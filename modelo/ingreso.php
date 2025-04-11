@@ -1,0 +1,160 @@
+<?php
+    require_once("motivo_ingreso.php");
+    require_once("procedencia.php");
+    require_once("destino.php");
+    require_once("tratamiento.php");
+    require_once("BBDD.php");
+    class Ingreso {
+        private ?int $id; 
+        private string $fecha_ingreso;
+        private ?string $fecha_alta;
+        private ?string $reingreso;
+        private ?string $eco;
+        private ?string $crf;
+        private ?string $crm;
+        private ?int $barthel;
+        private ?int $pfeiffer;
+        private ?int $minimental;
+        private ?int $analitica;
+        private ?int $NUM_VISIT;
+        private int $nhc;
+        private ?Motivo_ingreso $motivo_ingreso;
+        private ?Procedencia $procedencia;
+        private ?Destino $destino;
+        private array $lista_tratamientos;
+        
+        public function __construct() {
+            $this->id = null;
+            $this->fecha_ingreso = "";
+            $this->fecha_alta = null;
+            $this->reingreso = null;
+            $this->eco = null;
+            $this->crf = null;
+            $this->crm = null;
+            $this->barthel = null;
+            $this->pfeiffer = null;
+            $this->minimental = null;
+            $this->analitica = null;
+            $this->NUM_VISIT = null;
+            $this->nhc = 0;
+            $this->motivo_ingreso = null;
+            $this->procedencia = null;
+            $this->destino = null;
+            $this->lista_tratamientos = [];
+        }
+        public function __destruct() {
+            $this->id = null;
+            $this->fecha_ingreso = "";
+            $this->fecha_alta = null;
+            $this->reingreso = null;
+            $this->eco = null;
+            $this->crf = null;
+            $this->crm = null;
+            $this->barthel = null;
+            $this->pfeiffer = null;
+            $this->minimental = null;
+            $this->analitica = null;
+            $this->NUM_VISIT = null;
+            $this->nhc = 0;
+            $this->motivo_ingreso = null;
+            $this->procedencia = null;
+            $this->destino = null;
+            $this->lista_tratamientos = [];
+        }
+        public function cargarDatos($id, $fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, 
+                                    $minimental, $analitica, $NUM_VISIT, $nhc) {
+            $this->id = $id;
+            $this->fecha_ingreso = $fecha_ingreso;
+            $this->fecha_alta = $fecha_alta;
+            $this->reingreso = $reingreso;
+            $this->eco = $eco;
+            $this->crf = $crf;
+            $this->crm = $crm;
+            $this->barthel = $barthel;
+            $this->pfeiffer = $pfeiffer;
+            $this->minimental = $minimental;
+            $this->analitica = $analitica;
+            $this->NUM_VISIT = $NUM_VISIT;
+            $this->nhc = $nhc;
+        }
+        public function set_motivo_ingreso($motivo_ingreso) {
+            $this->motivo_ingreso = $motivo_ingreso;
+        }
+        public function set_procedencia($procedencia) {
+            $this->procedencia = $procedencia;
+        }
+        public function set_destino($destino) {
+            $this->destino = $destino;
+        }
+        public function set_tratamientos($lista_tratamientos) {
+            foreach($lista_tratamiento as $tratamiento) {
+                $this->lista_tratamiento[] = $tratamiento;
+            }
+        }
+        public function aniadir_ingreso() {
+            $aniadido = false;
+            try {
+                $bd = new BBDD();
+                $pdo = $bd->getPDO();
+                $pdo->begin_transaction();
+                $stmt = $pdo->prepare("INSERT INTO ingreso (fecha_ingreso, fecha_alta, reingreso, eco, crf, crm, barthel, pfeiffer, 
+                                        minimental, analitica, NUM_VISIT, nhc, id_motivo_ingreso, id_procedencia, id_destino)
+                                    VALUES (:fecha_ingreso, :fecha_alta, :reingreso, :eco, :crf, :crm, :barthel, :pfeiffer, 
+                                        :minimental, :analitica, :NUM_VISIT, :nhc, :id_motivo_ingreso, :id_procedencia, :id_destino)");
+                    $stmt->bindParam(":fecha_ingreso", $this->fecha_ingreso);
+                    $stmt->bindParam(":fecha_alta", $this->fecha_alta);
+                    $stmt->bindParam(":reingreso", $this->reingreso);
+                    $stmt->bindParam(":eco", $this->eco);
+                    $stmt->bindParam(":crf", $this->crf);
+                    $stmt->bindParam(":crm", $this->crm);
+                    $stmt->bindParam(":barthel", $this->barthel);
+                    $stmt->bindParam(":pfeiffer", $this->pfeiffer);
+                    $stmt->bindParam(":minimental", $this->minimental);
+                    $stmt->bindParam(":analitica", $this->analitica);
+                    $stmt->bindParam(":NUM_VISIT", $this->NUM_VISIT);
+                    if ($this->motivo_ingreso != null) {
+                        $datos = $this->motivo_ingreso->get_migr();
+                        $motivo_ingreso = $datos["id"];
+                    }
+                    if ($this->procedencia != null) {
+                        $datos = $this->procedencia->get_pr();
+                        $procedencia = $datos["id"];
+                    }
+                    if ($this->destino != null) {
+                        $datos = $this->destino->get_de();
+                        $destino = $datos["id"];
+                    }
+                    $stmt->bindParam(":id_motivo_ingreso", $motivo_ingreso);
+                    $stmt->bindParam(":id_procedencia", $procedencia);
+                    $stmt->bindParam(":id_destino", $destino);
+                    $stmt->execute();
+                    if (!empty($this->lista_tratamientos)) {
+                        $stmt = $pdo->prepare("SELECT * FROM ingreso WHERE nhc = :nhc AND fecha_ingreso = :fecha_ingreso;");
+                        $stmt->bindParam(":nhc", $this->nhc);
+                        $stmt->bindParam(":fecha_ingreso", $this->fecha_ingreso);
+                        $stmt->execute();
+                        $ingreso = $stmt->fetch(PDO::FETCH_ASSOC);
+                        $id_ingreso = $ingreso["id_ingreso"];
+                        $stmt = $pdo->prepare("INSERT INTO ingreso_tratamiento (id_ingreso, id_tratamiento)
+                                                VALUES (:id_ingreso, :id_tratamiento)");
+                        $stmt->bindParam(":id_ingreso", $id_ingreso);
+                        foreach($this->lista_tratamientos as $tratamiento) {
+                            $datos = $tratamiento->get_tr();
+                            $tratamiento = $datos["id"];
+                            $stmt->bindParam(":id_tratamiento", $tratamiento);
+                            $stmt->execute();
+                        }
+                    }
+                    $pdo->commit();
+                    $aniadido = true;
+            }
+            catch (Exception $e) {
+                $_SESSION["err"]=$e->getMessage();
+            }
+            finally {
+                unset($bd);
+                return $aniadido;
+            }
+        }
+    }
+?>

@@ -122,7 +122,9 @@
             $this->sng = $sng;
             $this->ocd = $ocd;
         }
-        public function set_centro_salud(Centro_salud $centro_salud) {
+        public function set_centro_salud(int $id_centro_salud) {
+            $centro_salud = new Centro_salud();
+            $centro_salud->cargar_datos_desde_BBDD($id_centro_salud);
             $this->centro_salud = $centro_salud;
         }
         public function set_motivo_inc(Motivo_inc $motivo_inc) {

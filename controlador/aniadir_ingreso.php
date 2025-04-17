@@ -13,7 +13,9 @@
                 $_SESSION["rip_domi"], $_SESSION["upp"], $_SESSION["in_ur"], $_SESSION["disf"], $_SESSION["in_fec"], $_SESSION["sv"], 
                 $_SESSION["insom"], $_SESSION["sng"], $_SESSION["sob_cui"], $_SESSION["ocd"]);
             if ($_SESSION["centro_salud"] != null){
-                $paciente->set_centro_salud($_SESSION["centro_salud"]);//Cambio que instancia el centro salud en el modelo tipo aggregate
+                $centro_salud = new Centro_salud();
+                $centro_salud->cargar_datos_desde_BBDD($_SESSION["centro_salud"]);
+                $paciente->set_centro_salud($centro_salud);
             }
             if ($_SESSION["motivo_inc"] != null){
                 $motivo_inc = new Motivo_inc();

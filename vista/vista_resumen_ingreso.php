@@ -300,7 +300,7 @@
             if (isset($_SESSION["editando"])) {
                 echo "
                     <a href='./aniadir_ingreso_diagnosticos.php' class='btn btn-primary me-2'>Volver a editar</a>
-                    <a href='../controlador/actualizar_paciente.php' class='btn btn-success'>Guardar los cambios</a>
+                    <a href='../controlador/actualizar_ingreso.php' class='btn btn-success'>Guardar los cambios</a>
                 ";
             }
             else {

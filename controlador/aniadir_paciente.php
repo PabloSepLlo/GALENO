@@ -1,9 +1,4 @@
 <?php
-    require_once("../modelo/centro_salud.php");
-    require_once("../modelo/ayuda_social.php");
-    require_once("../modelo/convivencia.php");
-    require_once("../modelo/motivo_inc.php");
-    require_once("../modelo/ppal_cuidador.php");
     require_once("../modelo/paciente.php");
     session_start();
     if(isset($_SESSION["nhc"], $_SESSION["nombre"], $_SESSION["ape1"], $_SESSION["sexo"], $_SESSION["edad"])){

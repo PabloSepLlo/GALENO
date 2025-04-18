@@ -6,6 +6,9 @@
     require_once("ppal_cuidador.php");
     require_once("ingreso.php");
     require_once("BBDD.php");
+    error_reporting(E_ALL);
+    ini_set('log_errors', 1);  
+    ini_set('error_log', 'C:\\xampp\\htdocs\\php\\PROYECTO_FINAL\\TFG\\logs\\error_log.txt');
 
     class Paciente {
         private int $nhc;
@@ -223,7 +226,7 @@
                 }
             }
             catch (Exception $e) {
-                $_SESSION["err"]=$e->getMessage();
+                error_log("Error al añadir paciente: " . $e->getMessage(), 3, "logs/error_log.txt");
             }
             finally {
                 unset($bd);
@@ -247,7 +250,6 @@
                 $this->edad = $paciente["edad"];
                 $this->medico = $paciente["medico"];
                 $this->enfermera = $paciente["enfermera"];
-                $this->motivo_inc = $paciente["motivo_inc"];
                 $this->co_morb = $paciente["co_morb"];
                 $this->num_farm = $paciente["num_farm"];
                 $this->grado_ulcera = $paciente["grado_ulcera"];
@@ -416,7 +418,7 @@
                 $actualizado = true;
             }
             catch (Exception $e) {
-                $_SESSION["msg"]=$e->getMessage();
+                error_log("Error al actualizar paciente: " . $e->getMessage(), 3, "logs/error_log.txt");
             }
             finally {
                 unset($bd);
@@ -424,10 +426,10 @@
             }
         }
 
-        public function ingresar($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, 
+        public function ingresar($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, $cultivo,
                                     $minimental, $analitica, $NUM_VISIT, $procedencia, $destino, $motivo_ingreso, $tratamientos){
             $ingreso = new Ingreso();
-            $ingreso->cargar_datos($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, 
+            $ingreso->cargar_datos($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, $cultivo,
                                         $minimental, $analitica, $NUM_VISIT, $this->nhc);
             if ($motivo_ingreso != null) {
                 $ingreso->set_motivo_ingreso($motivo_ingreso);
@@ -441,8 +443,10 @@
             if (!empty($tratamientos)){
                 $ingreso->set_tratamientos($tratamientos);
             }
-            $ingreso->aniadir_ingreso();
-            $this->lista_ingresos[] = $ingreso;
+            if ($ingreso->aniadir_ingreso()){
+                $this->lista_ingresos[] = $ingreso;
+                return true;
+            }
         }
     }
 ?>

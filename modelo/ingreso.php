@@ -4,6 +4,9 @@
     require_once("destino.php");
     require_once("tratamiento.php");
     require_once("BBDD.php");
+    error_reporting(E_ALL);
+    ini_set('log_errors', 1);  
+    ini_set('error_log', 'C:\\xampp\\htdocs\\php\\PROYECTO_FINAL\\TFG\\logs\\error_log.txt');
     class Ingreso {
         private ?int $id; 
         private string $fecha_ingreso;
@@ -14,6 +17,7 @@
         private ?string $crm;
         private ?int $barthel;
         private ?int $pfeiffer;
+        private ?int $cultivo;
         private ?int $minimental;
         private ?int $analitica;
         private ?int $NUM_VISIT;
@@ -33,6 +37,7 @@
             $this->crm = null;
             $this->barthel = null;
             $this->pfeiffer = null;
+            $this->cultivo = null;
             $this->minimental = null;
             $this->analitica = null;
             $this->NUM_VISIT = null;
@@ -52,6 +57,7 @@
             $this->crm = null;
             $this->barthel = null;
             $this->pfeiffer = null;
+            $this->cultivo = null;
             $this->minimental = null;
             $this->analitica = null;
             $this->NUM_VISIT = null;
@@ -61,7 +67,7 @@
             $this->destino = null;
             $this->lista_tratamientos = [];
         }
-        public function cargar_datos($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, 
+        public function cargar_datos($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, $cultivo, 
                                     $minimental, $analitica, $NUM_VISIT, $nhc) {
             $this->fecha_ingreso = $fecha_ingreso;
             $this->fecha_alta = $fecha_alta;
@@ -72,6 +78,7 @@
             $this->barthel = $barthel;
             $this->pfeiffer = $pfeiffer;
             $this->minimental = $minimental;
+            $this->cultivo = $cultivo;
             $this->analitica = $analitica;
             $this->NUM_VISIT = $NUM_VISIT;
             $this->nhc = $nhc;
@@ -82,7 +89,7 @@
             $this->motivo_ingreso = $motivo_ingreso;
         }
         public function set_procedencia(int $id_procedencia) {
-            $procedencia = new Porocedencia();
+            $procedencia = new Procedencia();
             $procedencia->cargar_datos_desde_BBDD($id_procedencia);
             $this->procedencia = $procedencia;
         }
@@ -92,10 +99,10 @@
             $this->destino = $destino;
         }
         public function set_tratamientos($lista_tratamientos) {
-            foreach($lista_tratamiento as $id_tratamiento) {
+            foreach($lista_tratamientos as $id_tratamiento) {
                 $tratamiento = new Tratamiento();
                 $tratamiento->cargar_datos_desde_BBDD($id_tratamiento);
-                $this->lista_tratamiento[] = $tratamiento;
+                $this->lista_tratamientos[] = $tratamiento;
             }
         }
         public function aniadir_ingreso() {
@@ -103,10 +110,10 @@
             try {
                 $bd = new BBDD();
                 $pdo = $bd->getPDO();
-                $pdo->begin_transaction();
-                $stmt = $pdo->prepare("INSERT INTO ingreso (fecha_ingreso, fecha_alta, reingreso, eco, crf, crm, barthel, pfeiffer, 
+                $pdo->beginTransaction();
+                $stmt = $pdo->prepare("INSERT INTO ingreso (fecha_ingreso, fecha_alta, reingreso, eco, crf, crm, barthel, pfeiffer, cultivo,
                                         minimental, analitica, NUM_VISIT, nhc, id_motivo_ingreso, id_procedencia, id_destino)
-                                    VALUES (:fecha_ingreso, :fecha_alta, :reingreso, :eco, :crf, :crm, :barthel, :pfeiffer, 
+                                    VALUES (:fecha_ingreso, :fecha_alta, :reingreso, :eco, :crf, :crm, :barthel, :pfeiffer, :cultivo, 
                                         :minimental, :analitica, :NUM_VISIT, :nhc, :id_motivo_ingreso, :id_procedencia, :id_destino)");
                     $stmt->bindParam(":fecha_ingreso", $this->fecha_ingreso);
                     $stmt->bindParam(":fecha_alta", $this->fecha_alta);
@@ -116,9 +123,11 @@
                     $stmt->bindParam(":crm", $this->crm);
                     $stmt->bindParam(":barthel", $this->barthel);
                     $stmt->bindParam(":pfeiffer", $this->pfeiffer);
+                    $stmt->bindParam(":cultivo", $this->cultivo);
                     $stmt->bindParam(":minimental", $this->minimental);
                     $stmt->bindParam(":analitica", $this->analitica);
                     $stmt->bindParam(":NUM_VISIT", $this->NUM_VISIT);
+                    $stmt->bindParam(":nhc", $this->nhc);
                     if ($this->motivo_ingreso != null) {
                         $datos = $this->motivo_ingreso->get_migr();
                         $motivo_ingreso = $datos["id"];
@@ -135,6 +144,7 @@
                     $stmt->bindParam(":id_procedencia", $procedencia);
                     $stmt->bindParam(":id_destino", $destino);
                     $stmt->execute();
+                    //$id_ingreso = $pdo->lastInsertId(); opcion mas rapida sin hacer el select
                     if (!empty($this->lista_tratamientos)) {
                         $stmt = $pdo->prepare("SELECT * FROM ingreso WHERE nhc = :nhc AND fecha_ingreso = :fecha_ingreso;");
                         $stmt->bindParam(":nhc", $this->nhc);
@@ -156,7 +166,8 @@
                     $aniadido = true;
             }
             catch (Exception $e) {
-                $_SESSION["err"]=$e->getMessage();
+                error_log("Error al añadir ingreso: " . $e->getMessage(), 3, "logs/error_log.txt");
+                $pdo->rollback();
             }
             finally {
                 unset($bd);

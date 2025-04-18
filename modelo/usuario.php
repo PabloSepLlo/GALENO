@@ -95,7 +95,7 @@
                 $actualizado = true;
             }
             catch (Exception $e) {
-                $_SESSION["msg"]=$e->getMessage();
+                error_log("Error al actualizar usuario: " . $e->getMessage(), 3, "logs/error_log.txt");
             }
             finally {
                 unset($bd);
@@ -131,7 +131,7 @@
                 }
             }
             catch (Exception $e) {
-                $_SESSION["err"]=$e->getMessage();
+                error_log("Error al registrar usuario: " . $e->getMessage(), 3, "logs/error_log.txt");
             }
             finally {
                 unset($bd);

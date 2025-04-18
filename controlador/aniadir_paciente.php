@@ -13,27 +13,19 @@
                 $_SESSION["rip_domi"], $_SESSION["upp"], $_SESSION["in_ur"], $_SESSION["disf"], $_SESSION["in_fec"], $_SESSION["sv"], 
                 $_SESSION["insom"], $_SESSION["sng"], $_SESSION["sob_cui"], $_SESSION["ocd"]);
             if ($_SESSION["centro_salud"] != null){
-                $paciente->set_centro_salud($_SESSION["centro_salud"]);//Cambio que instancia el centro salud en el modelo tipo aggregate
+                $paciente->set_centro_salud($_SESSION["centro_salud"]);
             }
             if ($_SESSION["motivo_inc"] != null){
-                $motivo_inc = new Motivo_inc();
-                $motivo_inc->cargar_datos_desde_BBDD($_SESSION["motivo_inc"]);
-                $paciente->set_motivo_inc($motivo_inc);
+                $paciente->set_motivo_inc($_SESSION["motivo_inc"]);
             }
             if ($_SESSION["ayuda_social"] != null){
-                $ayuda_social = new Ayuda_social();
-                $ayuda_social->cargar_datos_desde_BBDD($_SESSION["ayuda_social"]);
-                $paciente->set_ayuda_social($ayuda_social);
+                $paciente->set_ayuda_social($_SESSION["ayuda_social"]);
             }
             if ($_SESSION["convivencia"] != null){
-                $convivencia = new Convivencia();
-                $convivencia->cargar_datos_desde_BBDD($_SESSION["convivencia"]);
-                $paciente->set_convivencia($convivencia);
+                $paciente->set_convivencia($_SESSION["convivencia"]);
             }
             if ($_SESSION["ppal_cuidador"] != null){
-                $ppal_cuidador = new Ppal_cuidador();
-                $ppal_cuidador->cargar_datos_desde_BBDD($_SESSION["ppal_cuidador"]);
-                $paciente->set_ppal_cuidador($ppal_cuidador);
+                $paciente->set_ppal_cuidador($_SESSION["ppal_cuidador"]);
             }
             if ($paciente->aniadir_paciente()) {
                 $_SESSION["msg"] = "Paciente añadido con éxito";

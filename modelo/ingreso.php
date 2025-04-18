@@ -61,9 +61,8 @@
             $this->destino = null;
             $this->lista_tratamientos = [];
         }
-        public function cargarDatos($id, $fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, 
+        public function cargar_datos($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, 
                                     $minimental, $analitica, $NUM_VISIT, $nhc) {
-            $this->id = $id;
             $this->fecha_ingreso = $fecha_ingreso;
             $this->fecha_alta = $fecha_alta;
             $this->reingreso = $reingreso;
@@ -77,17 +76,25 @@
             $this->NUM_VISIT = $NUM_VISIT;
             $this->nhc = $nhc;
         }
-        public function set_motivo_ingreso($motivo_ingreso) {
+        public function set_motivo_ingreso(int $id_motivo_ingreso) {
+            $motivo_ingreso = new Motivo_ingreso();
+            $motivo_ingreso->cargar_datos_desde_BBDD($id_motivo_ingreso);
             $this->motivo_ingreso = $motivo_ingreso;
         }
-        public function set_procedencia($procedencia) {
+        public function set_procedencia(int $id_procedencia) {
+            $procedencia = new Porocedencia();
+            $procedencia->cargar_datos_desde_BBDD($id_procedencia);
             $this->procedencia = $procedencia;
         }
-        public function set_destino($destino) {
+        public function set_destino(int $id_destino) {
+            $destino = new Destino();
+            $destino->cargar_datos_desde_BBDD($id_destino);
             $this->destino = $destino;
         }
         public function set_tratamientos($lista_tratamientos) {
-            foreach($lista_tratamiento as $tratamiento) {
+            foreach($lista_tratamiento as $id_tratamiento) {
+                $tratamiento = new Tratamiento();
+                $tratamiento->cargar_datos_desde_BBDD($id_tratamiento);
                 $this->lista_tratamiento[] = $tratamiento;
             }
         }

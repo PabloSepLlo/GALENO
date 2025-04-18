@@ -4,6 +4,7 @@
     require_once("convivencia.php");
     require_once("motivo_inc.php");
     require_once("ppal_cuidador.php");
+    require_once("ingreso.php");
     require_once("BBDD.php");
 
     class Paciente {
@@ -127,16 +128,24 @@
             $centro_salud->cargar_datos_desde_BBDD($id_centro_salud);
             $this->centro_salud = $centro_salud;
         }
-        public function set_motivo_inc(Motivo_inc $motivo_inc) {
+        public function set_motivo_inc(int $id_motivo_inc) {
+            $motivo_inc = new Motivo_inc();
+            $motivo_inc->cargar_datos_desde_BBDD($id_motivo_inc);
             $this->motivo_inc = $motivo_inc;
         }
-        public function set_ayuda_social(Ayuda_social $ayuda_social) {
+        public function set_ayuda_social(int $id_ayuda_social) {
+            $ayuda_social = new Ayuda_social();
+            $ayuda_social->cargar_datos_desde_BBDD($id_ayuda_social);
             $this->ayuda_social = $ayuda_social;
         }
-        public function set_convivencia(Convivencia $convivencia) {
+        public function set_convivencia(int $id_convivencia) {
+            $convivencia = new Convivencia();
+            $convivencia->cargar_datos_desde_BBDD($id_convivencia);
             $this->convivencia = $convivencia;
         }
-        public function set_ppal_cuidador(Ppal_cuidador $ppal_cuidador) {
+        public function set_ppal_cuidador(int $id_ppal_cuidador) {
+            $ppal_cuidador = new Ppal_cuidador();
+            $ppal_cuidador->cargar_datos_desde_BBDD($id_ppal_cuidador);
             $this->ppal_cuidador = $ppal_cuidador;
         }
 
@@ -413,6 +422,27 @@
                 unset($bd);
                 return $actualizado;
             }
+        }
+
+        public function ingresar($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, 
+                                    $minimental, $analitica, $NUM_VISIT, $procedencia, $destino, $motivo_ingreso, $tratamientos){
+            $ingreso = new Ingreso();
+            $ingreso->cargar_datos($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, 
+                                        $minimental, $analitica, $NUM_VISIT, $this->nhc);
+            if ($motivo_ingreso != null) {
+                $ingreso->set_motivo_ingreso($motivo_ingreso);
+            }
+            if ($procedencia != null) {
+                $ingreso->set_procedencia($procedencia);
+            }
+            if ($destino != null) {
+                $ingreso->set_destino($destino);
+            }
+            if (!empty($tratamientos)){
+                $ingreso->set_tratamientos($tratamientos);
+            }
+            $ingreso->aniadir_ingreso();
+            $this->lista_ingresos[] = $ingreso;
         }
     }
 ?>

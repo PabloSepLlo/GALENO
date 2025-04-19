@@ -4,7 +4,7 @@
     if (isset($_POST["nhc"])) {
         $paciente = new Paciente();
         if ($paciente->cargar_datos_desde_BBDD($_POST["nhc"])) {
-            $datos = $paciente->get_datos();
+            $datos = $paciente->get_datos_paciente();
             $_SESSION["nhc"] = $datos["nhc"];
             $_SESSION["nombre"] = $datos["nombre"];
             $_SESSION["ape1"] = $datos["ape1"];
@@ -32,6 +32,7 @@
             $_SESSION["ayuda_social"] = $datos["ayuda_social"];
             $_SESSION["convivencia"] = $datos["convivencia"];
             $_SESSION["ppal_cuidador"] = $datos["ppal_cuidador"];
+
             if (isset($_GET["editando"])){
                 $_SESSION["editando"] = true;
                 header("Location: ./cargar_datos_form_pacientes.php");

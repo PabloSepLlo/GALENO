@@ -174,5 +174,84 @@
                 return $aniadido;
             }
         }
+
+        public function cargar_datos_desde_BBDD($id_ingreso) {
+            $existe = false;
+            $bd = new BBDD();
+            $pdo = $bd->getPDO();
+            $stmt = $pdo->prepare("SELECT * FROM datos_paciente WHERE nhc=:nhc");
+            $stmt->bindParam(":nhc", $nhc);
+            $stmt->execute();
+            if ($ingreso = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $this->id = $ingreso["id_ingreso"];
+                $this->fecha_ingreso = $ingreso["fecha_ingreso"];
+                $this->fecha_alta = $ingreso["fecha_alta"];
+                $this->reingreso = $ingreso["reingreso"];
+                $this->eco = $ingreso["eco"];
+                $this->crf = $ingreso["crf"];
+                $this->crm = $ingreso["crm"];
+                $this->barthel = $ingreso["barthel"];
+                $this->pfeiffer = $ingreso["pfeiffer"];
+                $this->minimental = $ingreso["minimental"];
+                $this->cultivo = $ingreso["cultivo"];
+                $this->analitica = $ingreso["analitica"];
+                $this->NUM_VISIT = $ingreso["NUM_VISIT"];
+                $this->nhc = $ingreso["nhc"];
+                if ($ingreso["id_motivo_ingreso"] != null) {
+                    $this->motivo_ingreso = new Motivo_ingreso();
+                    $this->motivo_ingreso->cargar_datos_desde_BBDD($ingreso["id_motivo_ingreso"]);
+                }
+
+                if ($ingreso["id_procedencia"] != null) {
+                    $this->procedencia = new Procedencia();
+                    $this->procedencia->cargar_datos_desde_BBDD($ingreso["id_procedencia"]);
+                }
+
+                if ($ingreso["id_destino"] != null) {
+                    $this->destino = new Destino();
+                    $this->destino->cargar_datos_desde_BBDD($ingreso["id_destino"]);
+                }
+                $stmt = $pdo->prepare("SELECT * FROM ingreso_tratamiento WHERE id_ingreso=:id_ingreso");
+                $stmt->bindParam(":id_ingreso", $id_ingreso);
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                $stmt->execute();       
+                while ($ingreso_tratamiento = $stmt->fetch()) {
+                    $tratamiento = new Tratamiento();
+                    $tratamiento->cargar_datos_desde_BBDD($ingreso_tratamiento["id_tratamiento"]);
+                    $this->lista_tratamientos[] = $tratamiento;
+                }
+            }
+        }
+
+        public function get_datos_ingreso() {
+            $lista_tratamientos = [];
+            if (!empty($this->lista_tratamientos)){
+                foreach ($this->lista_tratamientos as $tratamiento) {
+                    $lista_tratamientos[] = $tratamiento->get_tr()["id"];
+                }
+            }
+            $datos = [
+                "id" => $this->id,
+                "fecha_ingreso" => $this->fecha_ingreso,
+                "fecha_alta" => $this->fecha_alta,
+                "reingreso" => $this->reingreso,
+                "eco" => $this->eco,
+                "crf" => $this->crf,
+                "crm" => $this->crm,
+                "barthel" => $this->barthel,
+                "pfeiffer" => $this->pfeiffer,
+                "minimental" => $this->minimental,
+                "cultivo" => $this->cultivo,
+                "analitica" => $this->analitica,
+                "NUM_VISIT" => $this->NUM_VISIT,
+                "nhc" => $this->nhc,
+                "motivo_ingreso" => $this->motivo_ingreso ? $this->motivo_ingreso->get_migr()["id"] : null,
+                "procedencia" => $this->procedencia ? $this->procedencia->get_pr()["id"] : null,
+                "destino" => $this->destino ? $this->destino->get_de()["id"] : null,
+                "lista_tratamientos" => $lista_tratamientos
+            ];
+            return $datos;
+        }
+        
     }
 ?>

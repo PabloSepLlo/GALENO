@@ -289,31 +289,27 @@
                     $this->motivo_inc = new Motivo_inc();
                     $this->motivo_inc->cargar_datos_desde_BBDD($paciente["id_motivo_inc"]);
                 }
+
+                $stmt = $pdo->prepare("SELECT * FROM ingreso WHERE nhc=:nhc");
+                $stmt->bindParam(":nhc", $nhc);
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                $stmt->execute();
+                while ($datos_ingreso = $stmt->fetch()) {//$stmt->fetchObject
+                    $ingreso = new Ingreso();
+                    $ingreso->cargar_datos_desde_BBDD($datos_ingreso["id_ingreso"]);
+                    $this->lista_ingresos[] = $ingreso; 
+                }//opcion a ver, revisar si merece la pena hacer funcion que cargue el objeto desde array y otra por id para no repetir
                 $existe = true;
             }
             return $existe;
         }
 
-        public function get_datos() {
-            if ($this->centro_salud != null) {
-                $datos = $this->centro_salud->get_cs();
-                $centro_salud = $datos["id"];
-            }
-            if ($this->ayuda_social != null) {
-                $datos = $this->ayuda_social->get_as();
-                $ayuda_social = $datos["id"];
-            }
-            if ($this->motivo_inc != null) {
-                $datos = $this->motivo_inc->get_mi();
-                $motivo_inc = $datos["id"];
-            }
-            if ($this->convivencia != null) {
-                $datos = $this->convivencia->get_c();
-                $convivencia = $datos["id"];
-            }
-            if ($this->ppal_cuidador != null) {
-                $datos = $this->ppal_cuidador->get_pc();
-                $ppal_cuidador = $datos["id"];
+        public function get_datos_paciente() {
+            $lista_ingresos = [];
+            if (!empty($this->lista_ingresos)) {
+                foreach ($this->lista_ingresos as $ingreso) {
+                    $lista_ingresos[] = $ingreso->get_datos_ingreso()["id"];
+                }
             }
             $datos = [
                 "nhc" => $this->nhc,
@@ -338,11 +334,12 @@
                 "sv" => $this->sv,
                 "sng" => $this->sng,
                 "ocd" => $this->ocd,
-                "centro_salud" => $this->centro_salud ? $centro_salud : null,
-                "motivo_inc" => $this->motivo_inc ? $motivo_inc : null,
-                "ayuda_social" => $this->ayuda_social ? $ayuda_social : null,
-                "convivencia" => $this->convivencia ? $convivencia : null,
-                "ppal_cuidador" => $this->ppal_cuidador ? $ppal_cuidador : null
+                "centro_salud" => $this->centro_salud ? $this->centro_salud->get_cs()["id"] : null,
+                "motivo_inc" => $this->motivo_inc ? $this->motivo_inc->get_mi()["id"] : null,
+                "ayuda_social" => $this->ayuda_social ? $this->ayuda_social->get_as()["id"] : null,
+                "convivencia" => $this->convivencia ? $this->convivencia->get_c()["id"] : null,
+                "ppal_cuidador" => $this->ppal_cuidador ? $this->ppal_cuidador->get_pc()["id"] : null,
+                "ingresos" => $lista_ingresos
             ]; 
             return $datos;
         }

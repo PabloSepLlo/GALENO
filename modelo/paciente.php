@@ -343,11 +343,11 @@
             ]; 
             return $datos;
         }
-        
+        //para datos paciente
         public function borrar_usuario() {
             $bd = new BBDD();
             $pdo = $bd->getPDO();
-            $stmt = $pdo->prepare("DELETE FROM usuario WHERE id_usuario={$this->id}");
+            $stmt = $pdo->prepare("DELETE FROM datos_paciente WHERE id_usuario={$this->id}");
             $stmt->execute();
         }
         

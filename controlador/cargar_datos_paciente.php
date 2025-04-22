@@ -32,7 +32,19 @@
             $_SESSION["ayuda_social"] = $datos["ayuda_social"];
             $_SESSION["convivencia"] = $datos["convivencia"];
             $_SESSION["ppal_cuidador"] = $datos["ppal_cuidador"];
-
+            if (!empty($datos["lista_ingresos"])) {
+                $_SESSION["lista_ingresos"] = []; 
+                foreach ($datos["lista_ingresos"] as $datos_ingreso) {
+                    $_SESSION["lista_ingresos"][] = [
+                        "id" => $datos_ingreso["id"] ?? null,
+                        "fecha_ingreso" => $datos_ingreso["fecha_ingreso"] ?? null,
+                        "procedencia" => $datos_ingreso["procedencia"]["descripcion"] ?? null
+                    ];
+                }
+            }
+            else {
+                $_SESSION["lista_ingresos"] = [];
+            }
             if (isset($_GET["editando"])){
                 $_SESSION["editando"] = true;
                 header("Location: ./cargar_datos_form_pacientes.php");

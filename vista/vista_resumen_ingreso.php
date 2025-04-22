@@ -161,134 +161,138 @@
             <h4 class='text-center'>Paciente: " . (isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : "") . " " . (isset($_SESSION["ape1"]) ? $_SESSION["ape1"] : "") . " " . (isset($_SESSION["ape2"]) ? $_SESSION["ape2"] : "") . "</h4>
             <h4 class='text-center'>N. H. C.: " . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "</h4>";
         ?>
-        <div class="row d-flex justify-content-evenly">
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card shadow">
-                    <div class="card-header table-responsive bg-primary text-white text-center">
-                        <h5>GENERALES</h5>
-                    </div>
-                    <div class="card-body m-0">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button fs-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    GENERALES
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
                         <table class="table table-primary table-striped-columns table-bordered table-hover">
                             <?php
-                            $procedencia = null;
-                            foreach ($_SESSION["datos_pr"] as $pr) {
-                                if ($pr["id_procedencia"] == $_SESSION["procedencia"]){
-                                    $procedencia = $pr["descripcion"];
-                                }
-                            } 
-                            $destino = null;
-                            foreach ($_SESSION["datos_de"] as $de) {
-                                if ($de["id_destino"] == $_SESSION["destino"]){
-                                    $destino = $de["descripcion"];
-                                }
-                            } 
-                            echo "
-                            <tr>
-                                <td>Fecha de ingreso</td>
-                                <td>". ($_SESSION["fecha_ingreso"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Fecha de alta</td>
-                                <td>". ($_SESSION["fecha_alta"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Reingreso</td>
-                                <td>". ($_SESSION["reingreso"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Número de visitas</td>
-                                <td>". ($_SESSION["NUM_VISIT"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Procedencia</td>
-                                <td>". ($procedencia ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Destino</td>
-                                <td>". ($destino ?? '-') ."</td>
-                            </tr>
-                            ";
-                        ?>
+                                $procedencia = null;
+                                foreach ($_SESSION["datos_pr"] as $pr) {
+                                    if ($pr["id_procedencia"] == $_SESSION["procedencia"]){
+                                        $procedencia = $pr["descripcion"];
+                                    }
+                                } 
+                                $destino = null;
+                                foreach ($_SESSION["datos_de"] as $de) {
+                                    if ($de["id_destino"] == $_SESSION["destino"]){
+                                        $destino = $de["descripcion"];
+                                    }
+                                } 
+                                echo "
+                                <tr>
+                                    <td>Fecha de ingreso</td>
+                                    <td>". ($_SESSION["fecha_ingreso"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Fecha de alta</td>
+                                    <td>". ($_SESSION["fecha_alta"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Reingreso</td>
+                                    <td>". ($_SESSION["reingreso"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Número de visitas</td>
+                                    <td>". ($_SESSION["NUM_VISIT"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Procedencia</td>
+                                    <td>". ($procedencia ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Destino</td>
+                                    <td>". ($destino ?? '-') ."</td>
+                                </tr>
+                                ";
+                            ?>
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white text-center">
-                        <h5>DIAGNÓSTICOS</h5>
-                    </div>
-                    <div class="card-body">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed fs-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    DIAGNÓSTICOS
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
                         <table class="table table-primary table-striped-columns table-bordered table-hover">
                             <?php
-                            $motivo_ingreso = null;
-                            foreach ($_SESSION["datos_migr"] as $migr) {
-                                if ($migr["id_motivo_ingreso"] == $_SESSION["motivo_ingreso"]){
-                                    $motivo_ingreso = $migr["descripcion"];
-                                }
-                            } 
-                            $tratamientos = [];
-                            if ($_SESSION["tratamientos"] != null) {
-                                foreach ($_SESSION["datos_tr"] as $tr) {
-                                    if (in_array($tr["id_tratamiento"], $_SESSION["tratamientos"])) {
-                                        $tratamientos[] = $tr["descripcion"];
+                                $motivo_ingreso = null;
+                                foreach ($_SESSION["datos_migr"] as $migr) {
+                                    if ($migr["id_motivo_ingreso"] == $_SESSION["motivo_ingreso"]){
+                                        $motivo_ingreso = $migr["descripcion"];
                                     }
                                 } 
-                            }
-                            echo "
-                            <tr>
-                                <td>CRF</td>
-                                <td>". ($_SESSION["crf"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>CRM</td>
-                                <td>". ($_SESSION["crm"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>ECO</td>
-                                <td>". ($_SESSION["eco"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Cultivo</td>
-                                <td>". ($_SESSION["cultivo"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Barthel</td>
-                                <td>". ($_SESSION["barthel"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Pfeiffer</td>
-                                <td>". ($_SESSION["pfeiffer"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Analítica</td>
-                                <td>". ($_SESSION["analitica"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Minimental</td>
-                                <td>". ($_SESSION["minimental"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Motivo de ingreso</td>
-                                <td>". ($motivo_ingreso ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>Tratamaiento(s)</td>
-                                <td>"; 
-                                    if (!empty($tratamientos)) {
-                                        echo "<ul>";
-                                        foreach($tratamientos as $tratamiento){
-                                            echo "<li>". $tratamiento . "</li>";
+                                $tratamientos = [];
+                                if ($_SESSION["tratamientos"] != null) {
+                                    foreach ($_SESSION["datos_tr"] as $tr) {
+                                        if (in_array($tr["id_tratamiento"], $_SESSION["tratamientos"])) {
+                                            $tratamientos[] = $tr["descripcion"];
                                         }
-                                        echo "</ul>";
-                                    }
-                                    else {
-                                        echo "-";
-                                    }
-                                echo "</td>
-                            </tr>
-                            ";
-                        ?>
+                                    } 
+                                }
+                                echo "
+                                <tr>
+                                    <td>CRF</td>
+                                    <td>". ($_SESSION["crf"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>CRM</td>
+                                    <td>". ($_SESSION["crm"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>ECO</td>
+                                    <td>". ($_SESSION["eco"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Cultivo</td>
+                                    <td>". ($_SESSION["cultivo"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Barthel</td>
+                                    <td>". ($_SESSION["barthel"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Pfeiffer</td>
+                                    <td>". ($_SESSION["pfeiffer"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Analítica</td>
+                                    <td>". ($_SESSION["analitica"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Minimental</td>
+                                    <td>". ($_SESSION["minimental"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Motivo de ingreso</td>
+                                    <td>". ($motivo_ingreso ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>Tratamaiento(s)</td>
+                                    <td>"; 
+                                        if (!empty($tratamientos)) {
+                                            echo "<ul>";
+                                            foreach($tratamientos as $tratamiento){
+                                                echo "<li>". $tratamiento . "</li>";
+                                            }
+                                            echo "</ul>";
+                                        }
+                                        else {
+                                            echo "-";
+                                        }
+                                    echo "</td>
+                                </tr>
+                                ";
+                            ?>
                         </table>
                     </div>
                 </div>

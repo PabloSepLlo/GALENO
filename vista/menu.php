@@ -60,7 +60,7 @@
 
         /* Carrusel */
         .carousel-image {
-            height: 92vh;
+            height: 90vh;
             object-fit: cover;
         }
 
@@ -166,23 +166,23 @@
         </div>
     </nav>
     <!-- Carrusel -->
-    <div id="carouselExample" class="carousel slide">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item active" data-bs-interval="5000">
                 <img src="../images/GettyImages-1208116440.jpg" class="d-block w-100 carousel-image" alt="Hospital">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 class="text-white">Atención de Calidad</h5>
                     <p>Brindamos el mejor cuidado a nuestros pacientes.</p>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-interval="5000">
                 <img src="../images/caEUBouW-gallery-21-min-jpg.webp" class="d-block w-100 carousel-image" alt="Consultorio">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 class="text-white">Instalaciones Modernas</h5>
                     <p>Equipos de última tecnología para tu bienestar.</p>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-interval="5000">
                 <img src="../images/datos9-scaled.jpg" class="d-block w-100 carousel-image" alt="Médicos">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 class="text-white">Equipo Médico Profesional</h5>
@@ -190,11 +190,11 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Anterior</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Siguiente</span>
         </button>

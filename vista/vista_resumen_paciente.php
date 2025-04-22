@@ -156,184 +156,220 @@
     ?>
        
     <div class="container-fluid my-4">
-        <div class="row d-flex justify-content-evenly">
-            <div class="col-12 col-md-3 mb-4">
-                <div class="card shadow">
-                    <div class="card-header table-responsive bg-primary text-white text-center">
-                        <h5>DEMOGRÁFICOS</h5>
-                    </div>
-                    <div class="card-body m-0">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button fs-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    DEMOGRÁFICOS
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
                         <table class="table table-primary table-striped-columns table-bordered table-hover">
                             <?php
-                            $centro_salud = null;
-                            foreach ($_SESSION["datos_cs"] as $cs) {
-                                if ($cs["id_centro_salud"] == $_SESSION["centro_salud"]){
-                                    $centro_salud = $cs["codigo_centro"];
-                                }
-                            } 
-                            echo "
-                            <tr>
-                                <td>NHC</td>
-                                <td>". ($_SESSION["nhc"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>NOMBRE</td>
-                                <td>". ($_SESSION["nombre"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>PRIMER APELLIDO</td>
-                                <td>". ($_SESSION["ape1"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>SEGUNDO APELLIDO</td>
-                                <td>". ($_SESSION["ape2"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>SEXO</td>
-                                <td>". ($_SESSION["sexo"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>EDAD</td>
-                                <td>". ($_SESSION["edad"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>CENTRO DE SALUD</td>
-                                <td>". ($centro_salud ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>MÉDICO/A</td>
-                                <td>". ($_SESSION["med"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>ENFERMERO/A</td>
-                                <td>". ($_SESSION["enf"] ?? '-') ."</td>
-                            </tr>
-                            ";
-                        ?>
+                                $centro_salud = null;
+                                foreach ($_SESSION["datos_cs"] as $cs) {
+                                    if ($cs["id_centro_salud"] == $_SESSION["centro_salud"]){
+                                        $centro_salud = $cs["codigo_centro"];
+                                    }
+                                } 
+                                echo "
+                                    <tr>
+                                        <td>NHC</td>
+                                        <td>". ($_SESSION["nhc"] ?? '-') ."</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NOMBRE</td>
+                                        <td>". ($_SESSION["nombre"] ?? '-') ."</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PRIMER APELLIDO</td>
+                                        <td>". ($_SESSION["ape1"] ?? '-') ."</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SEGUNDO APELLIDO</td>
+                                        <td>". ($_SESSION["ape2"] ?? '-') ."</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SEXO</td>
+                                        <td>". ($_SESSION["sexo"] ?? '-') ."</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EDAD</td>
+                                        <td>". ($_SESSION["edad"] ?? '-') ."</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CENTRO DE SALUD</td>
+                                        <td>". ($centro_salud ?? '-') ."</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MÉDICO/A</td>
+                                        <td>". ($_SESSION["med"] ?? '-') ."</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ENFERMERO/A</td>
+                                        <td>". ($_SESSION["enf"] ?? '-') ."</td>
+                                    </tr>
+                                ";
+                            ?>
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 mb-4">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white text-center">
-                        <h5>DIAGNÓSTICOS</h5>
-                    </div>
-                    <div class="card-body">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed fs-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    DIAGNÓSTICOS
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
                         <table class="table table-primary table-striped-columns table-bordered table-hover">
                             <?php
-                            $motivo_inc = null;
-                            foreach ($_SESSION["datos_mi"] as $mi) {
-                                if ($mi["id_motivo_inc"] == $_SESSION["motivo_inc"]){
-                                    $motivo_inc = $mi["descripcion"];
-                                }
-                            } 
-                            echo "
-                            <tr>
-                                <td>MOTIVO PRINCIPAL DE INCAPACIDAD</td>
-                                <td>". ($motivo_inc ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>COMORBILIDAD</td>
-                                <td>". ($_SESSION["co_morb"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>NÚMERO DE FÁRMACOS</td>
-                                <td>". ($_SESSION["num_farm"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>GRADO DE ÚLCERA</td>
-                                <td>". ($_SESSION["grado_ulcera"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>RIP_DOMI</td>
-                                <td>". ($_SESSION["rip_domi"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>UPP</td>
-                                <td>". ($_SESSION["upp"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>INCONTINENCIA URINARIA</td>
-                                <td>". ($_SESSION["in_ur"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>DISFAGIA</td>
-                                <td>". ($_SESSION["disf"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>INCONTINENCIA FECAL</td>
-                                <td>". ($_SESSION["in_fec"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>SV</td>
-                                <td>". ($_SESSION["sv"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>INSOMNIO</td>
-                                <td>". ($_SESSION["insom"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>SNG</td>
-                                <td>". ($_SESSION["sng"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>SOB_CUI</td>
-                                <td>". ($_SESSION["sob_cui"] ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>OCD</td>
-                                <td>". ($_SESSION["ocd"] ?? '-') ."</td>
-                            </tr>
-                            ";
-                        ?>
+                                $motivo_inc = null;
+                                foreach ($_SESSION["datos_mi"] as $mi) {
+                                    if ($mi["id_motivo_inc"] == $_SESSION["motivo_inc"]){
+                                        $motivo_inc = $mi["descripcion"];
+                                    }
+                                } 
+                                echo "
+                                <tr>
+                                    <td>MOTIVO PRINCIPAL DE INCAPACIDAD</td>
+                                    <td>". ($motivo_inc ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>COMORBILIDAD</td>
+                                    <td>". ($_SESSION["co_morb"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>NÚMERO DE FÁRMACOS</td>
+                                    <td>". ($_SESSION["num_farm"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>GRADO DE ÚLCERA</td>
+                                    <td>". ($_SESSION["grado_ulcera"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>RIP_DOMI</td>
+                                    <td>". ($_SESSION["rip_domi"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>UPP</td>
+                                    <td>". ($_SESSION["upp"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>INCONTINENCIA URINARIA</td>
+                                    <td>". ($_SESSION["in_ur"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>DISFAGIA</td>
+                                    <td>". ($_SESSION["disf"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>INCONTINENCIA FECAL</td>
+                                    <td>". ($_SESSION["in_fec"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>SV</td>
+                                    <td>". ($_SESSION["sv"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>INSOMNIO</td>
+                                    <td>". ($_SESSION["insom"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>SNG</td>
+                                    <td>". ($_SESSION["sng"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>SOB_CUI</td>
+                                    <td>". ($_SESSION["sob_cui"] ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>OCD</td>
+                                    <td>". ($_SESSION["ocd"] ?? '-') ."</td>
+                                </tr>
+                                ";
+                            ?>
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white text-center">
-                        <h5>DATOS GENERALES</h5> 
-                    </div>
-                    <div class="card-body">
-                    <table class="table table-primary table-striped-columns table-bordered table-hover">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed fs-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    GENERALES
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <table class="table table-primary table-striped-columns table-bordered table-hover">
                             <?php
-                            $ayuda_social = $convivencia = $ppal_cuidador = null;
-                            foreach ($_SESSION["datos_as"] as $as) {
-                                if ($as["id_ayuda_social"] == $_SESSION["ayuda_social"]){
-                                    $ayuda_social = $as["descripcion"];
-                                }
-                            } 
-                            foreach ($_SESSION["datos_c"] as $c) {
-                                if ($c["id_convivencia"] == $_SESSION["convivencia"]){
-                                    $convivencia = $c["descripcion"];
-                                }
-                            } 
-                            foreach ($_SESSION["datos_pc"] as $pc) {
-                                if ($pc["id_ppal_cuidador"] == $_SESSION["ppal_cuidador"]){
-                                    $ppal_cuidador = $pc["descripcion"];
-                                }
-                            } 
-                            echo "
-                            <tr>
-                                <td>AYUDA SOCIAL</td>
-                                <td>". ($ayuda_social ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>CONVIVENCIA</td>
-                                <td>". ($convivencia ?? '-') ."</td>
-                            </tr>
-                            <tr>
-                                <td>PRINCIPAL CUIDADOR</td>
-                                <td>". ($ppal_cuidador ?? '-') ."</td>
-                            </tr>
-                            ";
-                        ?>
+                                $ayuda_social = $convivencia = $ppal_cuidador = null;
+                                foreach ($_SESSION["datos_as"] as $as) {
+                                    if ($as["id_ayuda_social"] == $_SESSION["ayuda_social"]){
+                                        $ayuda_social = $as["descripcion"];
+                                    }
+                                } 
+                                foreach ($_SESSION["datos_c"] as $c) {
+                                    if ($c["id_convivencia"] == $_SESSION["convivencia"]){
+                                        $convivencia = $c["descripcion"];
+                                    }
+                                } 
+                                foreach ($_SESSION["datos_pc"] as $pc) {
+                                    if ($pc["id_ppal_cuidador"] == $_SESSION["ppal_cuidador"]){
+                                        $ppal_cuidador = $pc["descripcion"];
+                                    }
+                                } 
+                                echo "
+                                <tr>
+                                    <td>AYUDA SOCIAL</td>
+                                    <td>". ($ayuda_social ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>CONVIVENCIA</td>
+                                    <td>". ($convivencia ?? '-') ."</td>
+                                </tr>
+                                <tr>
+                                    <td>PRINCIPAL CUIDADOR</td>
+                                    <td>". ($ppal_cuidador ?? '-') ."</td>
+                                </tr>
+                                ";
+                            ?>
                         </table>
                     </div>
                 </div>
             </div>
+            <?php
+                if (isset($_SESSION["editando"])) {
+                    echo "
+                        <div class='accordion-item'>
+                            <h2 class='accordion-header'>
+                                <button class='accordion-button collapsed fs-4 fw-bold' type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-collapseFour' aria-expanded='false' aria-controls='panelsStayOpen-collapseFour'>
+                                    INGRESOS
+                                </button>
+                            </h2>
+                            <div id='panelsStayOpen-collapseFour' class='accordion-collapse collapse'>
+                                <div class='accordion-body'>";
+                    if (!empty($_SESSION["lista_ingresos"])) {
+                        echo "<table class='table table-primary table-striped-columns table-bordered table-hover'>
+                            <tr><th>FECHA DE INGRESO</th><th>PROCEDENCIA</th></tr>
+                        ";
+                        foreach ($_SESSION["lista_ingresos"] as $ingreso) {
+                            echo "<tr><td>{$ingreso["fecha_ingreso"]}</td><td> ".($ingreso["procedencia"] ?? "-") ."</td></tr>";
+                        }
+                        echo "</table>";
+                    }  
+                    else {
+                        echo "Este paciente aún no tiene ingresos.";
+                    }          
+                    echo "            
+                                </div>
+                            </div>
+                        </div>
+                    ";
+                }
+            ?>
         </div>
     </div>
     <div class="container text-center my-4">

@@ -1,1 +1,2739 @@
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 9
+    [fecha_ingreso:Ingreso:private] => 2025-04-20
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
 
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 10
+    [fecha_ingreso:Ingreso:private] => 2025-04-26
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 11
+    [fecha_ingreso:Ingreso:private] => 2025-04-24
+    [fecha_alta:Ingreso:private] => 2025-04-27
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 54
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 45
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 7
+            [descripcion:Destino:private] => RESIDENCIA
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 12
+    [fecha_ingreso:Ingreso:private] => 2025-04-17
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 3
+            [descripcion:Procedencia:private] => UME
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 13
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [2] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 14
+    [fecha_ingreso:Ingreso:private] => 2025-04-11
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 15
+    [fecha_ingreso:Ingreso:private] => 2025-04-06
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 16
+    [fecha_ingreso:Ingreso:private] => 2025-04-12
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 9
+    [fecha_ingreso:Ingreso:private] => 2025-04-20
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 10
+    [fecha_ingreso:Ingreso:private] => 2025-04-26
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 11
+    [fecha_ingreso:Ingreso:private] => 2025-04-24
+    [fecha_alta:Ingreso:private] => 2025-04-27
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 54
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 45
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 7
+            [descripcion:Destino:private] => RESIDENCIA
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 12
+    [fecha_ingreso:Ingreso:private] => 2025-04-17
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 3
+            [descripcion:Procedencia:private] => UME
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 13
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [2] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 14
+    [fecha_ingreso:Ingreso:private] => 2025-04-11
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 15
+    [fecha_ingreso:Ingreso:private] => 2025-04-06
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 16
+    [fecha_ingreso:Ingreso:private] => 2025-04-12
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 9
+    [fecha_ingreso:Ingreso:private] => 2025-04-20
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 10
+    [fecha_ingreso:Ingreso:private] => 2025-04-26
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 11
+    [fecha_ingreso:Ingreso:private] => 2025-04-24
+    [fecha_alta:Ingreso:private] => 2025-04-27
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 54
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 45
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 7
+            [descripcion:Destino:private] => RESIDENCIA
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 12
+    [fecha_ingreso:Ingreso:private] => 2025-04-17
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 3
+            [descripcion:Procedencia:private] => UME
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 13
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [2] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 14
+    [fecha_ingreso:Ingreso:private] => 2025-04-11
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 15
+    [fecha_ingreso:Ingreso:private] => 2025-04-06
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 16
+    [fecha_ingreso:Ingreso:private] => 2025-04-12
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 9
+    [fecha_ingreso:Ingreso:private] => 2025-04-20
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 10
+    [fecha_ingreso:Ingreso:private] => 2025-04-26
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 11
+    [fecha_ingreso:Ingreso:private] => 2025-04-24
+    [fecha_alta:Ingreso:private] => 2025-04-27
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 54
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 45
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 7
+            [descripcion:Destino:private] => RESIDENCIA
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 12
+    [fecha_ingreso:Ingreso:private] => 2025-04-17
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 3
+            [descripcion:Procedencia:private] => UME
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 13
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [2] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 14
+    [fecha_ingreso:Ingreso:private] => 2025-04-11
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 15
+    [fecha_ingreso:Ingreso:private] => 2025-04-06
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 16
+    [fecha_ingreso:Ingreso:private] => 2025-04-12
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 9
+    [fecha_ingreso:Ingreso:private] => 2025-04-20
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 10
+    [fecha_ingreso:Ingreso:private] => 2025-04-26
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 11
+    [fecha_ingreso:Ingreso:private] => 2025-04-24
+    [fecha_alta:Ingreso:private] => 2025-04-27
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 54
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 45
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 7
+            [descripcion:Destino:private] => RESIDENCIA
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 12
+    [fecha_ingreso:Ingreso:private] => 2025-04-17
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 3
+            [descripcion:Procedencia:private] => UME
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 13
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [2] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 14
+    [fecha_ingreso:Ingreso:private] => 2025-04-11
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 15
+    [fecha_ingreso:Ingreso:private] => 2025-04-06
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 16
+    [fecha_ingreso:Ingreso:private] => 2025-04-12
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 9
+    [fecha_ingreso:Ingreso:private] => 2025-04-20
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 10
+    [fecha_ingreso:Ingreso:private] => 2025-04-26
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 11
+    [fecha_ingreso:Ingreso:private] => 2025-04-24
+    [fecha_alta:Ingreso:private] => 2025-04-27
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 54
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 45
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 7
+            [descripcion:Destino:private] => RESIDENCIA
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 12
+    [fecha_ingreso:Ingreso:private] => 2025-04-17
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 3
+            [descripcion:Procedencia:private] => UME
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 13
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [2] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 14
+    [fecha_ingreso:Ingreso:private] => 2025-04-11
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 15
+    [fecha_ingreso:Ingreso:private] => 2025-04-06
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 16
+    [fecha_ingreso:Ingreso:private] => 2025-04-12
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 9
+    [fecha_ingreso:Ingreso:private] => 2025-04-20
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 10
+    [fecha_ingreso:Ingreso:private] => 2025-04-26
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 11
+    [fecha_ingreso:Ingreso:private] => 2025-04-24
+    [fecha_alta:Ingreso:private] => 2025-04-27
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 54
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 45
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 7
+            [descripcion:Destino:private] => RESIDENCIA
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 12
+    [fecha_ingreso:Ingreso:private] => 2025-04-17
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 3
+            [descripcion:Procedencia:private] => UME
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 13
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [2] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 14
+    [fecha_ingreso:Ingreso:private] => 2025-04-11
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 15
+    [fecha_ingreso:Ingreso:private] => 2025-04-06
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 16
+    [fecha_ingreso:Ingreso:private] => 2025-04-12
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 9
+    [fecha_ingreso:Ingreso:private] => 2025-04-20
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 10
+    [fecha_ingreso:Ingreso:private] => 2025-04-26
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 11
+    [fecha_ingreso:Ingreso:private] => 2025-04-24
+    [fecha_alta:Ingreso:private] => 2025-04-27
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 54
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 45
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 7
+            [descripcion:Destino:private] => RESIDENCIA
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 12
+    [fecha_ingreso:Ingreso:private] => 2025-04-17
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 3
+            [descripcion:Procedencia:private] => UME
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 13
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [2] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [3] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [4] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 14
+    [fecha_ingreso:Ingreso:private] => 2025-04-11
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 15
+    [fecha_ingreso:Ingreso:private] => 2025-04-06
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 16
+    [fecha_ingreso:Ingreso:private] => 2025-04-12
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 17
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => NO
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 5
+            [descripcion:Procedencia:private] => CE
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 10
+            [descripcion:Destino:private] => ALTA_NO_PRE
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 9
+    [fecha_ingreso:Ingreso:private] => 2025-04-20
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 10
+    [fecha_ingreso:Ingreso:private] => 2025-04-26
+    [fecha_alta:Ingreso:private] => 2025-04-04
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 11
+    [fecha_ingreso:Ingreso:private] => 2025-04-24
+    [fecha_alta:Ingreso:private] => 2025-04-27
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 54
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 45
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 6
+            [descripcion:Motivo_ingreso:private] => CLAU_CUIDA
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 7
+            [descripcion:Procedencia:private] => URG
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 7
+            [descripcion:Destino:private] => RESIDENCIA
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 12
+    [fecha_ingreso:Ingreso:private] => 2025-04-17
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => SÍ
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 2
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 3
+            [descripcion:Procedencia:private] => UME
+        )
+
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 13
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [2] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 3
+                    [descripcion:Tratamiento:private] => FE_IV
+                )
+
+            [3] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 1
+                    [descripcion:Tratamiento:private] => INF_DIUR
+                )
+
+            [4] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 14
+    [fecha_ingreso:Ingreso:private] => 2025-04-11
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+            [0] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 2
+                    [descripcion:Tratamiento:private] => SED_PAL
+                )
+
+            [1] => Tratamiento Object
+                (
+                    [id:Tratamiento:private] => 4
+                    [descripcion:Tratamiento:private] => BISFOS_IV
+                )
+
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 15
+    [fecha_ingreso:Ingreso:private] => 2025-04-06
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 16
+    [fecha_ingreso:Ingreso:private] => 2025-04-12
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => 
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => 
+    [procedencia:Ingreso:private] => 
+    [destino:Ingreso:private] => 
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)
+Ingreso cargado: Ingreso Object
+(
+    [id:Ingreso:private] => 17
+    [fecha_ingreso:Ingreso:private] => 2025-04-18
+    [fecha_alta:Ingreso:private] => 
+    [reingreso:Ingreso:private] => NO
+    [eco:Ingreso:private] => 
+    [crf:Ingreso:private] => 
+    [crm:Ingreso:private] => 
+    [barthel:Ingreso:private] => 
+    [pfeiffer:Ingreso:private] => 
+    [cultivo:Ingreso:private] => 
+    [minimental:Ingreso:private] => 
+    [analitica:Ingreso:private] => 
+    [NUM_VISIT:Ingreso:private] => 
+    [nhc:Ingreso:private] => 44445555
+    [motivo_ingreso:Ingreso:private] => Motivo_ingreso Object
+        (
+            [id:Motivo_ingreso:private] => 7
+            [descripcion:Motivo_ingreso:private] => ULCE_CUT
+        )
+
+    [procedencia:Ingreso:private] => Procedencia Object
+        (
+            [id:Procedencia:private] => 5
+            [descripcion:Procedencia:private] => CE
+        )
+
+    [destino:Ingreso:private] => Destino Object
+        (
+            [id:Destino:private] => 10
+            [descripcion:Destino:private] => ALTA_NO_PRE
+        )
+
+    [lista_tratamientos:Ingreso:private] => Array
+        (
+        )
+
+)

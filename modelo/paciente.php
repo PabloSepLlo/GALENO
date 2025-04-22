@@ -308,7 +308,7 @@
             $lista_ingresos = [];
             if (!empty($this->lista_ingresos)) {
                 foreach ($this->lista_ingresos as $ingreso) {
-                    $lista_ingresos[] = $ingreso->get_datos_ingreso()["id"];
+                    $lista_ingresos[] = $ingreso->get_datos_ingreso();
                 }
             }
             $datos = [
@@ -339,7 +339,7 @@
                 "ayuda_social" => $this->ayuda_social ? $this->ayuda_social->get_as()["id"] : null,
                 "convivencia" => $this->convivencia ? $this->convivencia->get_c()["id"] : null,
                 "ppal_cuidador" => $this->ppal_cuidador ? $this->ppal_cuidador->get_pc()["id"] : null,
-                "ingresos" => $lista_ingresos
+                "lista_ingresos" => $lista_ingresos
             ]; 
             return $datos;
         }

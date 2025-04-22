@@ -179,8 +179,8 @@
             $existe = false;
             $bd = new BBDD();
             $pdo = $bd->getPDO();
-            $stmt = $pdo->prepare("SELECT * FROM datos_paciente WHERE nhc=:nhc");
-            $stmt->bindParam(":nhc", $nhc);
+            $stmt = $pdo->prepare("SELECT * FROM ingreso WHERE id_ingreso=:id_ingreso");
+            $stmt->bindParam(":id_ingreso", $id_ingreso);
             $stmt->execute();
             if ($ingreso = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $this->id = $ingreso["id_ingreso"];
@@ -220,6 +220,7 @@
                     $tratamiento->cargar_datos_desde_BBDD($ingreso_tratamiento["id_tratamiento"]);
                     $this->lista_tratamientos[] = $tratamiento;
                 }
+                error_log("Ingreso cargado: " . print_r($this, true), 3, "C:\\xampp\\htdocs\\php\\PROYECTO_FINAL\\TFG\\logs\\error_log.txt");
             }
         }
 
@@ -246,7 +247,7 @@
                 "NUM_VISIT" => $this->NUM_VISIT,
                 "nhc" => $this->nhc,
                 "motivo_ingreso" => $this->motivo_ingreso ? $this->motivo_ingreso->get_migr()["id"] : null,
-                "procedencia" => $this->procedencia ? $this->procedencia->get_pr()["id"] : null,
+                "procedencia" => $this->procedencia ? $this->procedencia->get_pr() : null,
                 "destino" => $this->destino ? $this->destino->get_de()["id"] : null,
                 "lista_tratamientos" => $lista_tratamientos
             ];

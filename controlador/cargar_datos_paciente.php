@@ -59,7 +59,7 @@
         }
         else {
             $_SESSION["err"] = "Revise el NHC introducido";
-            header("Location: ../vista/aniadir_paciente_demograficos.php");
+            header("Location: ../vista/menu.php");
             exit();
         }
     }

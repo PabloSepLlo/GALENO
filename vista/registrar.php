@@ -15,47 +15,14 @@
     </style>
 </head>
 <body>
+    <?php 
+        include("../include/aviso.php");
+    ?>      
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center min-vh-100">
             <div class="card shadow p-4 form-container">
                 <form method="POST" action="../controlador/registrar.php">
                     <h3 class="text-center mb-3">Registrate</h3>
-                    <?php
-                        $modalContent = '';
-                        if (isset($_SESSION['err'])) {
-                            $modalContent = "<div class='modal fade' id='sessionModal' tabindex='-1'>
-                                <div class='modal-dialog modal-dialog-centered modal-sm'>
-                                    <div class='modal-content'>
-                                        <div class='modal-header bg-danger text-white'>
-                                            <h5 class='modal-title w-100 text-center'>Error</h5>
-                                            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-                                        </div>
-                                        <div class='modal-body text-center'>
-                                            <p>{$_SESSION['err']}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>";
-                            unset($_SESSION['err']);
-                        } elseif (isset($_SESSION['msg'])) {
-                            $modalContent = "<div class='modal fade' id='sessionModal' tabindex='-1'>
-                                <div class='modal-dialog modal-dialog-centered modal-sm'>
-                                    <div class='modal-content'>
-                                        <div class='modal-header bg-success text-white'>
-                                            <h5 class='modal-title w-100 text-center'>Éxito</h5>
-                                            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-                                        </div>
-                                        <div class='modal-body text-center'>
-                                            <p>{$_SESSION['msg']}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>";
-                            unset($_SESSION['msg']);
-                        }
-
-                        echo $modalContent;
-                    ?>
                     <div class="mb-3">
                         <label for="nombreUsu" class="form-label">Nombre de usuario</label>
                         <input type="text" name="user_name" class="form-control" id="nombreUsu" required>

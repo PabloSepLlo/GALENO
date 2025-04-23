@@ -24,7 +24,7 @@
             }
             if ($paciente->aniadir_paciente()) {
                 $_SESSION["msg"] = "Paciente añadido con éxito";
-                header("Location: ./borrar_datos_formulario_paciente.php");
+                header("Location: ./borrar_datos_formulario.php");
                 exit();
             }
             else {

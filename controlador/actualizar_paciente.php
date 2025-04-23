@@ -24,7 +24,7 @@
         }
         if ($paciente->actualizar_paciente()){
             $_SESSION["msg"] = "Paciente actualizado";
-            header("Location: ./borrar_datos_formulario_paciente.php");
+            header("Location: ./borrar_datos_formulario.php");
             exit();
         }
         else {

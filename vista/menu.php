@@ -60,7 +60,7 @@
 
         /* Carrusel */
         .carousel-image {
-            height: 90vh;
+            height: 92vh;
             object-fit: cover;
         }
 

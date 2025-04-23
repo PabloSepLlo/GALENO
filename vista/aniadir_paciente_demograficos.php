@@ -142,7 +142,7 @@
                             }
                         echo "<form method='POST'>
                             <div class='row d-flex justify-content-end'>
-                                <button type='submit' class='btn btn-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' formaction='../controlador/borrar_datos_formulario_paciente.php' title='Borrar datos de paciente y salir'>
+                                <button type='submit' class='btn btn-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' formaction='../controlador/borrar_datos_formulario.php' title='Borrar datos de paciente y salir'>
                                     <i class='bi bi-x-lg'></i>
                                 </button>
                             </div>

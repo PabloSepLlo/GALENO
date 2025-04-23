@@ -9,7 +9,7 @@
                                     $_SESSION["minimental"], $_SESSION["analitica"], $_SESSION["NUM_VISIT"], $_SESSION["procedencia"], 
                                     $_SESSION["destino"], $_SESSION["motivo_ingreso"], $_SESSION["tratamientos"])) {
                 $_SESSION["msg"] = "Ingreso añadido con éxito";
-                header("Location: ./borrar_datos_formulario_ingreso.php");
+                header("Location: ./borrar_datos_formulario.php");
                 exit();
             }
             else {

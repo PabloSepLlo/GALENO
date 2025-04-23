@@ -5,7 +5,7 @@
         $usuario = new Usuario();
         if ($usuario->autenticar($_POST["user_name"], $_POST["pass"])) {
             $datos = $usuario->get_datos();
-            $_SESSION["id_usuario"] = $datos["id"];
+            $_SESSION["id_usuario"] = $datos["id_usuario"];
             header('Location: ../vista/menu.php');
             exit();
         }

@@ -60,7 +60,7 @@
 
         public function get_datos() {
             $datos = [
-                "id" => $this->id,
+                "id_usuario" => $this->id,
                 "user_name" => $this->user_name,
                 "nombre" => $this->nombre,
                 "ape1" => $this->ape1,

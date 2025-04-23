@@ -220,7 +220,6 @@
                     $tratamiento->cargar_datos_desde_BBDD($ingreso_tratamiento["id_tratamiento"]);
                     $this->lista_tratamientos[] = $tratamiento;
                 }
-                error_log("Ingreso cargado: " . print_r($this, true), 3, "C:\\xampp\\htdocs\\php\\PROYECTO_FINAL\\TFG\\logs\\error_log.txt");
             }
         }
 

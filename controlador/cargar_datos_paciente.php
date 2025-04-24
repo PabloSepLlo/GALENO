@@ -58,7 +58,7 @@
             
         }
         else {
-            $_SESSION["err"] = "Revise el NHC introducido";
+            $_SESSION["err"] = "No se ha encontrado el paciente. Revise el NHC introducido y vuelva a intentarlo";
             header("Location: ../vista/menu.php");
             exit();
         }

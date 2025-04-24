@@ -147,10 +147,10 @@
                                 </div>
                             </div>
 
-                            <div class='row d-flex justify-content-end'>
-                                    <button type='submit' formaction='../controlador/guardar_demograficos.php' class='btn btn-primary col-sm-2 col-md-1 d-flex justify-content-center align-items-center' title='Guardar y continuar'>
-                                        <i class='bi bi-arrow-right'></i>
-                                    </button>
+                            <div class='d-flex justify-content-end'>
+                                    <button type='submit' formaction='../controlador/guardar_demograficos.php' class='btn btn-outline-primary d-flex align-items-center rounded-pill shadow-sm px-4'>
+                                    Siguiente <i class='bi bi-arrow-right ms-2'></i>
+                                </button>
                             </div>
                         </form>
                     </div>

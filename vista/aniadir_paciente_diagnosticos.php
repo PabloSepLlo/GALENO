@@ -220,12 +220,13 @@
                                     </select>
                                 </div> 
                             </div>
-                            <div class='row d-flex justify-content-between'>
-                                <a href='./aniadir_paciente_demograficos.php' class='btn btn-primary col-sm-2 col-md-1 d-flex justify-content-center align-items-center mx-2' title='Regresar'>
-                                    <i class='bi bi-arrow-left'></i>
+
+                            <div class='d-flex justify-content-between'>
+                                <a href='./aniadir_paciente_demograficos.php' class='btn btn-outline-primary d-flex align-items-center rounded-pill shadow-sm px-4'>
+                                    <i class='bi bi-arrow-left me-2'></i> Atrás
                                 </a>
-                                <button type='submit' formaction='../controlador/guardar_diagnosticos.php' class='btn btn-primary col-sm-2 col-md-1 d-flex justify-content-center align-items-center mx-2' title='Guardar y continuar'>
-                                    <i class='bi bi-arrow-right'></i>
+                                <button type='submit' formaction='../controlador/guardar_diagnosticos.php' class='btn btn-outline-primary d-flex align-items-center rounded-pill shadow-sm px-4'>
+                                    Siguiente <i class='bi bi-arrow-right ms-2'></i>
                                 </button>
                             </div>
                         </form>

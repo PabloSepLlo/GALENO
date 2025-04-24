@@ -86,50 +86,55 @@
                             </div>";
                         include('../include/aviso.php'); 
                         echo "<form method='POST'>
-                            <div class='row'>
-                                <div class='col-md-12 mb-3'>
-                                    <label for='ayuda_social' class='form-label'>Ayuda social</label>
-                                    <select class='form-select' id='ayuda_social' name='ayuda_social'>
-                                        <option value=''>-</option>";
-                                        foreach ($_SESSION["datos_as"] as $as) {
-                                            echo "<option value='{$as["id_ayuda_social"]}'" . (isset($_SESSION["ayuda_social"]) && $_SESSION["ayuda_social"] == $as["id_ayuda_social"] ? " selected" : "") . ">{$as["descripcion"]}</option>";
-                                        }
 
-                                        echo "</select>
-                                </div>
+                            <div class='mb-3'>
+                                <label for='ayuda_social' class='form-label'>Ayuda social</label>
+                                <select class='form-select' id='ayuda_social' name='ayuda_social'>
+                                    <option value=''>-</option>";
+                                    foreach ($_SESSION['datos_as'] as $as) {
+                                        echo "<option value='{$as['id_ayuda_social']}'" . 
+                                            (isset($_SESSION['ayuda_social']) && $_SESSION['ayuda_social'] == $as['id_ayuda_social'] ? " selected" : "") . 
+                                            ">{$as['descripcion']}</option>";
+                                    }
+                    echo "      </select>
                             </div>
-                            <div class='row'>
-                                <div class='col-md-12 mb-3'>
-                                    <label for='convivencia' class='form-label'>Convivencia</label>
-                                    <select class='form-select' id='convivencia' name='convivencia'>
-                                        <option value=''>-</option>";
-                                        foreach ($_SESSION["datos_c"] as $c) {
-                                            echo "<option value='{$c["id_convivencia"]}'" . (isset($_SESSION["convivencia"]) && $_SESSION["convivencia"] == $c["id_convivencia"] ? " selected" : "") . ">{$c["descripcion"]}</option>";
-                                        }
 
-                                        echo "</select>
-                                </div>
+                            <div class='mb-3'>
+                                <label for='convivencia' class='form-label'>Convivencia</label>
+                                <select class='form-select' id='convivencia' name='convivencia'>
+                                    <option value=''>-</option>";
+                                    foreach ($_SESSION['datos_c'] as $c) {
+                                        echo "<option value='{$c['id_convivencia']}'" . 
+                                            (isset($_SESSION['convivencia']) && $_SESSION['convivencia'] == $c['id_convivencia'] ? " selected" : "") . 
+                                            ">{$c['descripcion']}</option>";
+                                    }
+                    echo "      </select>
                             </div>
-                            <div class='row'>
-                                <div class='col-md-12 mb-3'>
-                                    <label for='ppal_cuidador' class='form-label'>Principal cuidador</label>
-                                    <select class='form-select' id='ppal_cuidador' name='ppal_cuidador'>
-                                        <option value=''>-</option>";
-                                        foreach ($_SESSION["datos_pc"] as $pc) {
-                                            echo "<option value='{$pc["id_ppal_cuidador"]}'" . (isset($_SESSION["ppal_cuidador"]) && $_SESSION["ppal_cuidador"] == $pc["id_ppal_cuidador"] ? " selected" : "") . ">{$pc["descripcion"]}</option>";
-                                        }
 
-                                        echo "</select>
-                                </div>
+                            <div class='mb-4'>
+                                <label for='ppal_cuidador' class='form-label'>Principal cuidador</label>
+                                <select class='form-select' id='ppal_cuidador' name='ppal_cuidador'>
+                                    <option value=''>-</option>";
+                                    foreach ($_SESSION['datos_pc'] as $pc) {
+                                        echo "<option value='{$pc['id_ppal_cuidador']}'" . 
+                                            (isset($_SESSION['ppal_cuidador']) && $_SESSION['ppal_cuidador'] == $pc['id_ppal_cuidador'] ? " selected" : "") . 
+                                            ">{$pc['descripcion']}</option>";
+                                    }
+                    echo "      </select>
                             </div>
-                            <div class='row d-flex justify-content-between'>
-                                <a href='./aniadir_paciente_diagnosticos.php' class='btn btn-primary col-sm-2 col-md-1 d-flex justify-content-center align-items-center mx-2' title='Regresar'>
-                                    <i class='bi bi-arrow-left'></i>
+
+                            <div class='d-flex justify-content-between'>
+                                <a href='./aniadir_paciente_diagnosticos.php' 
+                                class='btn btn-outline-primary d-flex align-items-center rounded-pill shadow-sm px-4'>
+                                    <i class='bi bi-arrow-left me-2'></i> Atrás
                                 </a>
-                                <button type='submit' formaction='../controlador/guardar_datos_generales.php' class='btn btn-primary col-sm-2 col-md-1 d-flex justify-content-center align-items-center mx-2' title='Guardar y continuar'>
-                                    <i class='bi bi-arrow-right'></i>
+
+                                <button type='submit' formaction='../controlador/guardar_datos_generales.php' 
+                                        class='btn btn-primary d-flex align-items-center rounded-pill shadow-sm px-4'>
+                                    Guardar <i class='bi bi-arrow-right ms-2'></i>
                                 </button>
                             </div>
+
                         </form>
                     </div>
                 </div>

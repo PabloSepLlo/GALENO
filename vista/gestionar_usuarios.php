@@ -96,12 +96,12 @@
                                         <td>{$usuario["nombre_usuario"]}</td>
                                         <td>{$usuario["administrador"]}</td>
                                         <td>
-                                            <form method='POST' class='d-flex gap-2'>
-                                                <button type='submit' class='btn btn-danger btn-sm' formaction='../controlador/eliminar_usuario.php' title='Eliminar'>
-                                                    <i class='bi bi-trash'></i>
-                                                </button>
-                                                <button type='button' class='btn btn-primary btn-sm' data-bs-toggle='modal' data-bs-target='#modalEditar{$usuario["id_usuario"]}' title='Editar'>
+                                            <form method='POST' class='d-flex justify-content-around'>
+                                                <button type='button' class='btn btn-link p-0 text-primary' data-bs-toggle='modal' data-bs-target='#modalEditar{$usuario["id_usuario"]}' title='Editar'>
                                                     <i class='bi bi-pencil'></i>
+                                                </button>
+                                                <button type='submit' class='btn btn-link p-0 text-danger' formaction='../controlador/eliminar_usuario.php' title='Eliminar'>
+                                                    <i class='bi bi-trash'></i>
                                                 </button>
                                                 <input type='hidden' name='id_usuario' value='{$usuario['id_usuario']}'>
                                             </form>

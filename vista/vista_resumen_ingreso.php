@@ -151,9 +151,9 @@
                                     }
                                 } 
                                 $tratamientos = [];
-                                if ($_SESSION["tratamientos"] != null) {
+                                if ($_SESSION["lista_tratamientos"] != null) {
                                     foreach ($_SESSION["datos_tr"] as $tr) {
-                                        if (in_array($tr["id_tratamiento"], $_SESSION["tratamientos"])) {
+                                        if (in_array($tr["id_tratamiento"], $_SESSION["lista_tratamientos"])) {
                                             $tratamientos[] = $tr["descripcion"];
                                         }
                                     } 
@@ -196,7 +196,7 @@
                                     <td>". ($motivo_ingreso ?? '-') ."</td>
                                 </tr>
                                 <tr>
-                                    <td>Tratamaiento(s)</td>
+                                    <td>Tratamiento(s)</td>
                                     <td>"; 
                                         if (!empty($tratamientos)) {
                                             echo "<ul>";

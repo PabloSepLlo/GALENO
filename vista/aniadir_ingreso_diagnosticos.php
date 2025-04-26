@@ -197,7 +197,7 @@
 
                                         foreach ($_SESSION['datos_tr'] as $tr) {
                                             echo "<label class='d-block'><input type='checkbox' name='tratamientos[]' value='" . $tr['id_tratamiento'] . "' onchange='updateDropdownText()'" . 
-                                            (isset($_SESSION['tratamientos']) && in_array($tr['id_tratamiento'], $_SESSION['tratamientos']) ? " checked" : "") . "> " . $tr['descripcion'] . "</label>";
+                                            (isset($_SESSION['lista_tratamientos']) && in_array($tr['id_tratamiento'], $_SESSION['lista_tratamientos']) ? " checked" : "") . "> " . $tr['descripcion'] . "</label>";
                                         }
 
                             echo "

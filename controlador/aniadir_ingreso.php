@@ -7,7 +7,7 @@
             if ($paciente->ingresar($_SESSION["fecha_ingreso"], $_SESSION["fecha_alta"], $_SESSION["reingreso"], $_SESSION["eco"],
                                     $_SESSION["crf"], $_SESSION["crm"], $_SESSION["barthel"], $_SESSION["pfeiffer"], $_SESSION["cultivo"],
                                     $_SESSION["minimental"], $_SESSION["analitica"], $_SESSION["NUM_VISIT"], $_SESSION["procedencia"], 
-                                    $_SESSION["destino"], $_SESSION["motivo_ingreso"], $_SESSION["tratamientos"])) {
+                                    $_SESSION["destino"], $_SESSION["motivo_ingreso"], $_SESSION["lista_tratamientos"])) {
                 $_SESSION["msg"] = "Ingreso añadido con éxito";
                 header("Location: ./borrar_datos_formulario.php");
                 exit();

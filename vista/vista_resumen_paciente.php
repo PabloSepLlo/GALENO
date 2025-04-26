@@ -275,9 +275,21 @@
                             <tr><th>FECHA DE INGRESO</th><th>PROCEDENCIA</th></tr>
                         ";
                         foreach ($_SESSION["lista_ingresos"] as $ingreso) {
-                            echo "<tr><td>{$ingreso["fecha_ingreso"]}</td><td> ".($ingreso["procedencia"] ?? "-") ."</td></tr>";
+                            echo "<tr>
+                                    <td>{$ingreso["fecha_ingreso"]}</td>
+                                    <td> ".($ingreso["procedencia"] ?? "-") ."</td>
+                                    <td class='text-center align-middle border-0 bg-transparent p-1'>
+                                        <form method='POST' class='text-center' action='../controlador/cargar_ingreso_edicion.php'>
+                                            <button type='submit' name='action' value='editar' class='btn btn-link p-0 text-primary' title='Editar'>
+                                                <i class='bi bi-pencil'></i>
+                                            </button>
+                                            <input type='hidden' name='id_ingreso' value='{$ingreso["id"]}'>
+                                        </form>
+                                    </td>
+                                </tr>
+                                ";
                         }
-                        echo "</table>";
+                        echo "</table></form>";
                     }  
                     else {
                         echo "Este paciente aún no tiene ingresos.";

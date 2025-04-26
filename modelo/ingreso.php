@@ -83,6 +83,9 @@
             $this->NUM_VISIT = $NUM_VISIT;
             $this->nhc = $nhc;
         }
+        public function set_id($id) {
+            $this->id = $id;
+        }
         public function set_motivo_ingreso(int $id_motivo_ingreso) {
             $motivo_ingreso = new Motivo_ingreso();
             $motivo_ingreso->cargar_datos_desde_BBDD($id_motivo_ingreso);
@@ -214,7 +217,7 @@
                 $stmt = $pdo->prepare("SELECT * FROM ingreso_tratamiento WHERE id_ingreso=:id_ingreso");
                 $stmt->bindParam(":id_ingreso", $id_ingreso);
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                $stmt->execute();       
+                $stmt->execute();     
                 while ($ingreso_tratamiento = $stmt->fetch()) {
                     $tratamiento = new Tratamiento();
                     $tratamiento->cargar_datos_desde_BBDD($ingreso_tratamiento["id_tratamiento"]);
@@ -252,6 +255,73 @@
             ];
             return $datos;
         }
-        
+
+        public function actualizar_ingreso() {
+            $actualizado = false;
+            try {
+                $bd = new BBDD();
+                $pdo = $bd->getPDO();
+                $pdo->beginTransaction();
+                $stmt = $pdo->prepare("UPDATE ingreso 
+                                        SET fecha_ingreso = :fecha_ingreso, fecha_alta = :fecha_alta, reingreso = :reingreso, eco = :eco,
+                                            crf = :crf, crm = :crm, barthel = :barthel, pfeiffer = :pfeiffer, cultivo = :cultivo, minimental = :minimental,
+                                            analitica = :analitica, NUM_VISIT = :NUM_VISIT, id_motivo_ingreso = :id_motivo_ingreso, id_procedencia = :id_procedencia,
+                                            id_destino = :id_destino
+                                        WHERE id_ingreso = :id_ingreso
+                                    ");
+                $stmt->bindParam(":id_ingreso", $this->id);
+                $stmt->bindParam(":fecha_ingreso", $this->fecha_ingreso);
+                $stmt->bindParam(":fecha_alta", $this->fecha_alta);
+                $stmt->bindParam(":reingreso", $this->reingreso);
+                $stmt->bindParam(":eco", $this->eco);
+                $stmt->bindParam(":crf", $this->crf);
+                $stmt->bindParam(":crm", $this->crm);
+                $stmt->bindParam(":barthel", $this->barthel);
+                $stmt->bindParam(":pfeiffer", $this->pfeiffer);
+                $stmt->bindParam(":cultivo", $this->cultivo);
+                $stmt->bindParam(":minimental", $this->minimental);
+                $stmt->bindParam(":analitica", $this->analitica);
+                $stmt->bindParam(":NUM_VISIT", $this->NUM_VISIT);
+                if ($this->motivo_ingreso != null) {
+                    $datos = $this->motivo_ingreso->get_migr();
+                    $motivo_ingreso = $datos["id"];
+                }
+                if ($this->procedencia != null) {
+                    $datos = $this->procedencia->get_pr();
+                    $procedencia = $datos["id"];
+                }
+                if ($this->destino != null) {
+                    $datos = $this->destino->get_de();
+                    $destino = $datos["id"];
+                }
+                $stmt->bindParam(":id_motivo_ingreso", $motivo_ingreso);
+                $stmt->bindParam(":id_procedencia", $procedencia);
+                $stmt->bindParam(":id_destino", $destino);
+                $stmt->execute();
+                if (!empty($this->lista_tratamientos)) {
+                    $stmt = $pdo->prepare("DELETE FROM ingreso_tratamiento WHERE id_ingreso = :id_ingreso");
+                    $stmt->bindParam(":id_ingreso", $this->id);
+                    $stmt->execute();
+                    $stmt = $pdo->prepare("INSERT INTO ingreso_tratamiento (id_ingreso, id_tratamiento)
+                                            VALUES (:id_ingreso, :id_tratamiento)");
+                    $stmt->bindParam(":id_ingreso", $this->id);
+                    foreach($this->lista_tratamientos as $tratamiento) {
+                        $datos = $tratamiento->get_tr();
+                        $tratamiento = $datos["id"];
+                        $stmt->bindParam(":id_tratamiento", $tratamiento);
+                        $stmt->execute();
+                    }
+                }
+                $pdo->commit();
+                $actualizado = true;
+            }
+            catch (Exception $e) {
+                error_log("Error al actualizar ingreso: " . $e->getMessage(), 3, "../logs/error_log.txt");
+            }
+            finally {
+                unset($bd);
+                return $actualizado;
+            }
+        }
     }
 ?>

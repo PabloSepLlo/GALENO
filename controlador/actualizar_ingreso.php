@@ -16,10 +16,27 @@
         if ($_SESSION["destino"] != null) {
             $ingreso->set_destino($_SESSION["destino"]);
         }
-        if (!empty($_SESSION["tratamientos"])){
-            $ingreso->set_tratamientos($S_ESSION["tratamientos"]);
+        if (!empty($_SESSION["lista_tratamientos"])){
+            $ingreso->set_tratamientos($_SESSION["lista_tratamientos"]);
         }
         if ($ingreso->actualizar_ingreso($_SESSION["id_ingreso"])){
+            foreach ($_SESSION["lista_ingresos"] as &$datos_ingreso) { //El & hace que se referencia la session
+                if ($datos_ingreso["id"] == $_SESSION["id_ingreso"]) {
+                    $datos_ingreso["fecha_ingreso"] = $_SESSION["fecha_ingreso"];
+                    foreach ($_SESSION["datos_pr"] as $pr) {
+                        if ($pr["id_procedencia"] == $_SESSION["procedencia"]) {
+                            $descripcion_procedencia = $pr["descripcion"];
+                            break;
+                        }
+                    }
+                    /**$ids_procedencias = array_column($_SESSION["datos_pr"], "id_procedencia");
+                    $indice = array_search($_SESSION["procedencia"], $ids_procedencias);
+                    $datos_ingreso["procedencia"] = ($indice !== false) ? $_SESSION["datos_pr"][$indice]["descripcion"] : null;**/
+                    $datos_ingreso["procedencia"] = $descripcion_procedencia;
+                }
+            }
+            unset($datos_ingreso); // Rompe la referencia
+
             $_SESSION["msg"] = "Ingreso actualizado";
             header("Location: ../vista/vista_resumen_paciente.php");
             exit();

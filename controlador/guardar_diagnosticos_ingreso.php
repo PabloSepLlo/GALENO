@@ -11,7 +11,7 @@
         $_SESSION["analitica"] = !empty($_POST["analitica"]) ? $_POST["analitica"] : null;
         $_SESSION["minimental"] = !empty($_POST["minimental"]) ? $_POST["minimental"] : null;
         $_SESSION["motivo_ingreso"] = !empty($_POST["motivo_ingreso"]) ? $_POST["motivo_ingreso"] : null;
-        $_SESSION["lista_tratamientos"] = !empty($_POST["tratamientos"]) ? $_POST["tratamientos"] : null;
+        $_SESSION["lista_tratamientos"] = !empty($_POST["tratamientos"]) ? $_POST["tratamientos"] : [];
         header("Location: ../vista/vista_resumen_ingreso.php");
     }
     else {

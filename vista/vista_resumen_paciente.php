@@ -272,13 +272,13 @@
                                 <div class='accordion-body'>";
                     if (!empty($_SESSION["lista_ingresos"])) {
                         echo "<table class='table table-primary table-striped-columns table-bordered table-hover'>
-                            <tr><th>FECHA DE INGRESO</th><th>PROCEDENCIA</th></tr>
+                            <tr><th>FECHA DE INGRESO</th><th>PROCEDENCIA</th><th>ACCIONES</th></tr>
                         ";
                         foreach ($_SESSION["lista_ingresos"] as $ingreso) {
                             echo "<tr>
                                     <td>{$ingreso["fecha_ingreso"]}</td>
                                     <td> ".($ingreso["procedencia"] ?? "-") ."</td>
-                                    <td class='text-center align-middle border-0 bg-transparent p-1'>
+                                    <td class='text-center align-middle'>
                                         <form method='POST' class='text-center' action='../controlador/cargar_ingreso_edicion.php'>
                                             <button type='submit' name='action' value='editar' class='btn btn-link p-0 text-primary' title='Editar'>
                                                 <i class='bi bi-pencil'></i>

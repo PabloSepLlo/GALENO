@@ -75,14 +75,14 @@
         include("../include/aviso.php");
     ?>
     <div class="table-responsive-md m-5">
-        <table class="table table-bordered">
+        <table class="table table-primary table-striped table-hover table-bordered">
             <thead>
                 <tr>
                     <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>User name</th>
                     <th>Administrador</th>
-                    <th></th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody class="table-light">

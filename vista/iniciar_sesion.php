@@ -20,7 +20,7 @@
         ?> 
         <div class="container-fluid">
             <div class="row d-flex justify-content-center align-items-center min-vh-100">
-                <div class="card border-primary-subtle mb-3 w-100  p-0 m-0" style="max-width: 70vw;"> 
+                <div class="card border-primary-subtle mb-3 w-100 p-0 m-0 shadow-lg" style="max-width: 70vw;"> 
                     <div class="row g-0">
                         <div class="col-lg-7 d-none d-lg-block">
                             <img src="../images/datos9-scaled.jpg" class="img-fluid rounded-start" alt="Imagen de fondo">

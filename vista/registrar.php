@@ -20,16 +20,16 @@
         include("../include/aviso.php");
     ?>      
     <div class="container-fluid my-2">
-        <div class="row d-flex justify-content-center align-items-center min-vh-90">
-            <div class="card border-primary-subtle mb-3 w-100  p-0 m-0" style="max-width: 50vw;"> 
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="card border-primary-subtle mb-3 w-100 p-0 m-0 shadow-lg" style="max-width: 50vw;"> 
                 <div class="row g-0">
                     <div class="col-lg-7 d-none d-lg-block">
                         <img src="../images/registro.jpeg" class="img-fluid rounded-start" alt="Imagen de fondo">
                     </div>
                     <div class="col-12 col-lg-5">
-                        <div class="card-body h-100">
+                        <div class="card-body h-100 f-size">
                             <form class="d-flex flex-column justify-content-center h-100" method="POST" action="../controlador/registrar.php">
-                                <h3 class="text-center text-primary fw-light mb-4">Registrate</h3>
+                                <h3 class="text-center text-primary fw-light mb-4">Regístrate</h3>
                                 <div class="mb-2">
                                     <label for="nombreUsu" class="form-label">Nombre de usuario</label>
                                     <input type="text" name="user_name" class="form-control" id="nombreUsu" required>

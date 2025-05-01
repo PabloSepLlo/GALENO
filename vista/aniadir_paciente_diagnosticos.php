@@ -66,7 +66,10 @@
         .dropdown-item:hover {
             background-color: #e2e6ea;
         }
-
+        .custom-tooltip {
+            --bs-tooltip-bg:rgb(52, 60, 199);; /* Por ejemplo, un violeta Bootstrap */
+            --bs-tooltip-color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -79,9 +82,9 @@
                         <h2 class='mb-4 text-center'>DIAGNÓSTICOS</h2>
                         <div class='row d-flex justify-content-end'>
                             <a href='../controlador/borrar_datos_formulario.php' 
-                            class='btn btn-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
+                            class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
                             title='Borrar datos de paciente y salir'>
-                                <i class='bi bi-x-lg'></i>
+                                <i class='bi bi-x-lg fs-3'></i>
                             </a>
                         </div>";
                         include('../include/aviso.php'); 
@@ -101,7 +104,11 @@
 
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='co_morb' class='form-label'>Comorbilidad</label>
+                                    <label for='co_morb' class='form-label'>Comorbilidad</label><i class='bi bi-info-circle text-primary ms-3' 
+                                                                                data-bs-toggle='tooltip' 
+                                                                                data-bs-placement='top' 
+                                                                                data-bs-custom-class='custom-tooltip'
+                                                                                data-bs-title='This top tooltip is themed via CSS variables'></i>
                                     <input type='number' class='form-control' id='co_morb' name='co_morb' value='" . (isset($_SESSION["co_morb"]) ? $_SESSION["co_morb"] : "") . "'>
                                 </div>
                                 <div class='col-md-6 mb-3'>
@@ -132,7 +139,7 @@
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='rip_domi' class='form-label'>Rip_domi</label>
+                                    <label for='rip_domi' class='form-label'>Fallecimiento en domicilio</label>
                                     <select class='form-select' id='rip_domi' name='rip_domi'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["rip_domi"]) && $_SESSION["rip_domi"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -212,7 +219,11 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='ocd' class='form-label'>OCD</label>
+                                    <label for='ocd' class='form-label'>OCD</label><i class='bi bi-info-circle text-primary ms-3' 
+                                                                                data-bs-toggle='tooltip' 
+                                                                                data-bs-placement='top' 
+                                                                                data-bs-custom-class='custom-tooltip'
+                                                                                data-bs-title='This top tooltip is themed via CSS variables'></i>
                                     <select class='form-select' id='ocd' name='ocd'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["ocd"]) && $_SESSION["ocd"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -237,6 +248,8 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         window.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {

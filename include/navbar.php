@@ -20,7 +20,7 @@
                     }
                     
                     ?>
-                    <li class="nav-item"><a class="nav-link fs-5" href="#">CONSULTAS</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="../vista/informe.php">CONSULTAS</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle fs-5" href="#" role="button" data-bs-toggle="dropdown">
                             GESTIÓN PACIENTE

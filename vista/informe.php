@@ -78,7 +78,7 @@
         <table class="info-table">
             <tr><th>Procedencia</th><th>% Pacientes</th></tr>
             <?php 
-                foreach ($_SESSION['procedencias'] ?? [] as $descripcion => $porcentaje) {
+                foreach ($_SESSION['procedencia'] ?? [] as $descripcion => $porcentaje) {
                     echo"
                         <tr>
                             <td>$descripcion</td>

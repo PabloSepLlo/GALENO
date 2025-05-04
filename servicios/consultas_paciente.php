@@ -6,7 +6,7 @@
             $bbdd = new BBDD();
             $this->pdo = $bbdd->getPDO();
         }        
-        public function get_datos_paciente() {
+        public function get_datos_paciente($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 
                     COUNT(*) AS n_pacientes, 
@@ -18,18 +18,36 @@
                     ROUND(SUM(CASE WHEN dp.insom = 'SÍ' THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(dp.insom), 0), 2) AS insomnio,
                     ROUND(SUM(CASE WHEN dp.dolor = 'SÍ' THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(dp.dolor), 0), 2) AS dolor,
                     ROUND(SUM(CASE WHEN dp.disf = 'SÍ' THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(dp.disf), 0), 2) AS disfagia,
-                    ROUND(SUM(CASE WHEN dp.grado_ulcera IS NOT NULL THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(*), 0), 2) AS ulcera_total,
+                    ROUND(SUM(CASE WHEN dp.grado_ulcera IS NOT NULL THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(*), 0), 2) AS ulcera_total
+                FROM datos_paciente dp
+                JOIN ingreso i ON dp.nhc = i.nhc
+                WHERE i.fecha_ingreso <= :fin
+                AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio);
+                ");
+            $stmt->bindParam(":inicio", $inicio);
+            $stmt->bindParam(":fin", $fin);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function get_grados_ulcera($inicio, $fin) {
+            $stmt = $this->pdo->prepare("
+                SELECT 
+                    COUNT(*) AS n_pacientes, 
                     ROUND(SUM(CASE WHEN dp.grado_ulcera = 1 THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN dp.grado_ulcera IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS ulcera_1,
                     ROUND(SUM(CASE WHEN dp.grado_ulcera = 2 THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN dp.grado_ulcera IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS ulcera_2,
                     ROUND(SUM(CASE WHEN dp.grado_ulcera = 3 THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN dp.grado_ulcera IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS ulcera_3,
                     ROUND(SUM(CASE WHEN dp.grado_ulcera = 4 THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN dp.grado_ulcera IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS ulcera_4
                 FROM datos_paciente dp
                 JOIN ingreso i ON dp.nhc = i.nhc
-                WHERE i.fecha_ingreso <= '2025-12-31'
-                AND (i.fecha_alta IS NULL OR i.fecha_alta >= '2024-01-01');
+                WHERE i.fecha_ingreso <= :fin
+                AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio);
                 ");
+            $stmt->bindParam(":inicio", $inicio);
+            $stmt->bindParam(":fin", $fin);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        public function get_paciente_cs() {
+        public function get_paciente_cs($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 
                     cs.codigo_centro AS centro_salud,
@@ -48,12 +66,16 @@
                 FROM datos_paciente AS dp
                 JOIN ingreso AS i ON i.nhc = dp.nhc
                 JOIN centro_salud AS cs ON dp.id_centro_salud = cs.id_centro_salud
-                WHERE i.fecha_ingreso <= '2025-12-31'
-                AND (i.fecha_alta IS NULL OR i.fecha_alta >= '2024-12-31')
+                WHERE i.fecha_ingreso <= :fin
+                AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
                 GROUP BY cs.codigo_centro;
             ");
+            $stmt->bindParam(":inicio", $inicio);
+            $stmt->bindParam(":fin", $fin);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        public function get_paciente_c() {
+        public function get_paciente_c($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 
                     c.descripcion AS convivencia,
@@ -76,8 +98,13 @@
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
                 GROUP BY c.descripcion;
             ");
+            $stmt->bindParam(":inicio", $inicio);
+            $stmt->bindParam(":fin", $fin);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        public function get_paciente_pc() {
+
+        public function get_paciente_pc($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 
                     pc.descripcion AS ppal_cuidador,
@@ -100,8 +127,13 @@
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
                 GROUP BY pc.descripcion;
             ");
+            $stmt->bindParam(":inicio", $inicio);
+            $stmt->bindParam(":fin", $fin);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        public function get_paciente_as() {
+
+        public function get_paciente_as($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 
                     as.descripcion AS ayuda_social,
@@ -124,8 +156,12 @@
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
                 GROUP BY as.descripcion;
             ");
+            $stmt->bindParam(":inicio", $inicio);
+            $stmt->bindParam(":fin", $fin);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        public function get_paciente_mi() {
+        public function get_paciente_mi($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 
                     mi.descripcion AS motivo_inc,

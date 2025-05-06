@@ -79,9 +79,9 @@
                         <h2 class='mb-4 text-center'>GENERALES</h2>
                         <div class='row d-flex justify-content-end'>
                             <a href='../controlador/borrar_datos_formulario.php' 
-                            class='btn btn-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
+                            class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
                             title='Borrar datos de paciente y salir'>
-                                <i class='bi bi-x-lg'></i>
+                                <i class='bi bi-x-lg fs-3'></i>
                             </a>
                         </div>";
                         include('../include/aviso.php'); 

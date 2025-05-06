@@ -11,8 +11,8 @@
             $_SESSION["ape2"] = $datos["ape2"];
             $_SESSION["sexo"] = $datos["sexo"];
             $_SESSION["edad"] = $datos["edad"];
-            $_SESSION["medico"] = $datos["medico"];
-            $_SESSION["enfermera"] = $datos["enfermera"];
+            $_SESSION["med"] = $datos["medico"];
+            $_SESSION["enf"] = $datos["enfermera"];
             $_SESSION["co_morb"] = $datos["co_morb"];
             $_SESSION["num_farm"] = $datos["num_farm"];
             $_SESSION["grado_ulcera"] = $datos["grado_ulcera"];

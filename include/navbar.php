@@ -22,7 +22,7 @@
                     
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <a class="nav-link fs-5" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                             CONSULTAS
                         </a>
                     </li>
@@ -65,7 +65,7 @@
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                         <div class="accordion-body">
                             <div class="list-group">
-                                <a href="consulta1.php" class="list-group-item list-group-item-action">
+                                <a href="../controlador/cargar_datos_cs.php" class="list-group-item list-group-item-action">
                                     Pacientes por centro de salud
                                 </a>
                                 <a href="consulta2.php" class="list-group-item list-group-item-action">

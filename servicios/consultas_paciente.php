@@ -185,5 +185,29 @@
                 GROUP BY mi.descripcion;
             ");
         }
+        public function datos_paciente_por_cs($id_centro_salud) {
+            $stmt = $this->pdo->prepare("
+                SELECT 
+                    dp.nhc, 
+                    dp.nombre, 
+                    dp.ape1, 
+                    dp.ape2, 
+                    dp.edad, 
+                    dp.medico,
+                    mi.descripcion AS motivo_inc, 
+                    migr.descripcion AS motivo_ingreso,
+                    cs.codigo_centro as codigo_centro
+                FROM datos_paciente AS dp
+                JOIN centro_salud AS cs ON dp.id_centro_salud = cs.id_centro_salud
+                JOIN motivo_inc AS mi ON dp.id_motivo_inc = mi.id_motivo_inc
+                JOIN ingreso AS i ON i.nhc = dp.nhc
+                JOIN motivo_ingreso AS migr ON i.id_motivo_ingreso = migr.id_motivo_ingreso
+                WHERE i.fecha_alta IS NULL 
+                AND dp.id_centro_salud = :id_centro_salud;
+            ");
+            $stmt->bindParam(":id_centro_salud", $id_centro_salud);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 ?>

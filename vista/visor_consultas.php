@@ -78,7 +78,15 @@
         .dropdown-item:hover {
             background-color: #e2e6ea;
         }
+        /* Buscador */
+        tr {
+            transition: opacity 0.5s ease;
+        }
 
+        .oculto {
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -115,12 +123,17 @@
         if (isset($_SESSION["pacientes_por_cs"])) {
             echo "<div class='table-responsive-md m-5'>
                 <h1>Pacientes del centro con código: {$_SESSION["pacientes_por_cs"][0]["codigo_centro"]}</h1>
-                <div class='row d-flex justify-content-end'>
-                    <a href='../controlador/borrar_datos_formulario.php' 
-                    class='btn btn-link p-0 mb-3 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
-                    title='Borrar datos y salir'>
-                        <i class='bi bi-x-lg fs-3'></i>
-                    </a>
+                <div class='row d-flex justify-content-between align-items-center mb-3'>
+                    <div class='col-sm-6 col-md-3'>
+                        <input type='text' class='form-control' id='buscar' placeholder='Filtrar por apellido ...'>
+                    </div>
+                    <div class='col-sm-2 col-md-1 d-flex justify-content-center'>
+                        <a href='../controlador/borrar_datos_formulario.php' 
+                        class='btn btn-link text-danger' 
+                        title='Borrar datos y salir'>
+                            <i class='bi bi-x-lg fs-3'></i>
+                        </a>
+                    </div>
                 </div>
                 <table class='table table-primary table-striped table-hover table-bordered'>
                     <thead>
@@ -140,7 +153,7 @@
                 echo "<tr>
                         <td>{$paciente['nhc']}</td>
                         <td>{$paciente['nombre']}</td>
-                        <td>{$paciente['ape1']} {$paciente['ape2']}</td>
+                        <td class='ape'>{$paciente['ape1']} {$paciente['ape2']}</td>
                         <td>{$paciente['edad']}</td>
                         <td>{$paciente['motivo_inc']}</td>
                         <td>{$paciente['motivo_ingreso']}</td>
@@ -161,6 +174,17 @@
                 const sessionModal = new bootstrap.Modal(modalElement);
                 sessionModal.show();
             }
+        });
+        const buscar = document.getElementById("buscar");
+        buscar.addEventListener("input", function() {
+            const texto = buscar.value.toLowerCase();
+            document.querySelectorAll("tr").forEach(fila => {
+                const ape = fila.querySelector(".ape");
+                if (ape) {
+                    const apellidos = ape.textContent.toLowerCase();
+                    fila.style.display = apellidos.includes(texto) ? "table-row" : "none";
+                }
+            });
         });
     </script>
 </body>

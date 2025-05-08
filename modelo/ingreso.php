@@ -169,7 +169,7 @@
                     $aniadido = true;
             }
             catch (Exception $e) {
-                error_log("Error al añadir ingreso: " . $e->getMessage(), 3, "logs/error_log.txt");
+                error_log("Error al añadir ingreso: " . $e->getMessage(), 3, "../logs/error_log.txt");
                 $pdo->rollback();
             }
             finally {

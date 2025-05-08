@@ -3,7 +3,14 @@
     session_start();
     $consultas = new Consultas_paciente();
     $_SESSION["pacientes_por_cs"] = $consultas->datos_paciente_por_cs($_POST["centro_salud"]);
-    unset($_GET["filtrarCS"]);
-    header("Location: ../vista/visor_consultas.php");
-    exit();
+    if (!empty($_SESSION["pacientes_por_cs"])) {
+        header("Location: ../vista/visor_consultas.php");
+        exit();
+    }
+    else {
+        $_SESSION["err"] = "No hay datos para el centro de salud seleccionado";
+        header("Location: ../vista/menu.php");
+        exit();
+    }
+
 ?>

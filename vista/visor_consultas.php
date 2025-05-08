@@ -107,12 +107,39 @@
                                 <select class='form-select' id='centro_salud' name='centro_salud'>
                                     <option value=''>-</option>";
                                     foreach ($_SESSION["datos_cs"] as $cs) {
-                                        echo "<option value='{$cs["id_centro_salud"]}'" . (isset($_SESSION["centro_salud"]) && $_SESSION["centro_salud"] == $cs["id_centro_salud"] ? " selected" : "") . ">{$cs["codigo_centro"]}</option>";
+                                        echo "<option value='{$cs["id_centro_salud"]}'>{$cs["codigo_centro"]}</option>";
                                     }
 
                                 echo "</select>
                                 <div class='modal-footer'>
                                     <button type='submit' class='btn btn-primary'>Filtrar por CS</button>
+                                    <a href='./menu.php' class='btn btn-secondary'>Cancelar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>";
+        }
+        if (isset($_GET["filtrarMIGR"])) {
+            echo "<div class='modal fade show' id='modalFiltroMIGR' tabindex='-1' style='display: block; background: rgba(0,0,0,0.5);' aria-labelledby='modalFiltroMIGRLabel'>
+                <div class='modal-dialog modal-dialog-centered'>
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h5 class='modal-title'>Seleccione el motivo de ingreso de los pacientes que quiere consultar</h5>
+                            <a href='./menu.php' class='btn-close'></a>
+                        </div>
+                        <div class='modal-body'>
+                            <form method='POST' action='../controlador/cargar_datos_paciente_por_migr.php'>
+                                <label for='motivo_ingreso' class='form-label'>Motivo de ingreso</label>
+                                    <select class='form-select' id='motivo_ingreso' name='motivo_ingreso'>
+                                        <option value=''>-</option>";
+                                        foreach ($_SESSION["datos_migr"] as $migr) {
+                                            echo "<option value='{$migr["id_motivo_ingreso"]}'>{$migr["descripcion"]}</option>";
+                                        }
+
+                                        echo "</select>
+                                <div class='modal-footer'>
+                                    <button type='submit' class='btn btn-primary'>Filtrar por MIGR</button>
                                     <a href='./menu.php' class='btn btn-secondary'>Cancelar</a>
                                 </div>
                             </form>
@@ -157,6 +184,51 @@
                         <td>{$paciente['edad']}</td>
                         <td>{$paciente['motivo_inc']}</td>
                         <td>{$paciente['motivo_ingreso']}</td>
+                        <td>{$paciente['medico']}</td>
+                    </tr>";
+            }
+        
+            echo "</tbody>
+                </table>
+            </div>";
+        }
+        if (isset($_SESSION["pacientes_por_migr"])) {
+            echo "<div class='table-responsive-md m-5'>
+                <h1>Pacientes del centro con código: {$_SESSION["pacientes_por_migr"][0]["motivo_ingreso"]}</h1>
+                <div class='row d-flex justify-content-between align-items-center mb-3'>
+                    <div class='col-sm-6 col-md-3'>
+                        <input type='text' class='form-control' id='buscar' placeholder='Filtrar por apellido ...'>
+                    </div>
+                    <div class='col-sm-2 col-md-1 d-flex justify-content-center'>
+                        <a href='../controlador/borrar_datos_formulario.php' 
+                        class='btn btn-link text-danger' 
+                        title='Borrar datos y salir'>
+                            <i class='bi bi-x-lg fs-3'></i>
+                        </a>
+                    </div>
+                </div>
+                <table class='table table-primary table-striped table-hover table-bordered'>
+                    <thead>
+                        <tr>
+                            <th>N.H.C</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Edad</th>
+                            <th>Motivo de incapacidad</th>
+                            <th>Centro de salud</th>
+                            <th>Médico/a</th>
+                        </tr>
+                    </thead>
+                    <tbody class='table-light'>";
+            
+            foreach ($_SESSION["pacientes_por_migr"] as $paciente) { 
+                echo "<tr>
+                        <td>{$paciente['nhc']}</td>
+                        <td>{$paciente['nombre']}</td>
+                        <td class='ape'>{$paciente['ape1']} {$paciente['ape2']}</td>
+                        <td>{$paciente['edad']}</td>
+                        <td>{$paciente['motivo_inc']}</td>
+                        <td>{$paciente['codigo_centro']}</td>
                         <td>{$paciente['medico']}</td>
                     </tr>";
             }

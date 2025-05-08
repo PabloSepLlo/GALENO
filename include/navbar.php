@@ -10,16 +10,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <?php
-                    echo " 
-                    <span class='navbar-text fs-5 fw-bold text-primary-subtle mx-5'>
-                        Bienvenido, <span>{$datos["nombre"]}</span>
-                    </span>";
-                    if ($datos["administrador"] == "SÍ") {
-                        echo " 
-                        <li class='nav-item'><a class='nav-link fs-5' href='../controlador/cargar_usuarios.php'>GESTIÓN USUARIOS</a></li>
-                        ";
-                    }
-                    
+                        if ($datos["administrador"] == "SÍ") {
+                            echo " 
+                            <li class='nav-item'><a class='nav-link fs-5' href='../controlador/cargar_usuarios.php'>GESTIÓN USUARIOS</a></li>
+                            ";
+                        }
                     ?>
                     <li class="nav-item">
                         <a class="nav-link fs-5" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
@@ -36,6 +31,12 @@
                             <li><a class="dropdown-item" href="./aniadir_paciente_demograficos.php?editando">Editar paciente</a></li>
                         </ul>
                     </li>
+                    <?php
+                        echo " 
+                        <span class='navbar-text fs-5 fw-bold text-primary-subtle mx-5'>
+                            Bienvenido, <span>{$datos["nombre"]}</span>
+                        </span>";
+                    ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle fs-5 px-2" href="#" role="button" data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle ms-5 fs-5"></i>
@@ -67,6 +68,9 @@
                             <div class="list-group">
                                 <a href="../controlador/cargar_datos_cs.php" class="list-group-item list-group-item-action">
                                     Pacientes por centro de salud
+                                </a>
+                                <a href="../controlador/cargar_datos_migr.php" class="list-group-item list-group-item-action">
+                                    Pacientes por motivo de ingreso
                                 </a>
                                 <a href="consulta2.php" class="list-group-item list-group-item-action">
                                     Paciente por N.H.C.

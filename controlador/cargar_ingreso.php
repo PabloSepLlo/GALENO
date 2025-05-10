@@ -25,6 +25,10 @@
                 $_SESSION["procedencia"] = $datos_ingreso["procedencia"] ? $datos_ingreso["procedencia"]["id"] : null;
                 $_SESSION["destino"] = $datos_ingreso["destino"];
                 $_SESSION["lista_tratamientos"] = $datos_ingreso["lista_tratamientos"];
+                if (isset($_GET["consultando"])) {
+                    header("Location: ./cargar_datos_form_ingreso.php?consultando");
+                    exit();
+                }
                 header("Location: ./cargar_datos_form_ingreso.php");
                 exit();
             }

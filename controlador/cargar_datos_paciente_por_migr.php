@@ -4,7 +4,7 @@
     $consultas = new Consultas_ingreso();
     $_SESSION["pacientes_por_migr"] = $consultas->datos_paciente_por_migr($_POST["motivo_ingreso"]);
     if (!empty($_SESSION["pacientes_por_migr"])) {
-        header("Location: ../vista/visor_consultas.php");
+        header("Location: ../vista/visor_consultas_migr.php");
         exit();
     }
     else {

@@ -66,6 +66,9 @@
         .dropdown-item:hover {
             background-color: #e2e6ea;
         }
+        .titulo-azul-oscuro {
+            color: #052c65 !important;
+        }
 
     </style>
 </head>
@@ -75,11 +78,34 @@
         include("../include/aviso.php");
     ?> 
     <div class="container-fluid my-4">
-        <?php
-            echo "
-            <h4 class='text-center'>Paciente: " . (isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : "") . " " . (isset($_SESSION["ape1"]) ? $_SESSION["ape1"] : "") . " " . (isset($_SESSION["ape2"]) ? $_SESSION["ape2"] : "") . "</h4>
-            <h4 class='text-center'>N. H. C.: " . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "</h4>";
-        ?>
+    <?php
+        echo "
+        <div class='row mb-4'>
+            <div class='col-md-12'>
+                <div class='card shadow-sm bg-primary-subtle'>
+                    <div class='card-body py-3'>
+                        <div class='d-flex flex-column flex-md-row justify-content-between align-items-center'>
+                            <h3 class='card-title mb-2 fw-bold titulo-azul-oscuro'>
+                                DATOS INGRESO 
+                            </h3>
+                            <div class='text-center text-md-end'>
+                                <h4 class='mb-1'>
+                                    <span class='titulo-azul-oscuro fw-bold'>Paciente: </span> 
+                                    {$_SESSION["nombre"]} {$_SESSION["ape1"]} {$_SESSION["ape2"]}</span>
+                                </h4>
+                                <h5 class='mb-0 text-secondary'>
+                                    <span class='badge bg-white border border-primary titulo-azul-oscuro px-3 py-2'>
+                                        N.H.C: {$_SESSION["nhc"]}
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ";
+    ?>
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">

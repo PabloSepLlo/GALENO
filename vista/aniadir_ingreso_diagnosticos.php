@@ -94,6 +94,13 @@
             background-color: #f1f1f1;
         }
 
+        .tooltip-personalizado {
+            --bs-tooltip-bg: var(--bs-primary);
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
     </style>
 </head>
 <body>
@@ -103,21 +110,32 @@
             echo "
                 <div class='container d-flex justify-content-center align-items-center my-4'>
                     <div class='card p-4 shadow-lg w-50'>
-                        <h2 class='mb-4 text-center'>DIAGNÓSTICOS</h2>
-                        <div class='row d-flex justify-content-end'>
-                            <a href='../controlador/borrar_datos_formulario.php' 
-                            class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
-                            title='Borrar datos de paciente y salir'>
-                                <i class='bi bi-x-lg fs-3'></i>
-                            </a>
+                        <h2 class='mb-4 text-center fw-bold text-primary'>DIAGNÓSTICOS</h2>
+                        <div class='row align-items-center justify-content-between mb-3'>
+                            <div class='col-auto'>
+                                <i class='bi bi-person text-primary fs-2'
+                                    data-bs-toggle='tooltip' 
+                                    data-bs-placement='right' 
+                                    data-bs-custom-class='tooltip-personalizado'
+                                    data-bs-html='true'
+                                    data-bs-title='
+                                        <strong>Paciente:</strong> {$_SESSION['nombre']} {$_SESSION['ape1']} {$_SESSION['ape2']}<br>
+                                        <strong>N.H.C:</strong> {$_SESSION['nhc']}
+                                '></i>
+                            </div>
+                            <div class='col-auto text-end'>
+                                <a href='../controlador/borrar_datos_formulario.php' 
+                                    class='btn btn-link p-0 text-danger d-flex align-items-center' 
+                                    title='Borrar datos de paciente y salir'>
+                                    <i class='bi bi-x-lg fs-3'></i>
+                                </a>
+                            </div>
                         </div>";
                         include('../include/aviso.php'); 
                         echo "<form method='POST'>
-                            <h4>Paciente: " . (isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : "") . " " . (isset($_SESSION["ape1"]) ? $_SESSION["ape1"] : "") . " " . (isset($_SESSION["ape2"]) ? $_SESSION["ape2"] : "") . "</h4>
-                            <h4>N. H. C.: " . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "</h4>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='crf' class='form-label'>CRF</label>
+                                    <label for='crf' class='form-label fw-bold'>CRF</label>
                                     <select class='form-select' id='crf' name='crf'>
                                         <option value=''>-</option>
                                         <option value='0'" . (isset($_SESSION["crf"]) && $_SESSION["crf"] == '0' ? " selected" : "") . ">0</option>
@@ -129,7 +147,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='crm' class='form-label'>CRM</label>
+                                    <label for='crm' class='form-label fw-bold'>CRM</label>
                                     <select class='form-select' id='crm' name='crm'>
                                         <option value=''>-</option>
                                         <option value='0'" . (isset($_SESSION["crm"]) && $_SESSION["crm"] == '0' ? " selected" : "") . ">0</option>
@@ -144,7 +162,7 @@
 
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='eco' class='form-label'>ECO</label>
+                                    <label for='eco' class='form-label fw-bold'>ECO</label>
                                     <select class='form-select' id='eco' name='eco'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["eco"]) && $_SESSION["eco"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -152,33 +170,33 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='cultivo' class='form-label'>Cultivo</label>
+                                    <label for='cultivo' class='form-label fw-bold'>Cultivo</label>
                                     <input type='number' class='form-control' id='cultivo' name='cultivo' value='" . (isset($_SESSION["cultivo"]) ? $_SESSION["cultivo"] : "") . "'>
                                 </div>
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='barthel' class='form-label'>Barthel</label>
+                                    <label for='barthel' class='form-label fw-bold'>Barthel</label>
                                     <input type='number' class='form-control' id='barthel' name='barthel' value='" . (isset($_SESSION["barthel"]) ? $_SESSION["barthel"] : "") . "'>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='pfeiffer' class='form-label'>Pfeiffer</label>
+                                    <label for='pfeiffer' class='form-label fw-bold'>Pfeiffer</label>
                                     <input type='number' class='form-control' id='pfeiffer' name='pfeiffer' value='" . (isset($_SESSION["pfeiffer"]) ? $_SESSION["pfeiffer"] : "") . "'>
                                 </div>
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='analitica' class='form-label'>Analítica</label>
+                                    <label for='analitica' class='form-label fw-bold'>Analítica</label>
                                     <input type='number' class='form-control' id='analitica' name='analitica' value='" . (isset($_SESSION["analitica"]) ? $_SESSION["analitica"] : "") . "'>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='minimental' class='form-label'>Minimental</label>
+                                    <label for='minimental' class='form-label fw-bold'>Minimental</label>
                                     <input type='number' class='form-control' id='minimental' name='minimental' value='" . (isset($_SESSION["minimental"]) ? $_SESSION["minimental"] : "") . "'>
                                 </div>
                             </div>
                             <div class='row'>
                                 <div class='col-md-12 mb-3'>
-                                    <label for='motivo_ingreso' class='form-label'>Motivo de ingreso</label>
+                                    <label for='motivo_ingreso' class='form-label fw-bold'>Motivo de ingreso</label>
                                     <select class='form-select' id='motivo_ingreso' name='motivo_ingreso'>
                                         <option value=''>-</option>";
                                         foreach ($_SESSION["datos_migr"] as $migr) {
@@ -190,7 +208,7 @@
                             </div>
                             <div class='row'>
                                 <div class='col-md-12 mb-3'>
-                                    <label for='tratamiento' class='form-label'>Tratamiento</label>
+                                    <label for='tratamiento' class='form-label fw-bold'>Tratamiento</label>
                                     <div class='dropdown-multi'>
                                         <div class='dropdown-button form-control' onclick='toggleDropdown()' id='dropdownText'>Añada el(los) tratamiento(s)</div>
                                         <div class='dropdown-list border rounded mt-1 p-2' id='dropdownList' style='display:none;'>";
@@ -222,6 +240,8 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         function toggleDropdown() {
             const list = document.getElementById('dropdownList');
             list.style.display = list.style.display === 'block' ? 'none' : 'block';

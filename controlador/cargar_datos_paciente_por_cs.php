@@ -4,7 +4,7 @@
     $consultas = new Consultas_paciente();
     $_SESSION["pacientes_por_cs"] = $consultas->datos_paciente_por_cs($_POST["centro_salud"]);
     if (!empty($_SESSION["pacientes_por_cs"])) {
-        header("Location: ../vista/visor_consultas.php");
+        header("Location: ../vista/visor_consultas_cs.php");
         exit();
     }
     else {

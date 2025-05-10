@@ -53,9 +53,12 @@
             else if (isset($_GET["ingresando"])) {
                 $_SESSION["ingresando"] = true;
                 header("Location: ./cargar_datos_form_ingreso.php");
-            exit();
+                exit();
             }
-            
+            else if (isset($_GET["consultando"])){
+                header("Location: ./cargar_datos_form_pacientes.php?consultando");
+                exit();
+            }
         }
         else {
             $_SESSION["err"] = "No se ha encontrado el paciente. Revise el NHC introducido y vuelva a intentarlo";

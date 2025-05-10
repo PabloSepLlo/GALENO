@@ -1,1 +1,1 @@
-Nhc: 3333333331Error al añadir paciente: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2147483647' for key 'PRIMARY'ENhc: 3333333331ENhc: 3333333331
+Nhc: 3333333331Error al añadir paciente: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2147483647' for key 'PRIMARY'ENhc: 3333333331ENhc: 3333333331ENhc: 131231312

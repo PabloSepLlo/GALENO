@@ -67,6 +67,13 @@
             background-color: #e2e6ea;
         }
 
+        .tooltip-personalizado {
+            --bs-tooltip-bg: var(--bs-primary);
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
     </style>
 </head>
 <body>
@@ -76,32 +83,43 @@
             echo "
                 <div class='container d-flex justify-content-center align-items-center my-4'>
                     <div class='card p-4 shadow-lg w-50'>
-                        <h2 class='mb-4 text-center'>GENERALES</h2>
-                        <div class='row d-flex justify-content-end'>
-                            <a href='../controlador/borrar_datos_formulario.php' 
-                            class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
-                            title='Borrar datos de paciente y salir'>
-                                <i class='bi bi-x-lg fs-3'></i>
-                            </a>
+                        <h2 class='mb-4 text-center text-primary fw-bold'>GENERALES</h2>
+                        <div class='row align-items-center justify-content-between mb-3'>
+                            <div class='col-auto'>
+                                <i class='bi bi-person text-primary fs-2'
+                                    data-bs-toggle='tooltip' 
+                                    data-bs-placement='right' 
+                                    data-bs-custom-class='tooltip-personalizado'
+                                    data-bs-html='true'
+                                    data-bs-title='
+                                        <strong>Paciente:</strong> {$_SESSION['nombre']} {$_SESSION['ape1']} {$_SESSION['ape2']}<br>
+                                        <strong>N.H.C:</strong> {$_SESSION['nhc']}
+                                '></i>
+                            </div>
+                            <div class='col-auto text-end'>
+                                <a href='../controlador/borrar_datos_formulario.php' 
+                                    class='btn btn-link p-0 text-danger d-flex align-items-center' 
+                                    title='Borrar datos de paciente y salir'>
+                                    <i class='bi bi-x-lg fs-3'></i>
+                                </a>
+                            </div>
                         </div>";
                         include('../include/aviso.php'); 
                         echo "<form method='POST'>
-                            <h4>Paciente: " . (isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : "") . " " . (isset($_SESSION["ape1"]) ? $_SESSION["ape1"] : "") . " " . (isset($_SESSION["ape2"]) ? $_SESSION["ape2"] : "") . "</h4>
-                            <h4>N. H. C.: " . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "</h4>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='fecha_ingreso' class='form-label'>Fecha de Ingreso</label>
+                                    <label for='fecha_ingreso' class='form-label fw-bold'>Fecha de Ingreso</label>
                                     <input type='date' class='form-control' id='fecha_ingreso' name='fecha_ingreso' value='" . (isset($_SESSION["fecha_ingreso"]) ? $_SESSION["fecha_ingreso"] : "") . "' required>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='fecha_alta' class='form-label'>Fecha de Alta</label>
+                                    <label for='fecha_alta' class='form-label fw-bold'>Fecha de Alta</label>
                                     <input type='date' class='form-control' id='fecha_alta' name='fecha_alta' value='" . (isset($_SESSION["fecha_alta"]) ? $_SESSION["fecha_alta"] : "") . "'>
                                 </div>
                             </div>
 
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='reingreso' class='form-label'>Reingreso</label>
+                                    <label for='reingreso' class='form-label fw-bold'>Reingreso</label>
                                     <select class='form-select' id='reingreso' name='reingreso'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["reingreso"]) && $_SESSION["reingreso"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -109,14 +127,14 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='NUM_VISIT' class='form-label'>Número de visitas</label>
+                                    <label for='NUM_VISIT' class='form-label fw-bold'>Número de visitas</label>
                                     <input type='number' class='form-control' id='NUM_VISIT' name='NUM_VISIT' value='" . (isset($_SESSION["NUM_VISIT"]) ? $_SESSION["NUM_VISIT"] : "") . "'>
                                 </div>
                             </div>
 
                             <div class='row'>
                                 <div class='col-md-12 mb-3'>
-                                    <label for='procedencia' class='form-label'>Procedencia</label>
+                                    <label for='procedencia' class='form-label fw-bold'>Procedencia</label>
                                     <select class='form-select' id='procedencia' name='procedencia'>
                                         <option value=''>-</option>";
                                         foreach ($_SESSION["datos_pr"] as $pr) {
@@ -126,10 +144,9 @@
                                         echo "</select>
                                 </div>
                             </div>
-
                             <div class='row'>
                                 <div class='col-md-12 mb-3'>
-                                    <label for='destino' class='form-label'>Destino</label>
+                                    <label for='destino' class='form-label fw-bold'>Destino</label>
                                     <select class='form-select' id='destino' name='destino'>
                                         <option value=''>-</option>";
                                         foreach ($_SESSION["datos_de"] as $de) {
@@ -177,6 +194,8 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         window.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {

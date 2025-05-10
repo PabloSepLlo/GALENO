@@ -16,6 +16,10 @@
         $_SESSION["datos_c"] = $datos_c;
         $_SESSION["datos_mi"] = $datos_mi;
         $_SESSION["datos_pc"] = $datos_pc;
+        if (isset($_GET["consultando"])) {
+            header('Location: ../vista/visor_consultas_nhc.php?consultando');
+            exit();
+        }
         header('Location: ../vista/aniadir_paciente_demograficos.php');
         exit();
     }

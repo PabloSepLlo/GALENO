@@ -279,7 +279,7 @@
                                     <td>{$ingreso["fecha_ingreso"]}</td>
                                     <td> ".($ingreso["procedencia"] ?? "-") ."</td>
                                     <td class='text-center align-middle'>
-                                        <form method='POST' class='text-center' action='../controlador/cargar_ingreso_edicion.php'>
+                                        <form method='POST' class='text-center' action='../controlador/cargar_ingreso.php'>
                                             <button type='submit' name='action' value='editar' class='btn btn-link p-0 text-primary' title='Editar'>
                                                 <i class='bi bi-pencil'></i>
                                             </button>

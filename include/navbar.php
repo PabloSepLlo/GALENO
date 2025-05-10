@@ -12,17 +12,17 @@
                     <?php
                         if ($datos["administrador"] == "SÍ") {
                             echo " 
-                            <li class='nav-item'><a class='nav-link fs-5' href='../controlador/cargar_usuarios.php'>GESTIÓN USUARIOS</a></li>
+                            <li class='nav-item mx-3'><a class='nav-link fs-5 fw-bold' href='../controlador/cargar_usuarios.php'>GESTIÓN USUARIOS</a></li>
                             ";
                         }
                     ?>
-                    <li class="nav-item">
-                        <a class="nav-link fs-5" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link fs-5 fw-bold" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                             CONSULTAS
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fs-5" href="#" role="button" data-bs-toggle="dropdown">
+                    <li class="nav-item dropdown mx-3">
+                        <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown">
                             GESTIÓN PACIENTE
                         </a>
                         <ul class="dropdown-menu">
@@ -33,7 +33,7 @@
                     </li>
                     <?php
                         echo " 
-                        <span class='navbar-text fs-5 fw-bold text-primary-subtle mx-5'>
+                        <span class='navbar-text fs-5 fw-bold text-primary-subtle mx-4'>
                             Bienvenido, <span>{$datos["nombre"]}</span>
                         </span>";
                     ?>
@@ -72,7 +72,7 @@
                                 <a href="../controlador/cargar_datos_migr.php" class="list-group-item list-group-item-action">
                                     Pacientes por motivo de ingreso
                                 </a>
-                                <a href="consulta2.php" class="list-group-item list-group-item-action">
+                                <a href="../vista/visor_consultas_nhc.php?filtroNHC" class="list-group-item list-group-item-action">
                                     Paciente por N.H.C.
                                 </a>
                             </div>

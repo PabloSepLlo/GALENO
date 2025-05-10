@@ -13,6 +13,10 @@
         $_SESSION["datos_pr"] = $datos_pr;
         $_SESSION["datos_de"] = $datos_de;
         $_SESSION["datos_tr"] = $datos_tr;
+        if (isset($_GET["consultando"])) {
+            header('Location: ../vista/visor_consultas_ingreso.php?consultando');
+            exit();
+        }
         header('Location: ../vista/aniadir_ingreso_generales.php');
         exit();
     }

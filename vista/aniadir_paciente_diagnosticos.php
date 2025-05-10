@@ -66,10 +66,6 @@
         .dropdown-item:hover {
             background-color: #e2e6ea;
         }
-        .custom-tooltip {
-            --bs-tooltip-bg:rgb(52, 60, 199);; /* Por ejemplo, un violeta Bootstrap */
-            --bs-tooltip-color: #fff;
-        }
     </style>
 </head>
 <body>
@@ -79,7 +75,7 @@
             echo "
                 <div class='container d-flex justify-content-center align-items-center my-4'>
                     <div class='card p-4 shadow-lg w-50'>
-                        <h2 class='mb-4 text-center'>DIAGNÓSTICOS</h2>
+                        <h2 class='mb-4 text-center text-primary fw-bold'>DIAGNÓSTICOS</h2>
                         <div class='row d-flex justify-content-end'>
                             <a href='../controlador/borrar_datos_formulario.php' 
                             class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
@@ -91,7 +87,7 @@
                         echo "<form method='POST'>
                             <div class='row'>
                                 <div class='col-md-12 mb-3'>
-                                    <label for='motivo_inc' class='form-label'>Motivo principal de incapacidad</label>
+                                    <label for='motivo_inc' class='form-label fw-bold'>Motivo principal de incapacidad</label>
                                     <select class='form-select' id='motivo_inc' name='motivo_inc'>
                                         <option value=''>-</option>";
                                         foreach ($_SESSION["datos_mi"] as $mi) {
@@ -101,10 +97,9 @@
                                         echo "</select>
                                 </div>
                             </div>
-
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='co_morb' class='form-label'>Comorbilidad</label><i class='bi bi-info-circle text-primary ms-3' 
+                                    <label for='co_morb' class='form-label fw-bold'>Comorbilidad</label><i class='bi bi-info-circle text-primary ms-3' 
                                                                                 data-bs-toggle='tooltip' 
                                                                                 data-bs-placement='top' 
                                                                                 data-bs-custom-class='custom-tooltip'
@@ -112,13 +107,13 @@
                                     <input type='number' class='form-control' id='co_morb' name='co_morb' value='" . (isset($_SESSION["co_morb"]) ? $_SESSION["co_morb"] : "") . "'>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='num_farm' class='form-label'>Número de fármacos</label>
+                                    <label for='num_farm' class='form-label fw-bold'>Número de fármacos</label>
                                     <input type='number' class='form-control' id='num_farm' name='num_farm' value='" . (isset($_SESSION["num_farm"]) ? $_SESSION["num_farm"] : "") . "'>
                                 </div>
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='grado_ulcera' class='form-label'>Grado de úlcera</label>
+                                    <label for='grado_ulcera' class='form-label fw-bold'>Grado de úlcera</label>
                                     <select class='form-select' id='grado_ulcera' name='grado_ulcera'>
                                         <option value=''>-</option>
                                         <option value='0'" . (isset($_SESSION["grado_ulcera"]) && $_SESSION["grado_ulcera"] == '0' ? " selected" : "") . ">0</option>
@@ -129,7 +124,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='dolor' class='form-label'>Dolor</label>
+                                    <label for='dolor' class='form-label fw-bold'>Dolor</label>
                                     <select class='form-select' id='dolor' name='dolor'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["dolor"]) && $_SESSION["dolor"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -139,7 +134,7 @@
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='rip_domi' class='form-label'>Fallecimiento en domicilio</label>
+                                    <label for='rip_domi' class='form-label fw-bold'>Fallecimiento en domicilio</label>
                                     <select class='form-select' id='rip_domi' name='rip_domi'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["rip_domi"]) && $_SESSION["rip_domi"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -147,7 +142,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='upp' class='form-label'>UPP</label>
+                                    <label for='upp' class='form-label fw-bold'>UPP</label>
                                     <select class='form-select' id='upp' name='upp'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["upp"]) && $_SESSION["upp"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -157,7 +152,7 @@
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='in_ur' class='form-label'>Incontinencia urinaria</label>
+                                    <label for='in_ur' class='form-label fw-bold'>Incontinencia urinaria</label>
                                     <select class='form-select' id='in_ur' name='in_ur'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["in_ur"]) && $_SESSION["in_ur"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -165,7 +160,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='disf' class='form-label'>Disfagia</label>
+                                    <label for='disf' class='form-label fw-bold'>Disfagia</label>
                                     <select class='form-select' id='disf' name='disf'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["disf"]) && $_SESSION["disf"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -175,7 +170,7 @@
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='in_fec' class='form-label'>Incontinencia fecal</label>
+                                    <label for='in_fec' class='form-label fw-bold'>Incontinencia fecal</label>
                                     <select class='form-select' id='in_fec' name='in_fec'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["in_fec"]) && $_SESSION["in_fec"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -183,7 +178,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='sv' class='form-label'>SV</label>
+                                    <label for='sv' class='form-label fw-bold'>SV</label>
                                     <select class='form-select' id='sv' name='sv'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["sv"]) && $_SESSION["sv"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -193,7 +188,7 @@
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='insom' class='form-label'>Insomnio</label>
+                                    <label for='insom' class='form-label fw-bold'>Insomnio</label>
                                     <select class='form-select' id='insom' name='insom'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["insom"]) && $_SESSION["insom"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -201,7 +196,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='sng' class='form-label'>SNG</label>
+                                    <label for='sng' class='form-label fw-bold'>SNG</label>
                                     <select class='form-select' id='sng' name='sng'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["sng"]) && $_SESSION["sng"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -211,7 +206,7 @@
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='sob_cui' class='form-label'>Sob_cui</label>
+                                    <label for='sob_cui' class='form-label fw-bold'>Sob_cui</label>
                                     <select class='form-select' id='sob_cui' name='sob_cui'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["sob_cui"]) && $_SESSION["sob_cui"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -219,7 +214,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='ocd' class='form-label'>OCD</label><i class='bi bi-info-circle text-primary ms-3' 
+                                    <label for='ocd' class='form-label fw-bold'>OCD</label><i class='bi bi-info-circle text-primary ms-3' 
                                                                                 data-bs-toggle='tooltip' 
                                                                                 data-bs-placement='top' 
                                                                                 data-bs-custom-class='custom-tooltip'

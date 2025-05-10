@@ -76,7 +76,7 @@
             echo "
                 <div class='container d-flex justify-content-center align-items-center my-4'>
                     <div class='card p-4 shadow-lg w-50'>
-                        <h2 class='mb-4 text-center'>DATOS GENERALES</h2>
+                        <h2 class='mb-4 text-center text-primary fw-bold'>DATOS GENERALES</h2>
                         <div class='row d-flex justify-content-end'>
                             <a href='../controlador/borrar_datos_formulario.php' 
                             class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
@@ -88,7 +88,7 @@
                         echo "<form method='POST'>
 
                             <div class='mb-3'>
-                                <label for='ayuda_social' class='form-label'>Ayuda social</label>
+                                <label for='ayuda_social' class='form-label fw-bold'>Ayuda social</label>
                                 <select class='form-select' id='ayuda_social' name='ayuda_social'>
                                     <option value=''>-</option>";
                                     foreach ($_SESSION['datos_as'] as $as) {
@@ -100,7 +100,7 @@
                             </div>
 
                             <div class='mb-3'>
-                                <label for='convivencia' class='form-label'>Convivencia</label>
+                                <label for='convivencia' class='form-label fw-bold'>Convivencia</label>
                                 <select class='form-select' id='convivencia' name='convivencia'>
                                     <option value=''>-</option>";
                                     foreach ($_SESSION['datos_c'] as $c) {
@@ -112,7 +112,7 @@
                             </div>
 
                             <div class='mb-4'>
-                                <label for='ppal_cuidador' class='form-label'>Principal cuidador</label>
+                                <label for='ppal_cuidador' class='form-label fw-bold'>Principal cuidador</label>
                                 <select class='form-select' id='ppal_cuidador' name='ppal_cuidador'>
                                     <option value=''>-</option>";
                                     foreach ($_SESSION['datos_pc'] as $pc) {
@@ -143,6 +143,8 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         window.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {

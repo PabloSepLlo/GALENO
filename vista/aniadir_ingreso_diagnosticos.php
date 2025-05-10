@@ -110,7 +110,7 @@
             echo "
                 <div class='container d-flex justify-content-center align-items-center my-4'>
                     <div class='card p-4 shadow-lg w-50'>
-                        <h2 class='mb-4 text-center fw-bold text-primary'>DIAGNÓSTICOS</h2>
+                        <h2 class='mb-4 text-center fw-bold  text-primary'>DIAGNÓSTICOS</h2>
                         <div class='row align-items-center justify-content-between mb-3'>
                             <div class='col-auto'>
                                 <i class='bi bi-person text-primary fs-2'

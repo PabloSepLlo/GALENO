@@ -76,7 +76,7 @@
             echo "
                 <div class='container d-flex justify-content-center align-items-center my-4'>
                     <div class='card p-4 shadow-lg w-50'>
-                        <h2 class='mb-4 text-center text-primary fw-bold'>DATOS GENERALES</h2>
+                        <h2 class='mb-4 text-center  text-primary fw-bold'>DATOS GENERALES</h2>
                         <div class='row d-flex justify-content-end'>
                             <a href='../controlador/borrar_datos_formulario.php' 
                             class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 

@@ -8,16 +8,18 @@
         }        
         public function get_n_ingreso($inicio, $fin) {
             $stmt = $this->pdo->prepare("
-                SELECT 
-                    COUNT(*) AS n_ingreso 
+                SELECT COUNT(*) AS total_ingresos 
                 FROM ingreso
-                WHERE i.fecha_ingreso <= :fin
-                AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
+                WHERE (
+                    (fecha_ingreso BETWEEN :inicio AND :fin)
+                    OR
+                    (fecha_ingreso <= :fin AND (fecha_alta IS NULL OR fecha_alta >= :inicio))
+                )
             ");
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);
             $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetch(PDO::FETCH_COLUMN);
         }
 
         public function get_datos_ingresos($inicio, $fin) {
@@ -170,7 +172,7 @@
         public function get_ingreso_migr($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 
-                    mi.descripcion AS motivo_ingreso,
+                    migr.descripcion AS motivo_ingreso,
                     ROUND(COUNT(*) * 100.0 / (
                         SELECT COUNT(*)
                         FROM ingreso AS i2
@@ -190,10 +192,10 @@
                     GROUP BY nhc
                 ) AS ultimos 
                     ON i.nhc = ultimos.nhc AND i.fecha_ingreso = ultimos.fecha_max
-                JOIN motivo_ingreso AS mi ON i.id_motivo_ingreso = mi.id_motivo_ingreso
+                JOIN motivo_ingreso AS migr ON i.id_motivo_ingreso = migr.id_motivo_ingreso
                 WHERE i.fecha_ingreso <= :fin
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
-                GROUP BY mi.motivo_ingreso;
+                GROUP BY migr.descripcion;
             ");
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);
@@ -227,7 +229,7 @@
                 JOIN destino AS de ON i.id_destino = de.id_destino
                 WHERE i.fecha_ingreso <= :fin
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
-                GROUP BY de.motivo_ingreso;
+                GROUP BY de.descripcion;
             ");
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);
@@ -238,29 +240,22 @@
         public function get_porcentaje_muerte_domicilio($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 
-                    ROUND(COUNT(CASE WHEN i.rip_domi = 'SÍ' THEN 1 ELSE NULL END) * 100.0 / (
-                        SELECT COUNT(*)
-                        FROM ingreso AS i2
-                        JOIN (
-                            SELECT nhc, MAX(fecha_ingreso) AS fecha_max
-                            FROM ingreso
-                            GROUP BY nhc
-                        ) AS ultimos2 
-                        ON i2.nhc = ultimos2.nhc AND i2.fecha_ingreso = ultimos2.fecha_max
-                        WHERE i2.fecha_ingreso <= :fin
-                        AND (i2.fecha_alta IS NULL OR i2.fecha_alta >= :inicio)
-                    ), 2) AS porcentaje
+                    ROUND(
+                        COUNT(CASE WHEN dp.rip_domi = 'SÍ' THEN 1 END) * 100.0 /
+                        NULLIF(COUNT(*), 0),
+                        2
+                    ) AS porcentaje
                 FROM ingreso AS i
                 JOIN (
                     SELECT nhc, MAX(fecha_ingreso) AS fecha_max
                     FROM ingreso
                     GROUP BY nhc
-                ) AS ultimos 
+                ) AS ultimos
                     ON i.nhc = ultimos.nhc AND i.fecha_ingreso = ultimos.fecha_max
-                JOIN destino AS de ON i.id_destino = de.id_destino
-                WHERE i.fecha_ingreso <= :fin
-                AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
-                AND i.id_destino = 8;
+                JOIN datos_paciente AS dp ON dp.nhc = i.nhc
+                WHERE i.id_destino = 8
+                AND i.fecha_ingreso <= :fin
+                AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio);
             ");
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);

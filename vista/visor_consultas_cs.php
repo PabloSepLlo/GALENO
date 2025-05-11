@@ -104,7 +104,7 @@
                             </div>
                             <div class='modal-body'>
                                 <form method='POST' action='../controlador/cargar_datos_paciente_por_cs.php'>
-                                    <label for='centro_salud' class='form-label'>Centro de Salud</label>
+                                    <label for='centro_salud' class='form-label fw-bold'>Centro de Salud</label>
                                     <select class='form-select' id='centro_salud' name='centro_salud'>
                                         <option value=''>-</option>";
                                             foreach ($_SESSION["datos_cs"] as $cs) {

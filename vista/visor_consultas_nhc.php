@@ -96,7 +96,7 @@
                             </div>
                             <div class='modal-body'>
                                 <form method='POST' action='../controlador/cargar_datos_paciente.php?consultando'>
-                                <label for='nhc' class='form-label'>Número de Historia Clínica (NHC):</label>
+                                <label for='nhc' class='form-label fw-bold'>Número de Historia Clínica (NHC):</label>
                                 <input type='text' name='nhc' id='nhc' class='form-control' required>
                                 <div class='modal-footer'>
                                     <button type='submit' class='btn btn-primary'>Ver datos del paciente</button>

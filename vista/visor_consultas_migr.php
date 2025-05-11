@@ -104,7 +104,7 @@
                             </div>
                             <div class='modal-body'>
                                 <form method='POST' action='../controlador/cargar_datos_paciente_por_migr.php'>
-                                    <label for='motivo_ingreso' class='form-label'>Motivo de ingreso</label>
+                                    <label for='motivo_ingreso' class='form-label fw-bold'>Motivo de ingreso</label>
                                         <select class='form-select' id='motivo_ingreso' name='motivo_ingreso'>
                                             <option value=''>-</option>";
 

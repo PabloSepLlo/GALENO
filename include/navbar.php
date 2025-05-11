@@ -88,7 +88,7 @@
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                         <div class="accordion-body">
                             <div class="list-group">
-                                <a href="consulta1.php" class="list-group-item list-group-item-action">
+                                <a href="../vista/visor_consultas_informe.php?fechas_informe" class="list-group-item list-group-item-action">
                                     Generación de informe básico
                                 </a>
                             </div>

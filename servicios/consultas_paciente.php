@@ -10,7 +10,7 @@
             $stmt = $this->pdo->prepare("
                 SELECT 
                     COUNT(*) AS n_pacientes, 
-                    AVG(dp.edad) AS edad_media,
+                    ROUND(AVG(dp.edad), 2) AS edad_media,
                     ROUND(SUM(CASE WHEN dp.sexo = 'F' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS mujeres,
                     ROUND(SUM(CASE WHEN dp.sexo = 'M' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS hombres,
                     ROUND(SUM(CASE WHEN dp.in_ur = 'SÍ' THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(dp.in_ur), 0), 2) AS iu,
@@ -27,7 +27,7 @@
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);
             $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
         public function get_grados_ulcera($inicio, $fin) {
             $stmt = $this->pdo->prepare("
@@ -136,25 +136,36 @@
         public function get_paciente_as($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 
-                    as.descripcion AS ayuda_social,
-                    ROUND(COUNT(*) * 100.0 / (
-                        SELECT COUNT(*)
-                        FROM ingreso AS i2
-                        JOIN (
-                            SELECT nhc, MAX(fecha_ingreso) AS fecha_max
-                            FROM ingreso
-                            GROUP BY nhc
-                        ) AS ultimos2 
-                        ON i2.nhc = ultimos2.nhc AND i2.fecha_ingreso = ultimos2.fecha_max
-                        WHERE i2.fecha_ingreso <= :fin
-                        AND (i2.fecha_alta IS NULL OR i2.fecha_alta >= :inicio)
-                    ), 2) AS porcentaje
-                FROM datos_paciente AS dp
-                JOIN ingreso AS i ON i.nhc = dp.nhc
-                JOIN ayuda_social AS as ON dp.id_centro_salud = as.id_ayuda_social
-                WHERE i.fecha_ingreso <= :fin
-                AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
-                GROUP BY as.descripcion;
+                    ays.descripcion AS ayuda_social,
+                    ROUND(COUNT(*) * 100.0 / NULLIF(total.total_pacientes, 0), 2) AS porcentaje
+                FROM (
+                    SELECT i.nhc, dp.id_ayuda_social
+                    FROM ingreso AS i
+                    JOIN (
+                        SELECT nhc, MAX(fecha_ingreso) AS fecha_max
+                        FROM ingreso
+                        GROUP BY nhc
+                    ) AS ultimos 
+                        ON i.nhc = ultimos.nhc AND i.fecha_ingreso = ultimos.fecha_max
+                    JOIN datos_paciente AS dp ON dp.nhc = i.nhc
+                    WHERE i.fecha_ingreso <= :fin
+                    AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
+                ) AS sub
+                JOIN ayuda_social AS ays ON sub.id_ayuda_social = ays.id_ayuda_social
+                JOIN (
+                    SELECT COUNT(*) AS total_pacientes
+                    FROM ingreso AS i
+                    JOIN (
+                        SELECT nhc, MAX(fecha_ingreso) AS fecha_max
+                        FROM ingreso
+                        GROUP BY nhc
+                    ) AS ultimos2 
+                        ON i.nhc = ultimos2.nhc AND i.fecha_ingreso = ultimos2.fecha_max
+                    WHERE i.fecha_ingreso <= :fin
+                    AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
+                ) AS total
+                GROUP BY ays.descripcion;
+
             ");
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);

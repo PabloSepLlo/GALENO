@@ -1,7 +1,8 @@
 <?php
+    require_once("../include/validaciones/validaciones.php");
     session_start();
     if (isset($_POST["nhc"], $_POST["nombre"], $_POST["ape1"], $_POST["sexo"], $_POST["edad"], 
-    $_POST["ape2"], $_POST["med"], $_POST["enf"], $_POST["centro_salud"]) &&
+    $_POST["ape2"], $_POST["med"], $_POST["enf"], $_POST["centro_salud"]) && Validaciones::validar_NHC($_POST["nhc"]) &&
         !empty($_POST["nhc"]) && !empty($_POST["nombre"]) && !empty($_POST["ape1"]) &&
         !empty($_POST["sexo"]) && !empty($_POST["edad"])) {
             $_SESSION["nhc"] = $_POST["nhc"];
@@ -17,7 +18,7 @@
             exit();
     }
     else {
-        $_SESSION["err"] = "Alguno de los campos está incompleto";
+        $_SESSION["err"] = "Alguno de los campos está incompleto o tiene formato erróneo";
         header("Location: ../vista/aniadir_paciente_demograficos.php");
         exit();
     }

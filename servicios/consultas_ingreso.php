@@ -12,8 +12,6 @@
                 FROM ingreso
                 WHERE (
                     (fecha_ingreso BETWEEN :inicio AND :fin)
-                    OR
-                    (fecha_ingreso <= :fin AND (fecha_alta IS NULL OR fecha_alta >= :inicio))
                 )
             ");
             $stmt->bindParam(":inicio", $inicio);

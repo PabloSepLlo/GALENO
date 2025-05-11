@@ -86,6 +86,7 @@
         }
 
         .informe-geriatrico h1, 
+        .informe-geriatrico h4, 
         .informe-geriatrico h2 {
             color: #003366;
             text-align: center;

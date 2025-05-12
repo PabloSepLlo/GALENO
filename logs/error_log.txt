@@ -1,1 +1,6 @@
-Nhc: 3333333331Error al añadir paciente: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2147483647' for key 'PRIMARY'ENhc: 3333333331ENhc: 3333333331ENhc: 131231312ENhc: 11113333
+post: 0Ses: Error al añadir paciente: post: 2Ses: 2post: 2Ses: 2post: 0Ses: post: 2Ses: 2Error al añadir paciente: 2Error al añadir paciente: 0Error al añadir paciente: 3Error al añadir paciente: 3[12-May-2025 22:45:05 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property Paciente::$grado_ulcera of type ?int in C:\xampp\htdocs\php\PROYECTO_FINAL\TFG\modelo\paciente.php:116
+Stack trace:
+#0 C:\xampp\htdocs\php\PROYECTO_FINAL\TFG\controlador\actualizar_paciente.php(6): Paciente->cargar_datos('11113333', 'wdw', 'dwdw', 'dwdw', 'F', '33', NULL, NULL, NULL, NULL, '', 'S\xC3\x8D', 'NO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#1 {main}
+  thrown in C:\xampp\htdocs\php\PROYECTO_FINAL\TFG\modelo\paciente.php on line 116
+Error al añadir paciente: Error al añadir paciente: ENhc: 222222Error al añadir paciente: 3Error al añadir paciente: Error al añadir paciente: 1

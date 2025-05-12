@@ -6,7 +6,7 @@
             $_SESSION["motivo_inc"] = !empty($_POST["motivo_inc"]) ? $_POST["motivo_inc"] : null;
             $_SESSION["co_morb"] = !empty($_POST["co_morb"]) ? $_POST["co_morb"] : null;
             $_SESSION["num_farm"] = !empty($_POST["num_farm"]) ? $_POST["num_farm"] : null;
-            $_SESSION["grado_ulcera"] = !empty($_POST["grado_ulcera"]) ? $_POST["grado_ulcera"] : null;
+            $_SESSION["grado_ulcera"] = empty($_POST["grado_ulcera"]) ? null : $_POST["grado_ulcera"];
             $_SESSION["dolor"] = !empty($_POST["dolor"]) ? $_POST["dolor"] : null;
             $_SESSION["rip_domi"] = !empty($_POST["rip_domi"]) ? $_POST["rip_domi"] : null;
             $_SESSION["upp"] = !empty($_POST["upp"]) ? $_POST["upp"] : null;

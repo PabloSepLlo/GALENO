@@ -19,7 +19,7 @@
         $_SESSION["avg_ingreso"] = $consultas_ingreso->get_media_dias_ingreso($_POST["fecha_inicio"], $_POST["fecha_fin"]);
         $consultas_paciente = new Consultas_paciente();
         $_SESSION["datos_paciente"] = $consultas_paciente->get_datos_paciente($_POST["fecha_inicio"], $_POST["fecha_fin"]);
-        $_SESSION["grado_ulcera"] = $consultas_paciente->get_grados_ulcera($_POST["fecha_inicio"], $_POST["fecha_fin"]);
+        $_SESSION["grados_ulcera"] = $consultas_paciente->get_grados_ulcera($_POST["fecha_inicio"], $_POST["fecha_fin"]);
         $_SESSION["centro_salud"] = $consultas_paciente->get_paciente_cs($_POST["fecha_inicio"], $_POST["fecha_fin"]);
         $_SESSION["convivencia"] = $consultas_paciente->get_paciente_c($_POST["fecha_inicio"], $_POST["fecha_fin"]);
         $_SESSION["ppal_cuidador"] = $consultas_paciente->get_paciente_pc($_POST["fecha_inicio"], $_POST["fecha_fin"]);

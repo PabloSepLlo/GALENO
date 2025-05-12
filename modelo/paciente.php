@@ -11,7 +11,7 @@
     ini_set('error_log', 'C:\\xampp\\htdocs\\php\\PROYECTO_FINAL\\TFG\\logs\\error_log.txt');
 
     class Paciente {
-        private int $nhc;
+        private string $nhc;
         private string $nombre;
         private string $ape1;
         private ?string $ape2;
@@ -23,7 +23,7 @@
         private ?Motivo_inc $motivo_inc;
         private ?int $co_morb;
         private ?int $num_farm;
-        private ?int $grado_ulcera;
+        private ?string $grado_ulcera;
         private ?string $rip_domi;
         private ?string $in_ur;
         private ?string $in_fec;
@@ -102,7 +102,7 @@
             $this->lista_ingresos = [];
         }
         public function cargar_datos($nhc, $nombre, $ape1, $ape2, $sexo, $edad, $medico, $enfermera, $co_morb, $num_farm, $grado_ulcera,
-                                                $rip_domi, $in_ur, $in_fec, $insom, $sob_cui, $dolor, $upp, $disf, $sv, $sng, $ocd){
+                                                $dolor, $rip_domi, $upp, $in_ur, $disf, $in_fec, $sv, $insom, $sng, $sob_cui, $ocd){
             $this->nhc = $nhc;
             $this->nombre = $nombre;
             $this->ape1 = $ape1;
@@ -114,6 +114,7 @@
             $this->co_morb = $co_morb;
             $this->num_farm = $num_farm;
             $this->grado_ulcera = $grado_ulcera;
+            error_log("Error al añadir paciente: " . $this->grado_ulcera, 3, "../logs/error_log.txt");
             $this->rip_domi = $rip_domi;
             $this->in_ur = $in_ur;
             $this->in_fec = $in_fec;

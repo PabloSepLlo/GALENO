@@ -1,15 +1,15 @@
     <h1>INFORME DE ASISTENCIA GERIÁTRICA DOMICILIARIA</h1>
-    <h4>Periodo: <?= $_SESSION['fecha_inicio'] ?? "-" ?> a <?= $_SESSION['fecha_fin'] ?? "-" ?></h4>
+    <h4>Periodo: <?php echo $_SESSION['fecha_inicio'] ?? "-" ?> a <?php echo $_SESSION['fecha_fin'] ?? "-" ?></h4>
 
     <div class="seccion">
         <h2>Datos Generales</h2>
         <table class="info-table">
             <tr>
-                <td><span class="dato-label">N.º Pacientes:</span> <?= $_SESSION['datos_paciente']['n_pacientes'] ?? "-" ?></td>
-                <td><span class="dato-label">Edad media:</span> <?= $_SESSION['datos_paciente']['edad_media'] ?? "-" ?></td>
-                <td><span class="dato-label">Mujeres:</span> <?= $_SESSION['datos_paciente']['mujeres'] ?? "-" ?>%</td>
-                <td><span class="dato-label">Hombres:</span> <?= $_SESSION['datos_paciente']['hombres'] ?? "-" ?>%</td>
-                <td><span class="dato-label">Ingresos:</span> <?= $_SESSION['num_ingresos'] ?? "-" ?></td>
+                <td><span class="dato-label">N.º Pacientes:</span> <?php echo $_SESSION['datos_paciente']['n_pacientes'] ?? "-"; ?></td>
+                <td><span class="dato-label">Edad media:</span> <?php echo $_SESSION['datos_paciente']['edad_media'] ?? "-" ?></td>
+                <td><span class="dato-label">Mujeres:</span> <?php echo $_SESSION['datos_paciente']['mujeres'] ?? "-" ?>%</td>
+                <td><span class="dato-label">Hombres:</span> <?php echo $_SESSION['datos_paciente']['hombres'] ?? "-" ?>%</td>
+                <td><span class="dato-label">Ingresos:</span> <?php echo $_SESSION['num_ingresos'] ?? "-" ?></td>
             </tr>
         </table>
     </div>
@@ -37,10 +37,10 @@
         <table class="info-table">
             <tr><th>Centro</th><th>% Pacientes</th></tr>
             <?php 
-                foreach ($_SESSION['centro_salud'] ?? [] as $codigo_centro => $porcentaje) {
+                foreach ($_SESSION['centro_salud'] as $cs) {
                     echo "<tr>
-                        <td>$codigo_centro</td>
-                        <td>$porcentaje%</td>
+                        <td>{$cs['codigo_centro']}</td>
+                        <td>{$cs['porcentaje']}%</td>
                     </tr>";
                 }
             ?>
@@ -65,10 +65,10 @@
         <table class="info-table">
             <tr><th>Motivo</th><th>% Pacientes</th></tr>
             <?php 
-                foreach ($_SESSION['motivo_inc'] ?? [] as $descripcion => $porcentaje) {
+                foreach ($_SESSION['motivo_inc'] as $mi) {
                     echo "<tr>
-                        <td>$descripcion</td>
-                        <td>$porcentaje%</td>
+                        <td>{$mi['descripcion']}</td>
+                        <td>{$mi['porcentaje']}%</td>
                     </tr>";
                 }
             ?>
@@ -78,16 +78,16 @@
     <div class="seccion">
         <h2>Síndromes Geriátricos</h2>
         <ul>
-            <li>Incontinencia urinaria: <?= $_SESSION['in_ur'] ?? "-" ?>%</li>
-            <li>Incontinencia fecal: <?= $_SESSION['in_fec'] ?? "-" ?>%</li>
-            <li>Insomnio: <?= $_SESSION['insom'] ?? "-" ?>%</li>
-            <li>Dolor: <?= $_SESSION['dolor'] ?? "-" ?>%</li>
-            <li>Disfagia: <?= $_SESSION['disfagia'] ?? "-" ?></li>
-            <li>Úlcera: <?= $_SESSION['ulcera_total'] ?? "-" ?>%</li>
+            <li>Incontinencia urinaria: <?php echo $_SESSION['datos_paciente']['in_ur'] ?? "-" ?>%</li>
+            <li>Incontinencia fecal: <?php echo $_SESSION['datos_paciente']['in_fec'] ?? "-" ?>%</li>
+            <li>Insomnio: <?php echo $_SESSION['datos_paciente']['insom'] ?? "-" ?>%</li>
+            <li>Dolor: <?php echo $_SESSION['datos_paciente']['dolor'] ?? "-" ?>%</li>
+            <li>Disfagia: <?php echo $_SESSION['datos_paciente']['disfagia'] ?? "-" ?></li>
+            <li>Úlcera: <?php echo $_SESSION['datos_paciente']['ulcera_total'] ?? "-" ?>%</li>
             <table class="info-table">
                 <tr><th>Grado</th><th>% Pacientes</th></tr>
                 <?php 
-                    foreach ($_SESSION['grado_ulcera'] ?? [] as $grado => $porcentaje) {
+                    foreach ($_SESSION['grados_ulcera'] as $grado => $porcentaje) {
                         echo "<tr>
                             <td>$grado</td>
                             <td>$porcentaje%</td>
@@ -153,10 +153,11 @@
             <tr>
                 <td><span class="dato-label">Cuidador principal:
                 <?php 
-                    foreach ($_SESSION['ppal_cuidador'] ?? [] as $descripcion => $porcentaje) {
+                    foreach ($_SESSION['ppal_cuidador'] as $pc) {
                         echo "
-                            <td>$descripcion></td>
-                            <td>$porcentaje%</td>";
+                            <td>{$pc['descripcion']}</td>
+                            <td>{$pc['porcentaje']}%</td>
+                        </tr>";
                     }
                 ?>
                 </td>
@@ -166,10 +167,11 @@
             <tr>
                 <td><span class="dato-label">Convivencia:
                 <?php 
-                    foreach ($_SESSION['convivencia'] ?? [] as $descripcion => $porcentaje) {
+                    foreach ($_SESSION['convivencia'] as $c) {
                         echo "
-                            <td>$descripcion</td>
-                            <td>$porcentaje%</td>";
+                            <td>{$c['descripcion']}</td>
+                            <td>{$c['porcentaje']}%</td>
+                        </tr>";
                     }
                 ?>
                 </td>
@@ -179,10 +181,10 @@
             <tr>
                 <td><span class="dato-label">Ayuda social:
                 <?php 
-                    foreach ($_SESSION['ayuda_social'] ?? [] as $descripcion => $porcentaje) {
+                    foreach ($_SESSION['ayuda_social'] as $ays) {
                         echo "
-                            <td>$descripcion</td>
-                            <td><$porcentaje%</td>";
+                            <td>{$ays['descripcion']}</td>
+                            <td>{$ays['porcentaje']}%</td>";
                     }
                 ?>
                 </td>

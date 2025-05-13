@@ -180,7 +180,15 @@
             unset($_SESSION["pacientes_por_migr"], $_SESSION["pacientes_por_cs"]);
         }
         if (isset($_GET["informe_generado"])) {
-            echo "<div class='container mt-4 mb-5'>
+            echo "
+                <div class='container mt-4 mb-5'>
+                    <div class='col-auto d-flex justify-content-end m-2'>
+                        <a href='../controlador/borrar_datos_formulario.php' 
+                            class='btn btn-link p-0 text-danger d-flex align-items-center' 
+                            title='Borrar datos y salir'>
+                            <i class='bi bi-x-lg fs-3'></i>
+                        </a>
+                    </div>
                     <div class='card shadow-sm'>
                         <div class='card-body p-3 informe-geriatrico'>";
                             include("../include/informe.php");

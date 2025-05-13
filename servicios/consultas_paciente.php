@@ -52,9 +52,9 @@
                 SELECT 
                     cs.codigo_centro,
                     ROUND(
-                        COUNT(i.nhc) * 100.0 /  
+                        COUNT(DISTINCT i.nhc) * 100.0 /  
                         NULLIF(
-                            (SELECT COUNT(i2.nhc)
+                            (SELECT COUNT(DISTINCT i2.nhc)
                             FROM ingreso i2
                             JOIN datos_paciente dp2 ON i2.nhc = dp2.nhc
                             WHERE i2.fecha_ingreso <= :fin
@@ -85,9 +85,9 @@
                 SELECT 
                     c.descripcion,
                     ROUND(
-                        COUNT(i.nhc) * 100.0 / 
+                        COUNT(DISTINCT i.nhc) * 100.0 / 
                         NULLIF(
-                            (SELECT COUNT(i2.nhc)
+                            (SELECT COUNT(DISTINCT i2.nhc)
                             FROM ingreso i2
                             JOIN datos_paciente dp2 ON i2.nhc = dp2.nhc
                             WHERE i2.fecha_ingreso <= :fin
@@ -113,9 +113,9 @@
                 SELECT 
                     pc.descripcion,
                     ROUND(
-                        COUNT(i.nhc) * 100.0 / 
+                        COUNT(DISTINCT i.nhc) * 100.0 / 
                         NULLIF(
-                            (SELECT COUNT(i2.nhc)
+                            (SELECT COUNT(DISTINCT i2.nhc)
                             FROM ingreso i2
                             JOIN datos_paciente dp2 ON i2.nhc = dp2.nhc
                             WHERE i2.fecha_ingreso <= :fin
@@ -141,9 +141,9 @@
                 SELECT 
                     ays.descripcion,
                     ROUND(
-                        COUNT(i.nhc) * 100.0 / 
+                        COUNT(DISTINCT i.nhc) * 100.0 / 
                         NULLIF(
-                            (SELECT COUNT(i2.nhc)
+                            (SELECT COUNT(DISTINCT i2.nhc)
                             FROM ingreso i2
                             JOIN datos_paciente dp2 ON i2.nhc = dp2.nhc
                             WHERE i2.fecha_ingreso <= :fin
@@ -168,9 +168,9 @@
                 SELECT 
                     mi.descripcion,
                     ROUND(
-                        COUNT(i.nhc) * 100.0 / 
+                        COUNT(DISTINCT i.nhc) * 100.0 / 
                         NULLIF(
-                            (SELECT COUNT(i2.nhc)
+                            (SELECT COUNT(DISTINCT i2.nhc)
                             FROM ingreso i2
                             JOIN datos_paciente dp2 ON i2.nhc = dp2.nhc
                             WHERE i2.fecha_ingreso <= :fin

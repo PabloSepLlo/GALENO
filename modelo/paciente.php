@@ -23,7 +23,7 @@
         private ?Motivo_inc $motivo_inc;
         private ?int $co_morb;
         private ?int $num_farm;
-        private ?string $grado_ulcera;
+        private ?int $grado_ulcera;
         private ?string $rip_domi;
         private ?string $in_ur;
         private ?string $in_fec;
@@ -114,7 +114,6 @@
             $this->co_morb = $co_morb;
             $this->num_farm = $num_farm;
             $this->grado_ulcera = $grado_ulcera;
-            error_log("Error al añadir paciente: " . $this->grado_ulcera, 3, "../logs/error_log.txt");
             $this->rip_domi = $rip_domi;
             $this->in_ur = $in_ur;
             $this->in_fec = $in_fec;

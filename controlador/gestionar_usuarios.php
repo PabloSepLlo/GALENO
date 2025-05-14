@@ -8,12 +8,11 @@
         $usuario->cargar_datos_para_edicion($_POST["id_usuario"], $_POST["nombre_usuario"], $_POST["nombre"], $_POST["ape1"], $_POST["ape2"], $_POST["administrador"]);
         if ($usuario->actualizar_usuario()){
             $_SESSION["msg"] = "Usuario actualizado";
-            header("Location: ../vista/mis_datos.php");
+            header("Location: ./cargar_usuarios.php");
             exit();
         }
         else {
-            $_SESSION["err"] = "Ha habido un problema al actualizar";
-            header("Location: ../vista/mis_datos.php");
+            header("Location: ../vista/gestionar_usuarios.php");
             exit();
         }
     }

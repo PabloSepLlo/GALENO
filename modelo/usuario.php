@@ -34,6 +34,16 @@
             $this->ape2 = $ape2;  
             $this->pass = password_hash($pass, PASSWORD_BCRYPT);
         }
+
+        public function cargar_datos_para_edicion($id, $user_name, $nombre, $ape1, $ape2, $administrador){
+            $this->id = $id;
+            $this->user_name = $user_name;
+            $this->nombre = $nombre;
+            $this->ape1 = $ape1;
+            $this->ape2 = $ape2;  
+            $this->administrador = $administrador;  
+        }
+
         public function cargar_datos_desde_BBDD($id_usuario) {
             $bd = new BBDD();
             $pdo = $bd->getPDO();
@@ -77,7 +87,7 @@
             $stmt->execute();
         }
         
-        public function actualizar_usuario($user_name, $nombre, $ape1, $ape2, $administrador){
+        public function actualizar_usuario(){
             $actualizado = false;
             try {
                 $bd = new BBDD();
@@ -85,17 +95,17 @@
                 $stmt = $pdo->prepare("UPDATE usuario 
                                         SET nombre_usuario=:user_name, nombre=:nombre, ape1=:ape1, ape2=:ape2, administrador=:administrador
                                         WHERE id_usuario=:id_usuario");
-                $stmt->bindParam(":user_name", $user_name);
-                $stmt->bindParam(":nombre", $nombre);
-                $stmt->bindParam(":ape1", $ape1);
-                $stmt->bindParam(":ape2", $ape2);
-                $stmt->bindParam(":administrador", $administrador);
+                $stmt->bindParam(":user_name", $this->user_name);
+                $stmt->bindParam(":nombre", $this->nombre);
+                $stmt->bindParam(":ape1", $this->ape1);
+                $stmt->bindParam(":ape2", $this->ape2);
+                $stmt->bindParam(":administrador", $this->administrador);
                 $stmt->bindParam(":id_usuario", $this->id);
                 $stmt->execute();
                 $actualizado = true;
             }
             catch (Exception $e) {
-                error_log("Error al actualizar usuario: " . $e->getMessage(), 3, "logs/error_log.txt");
+                error_log("Error al actualizar usuario: " . $e->getMessage(), 3, "../logs/error_log.txt");
             }
             finally {
                 unset($bd);
@@ -131,7 +141,7 @@
                 }
             }
             catch (Exception $e) {
-                error_log("Error al registrar usuario: " . $e->getMessage(), 3, "logs/error_log.txt");
+                error_log("Error al registrar usuario: " . $e->getMessage(), 3, "../logs/error_log.txt");
             }
             finally {
                 unset($bd);
@@ -159,11 +169,36 @@
                 }
             }
             catch (Exception $e) {
-                $_SESSION["msg"] = "Error al iniciar sesion" . $e->getMessage();
+                error_log("Error al iniciar sesion: " . $e->getMessage(), 3, "../logs/error_log.txt");
             }
             finally {
                 unset($bd);
                 return $autenticado;
+            }
+        }
+
+        public function cambiar_password(string $pass_actual, string $nueva_pass) {
+            $actualizada = false;
+            try {
+                if (password_verify($pass_actual, $this->pass)) {
+                    $bd = new BBDD();
+                    $pdo = $bd->getPDO();
+                    $stmt = $pdo->prepare("UPDATE usuario 
+                                            SET pass=:pass
+                                            WHERE id_usuario=:id_usuario");
+                    $stmt->bindParam(":id_usuario", $this->id);
+                    $pass_hasheada = password_hash($nueva_pass, PASSWORD_BCRYPT);
+                    $stmt->bindParam(":pass", $pass_hasheada);
+                    $stmt->execute();
+                    $actualizada = true;
+                }
+            }
+            catch (Exception $e) {
+                error_log("Error al cambiar contraseña: " . $e->getMessage(), 3, "../logs/error_log.txt");
+            }
+            finally {
+                unset($bd);
+                return $actualizada;
             }
         }
     }

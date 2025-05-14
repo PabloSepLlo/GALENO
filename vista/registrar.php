@@ -48,11 +48,14 @@
                                 </div> 
                                 <div class="mb-2">
                                     <label for="pass1" class="form-label">Contraseña</label>
-                                    <input type="password" name="pass1" class="form-control" id="pass1" required>
+                                    <input type="password" name="pass1" class="form-control" id="new_pass" required>
                                 </div>
                                 <div class="mb-2">
                                     <label for="pass2" class="form-label">Repita la contraseña</label>
-                                    <input type="password" name="pass2" class="form-control" id="pass2" required>
+                                    <input type='password' id='confirm_pass' name='pass2' class='form-control' required>
+                                    <div class='text-danger small mt-1' id='pass_error' style='display:none;'>
+                                        <i class='bi bi-exclamation-circle'></i> Las contraseñas no coinciden
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary w-50 mx-auto btn-sm mt-4 mb-1">Registrar</button>
                                 <div class="text-center mt-2">
@@ -73,6 +76,20 @@
                 const sessionModal = new bootstrap.Modal(modalElement);
                 sessionModal.show();
             }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const newPass = document.getElementById('new_pass');
+            const confirmPass = document.getElementById('confirm_pass');
+            
+            confirmPass.addEventListener('input', function() {
+                if(newPass.value !== confirmPass.value) {
+                    newPass.classList.add('is-invalid');
+                    confirmPass.classList.add('is-invalid');
+                } else {
+                    newPass.classList.remove('is-invalid');
+                    confirmPass.classList.remove('is-invalid');
+                }
+            });
         });
     </script>
 </body>

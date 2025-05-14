@@ -106,18 +106,16 @@
                                                 <input type='hidden' name='id_usuario' value='{$usuario['id_usuario']}'>
                                             </form>
                                         </td>
-                                    </tr>";
-                                    // Modal para editar usuario
-                                    echo "
+                                    </tr>
                                     <div class='modal fade' id='modalEditar{$usuario["id_usuario"]}' tabindex='-1' aria-labelledby='modalLabel{$usuario["id_usuario"]}' aria-hidden='true'>
                                         <div class='modal-dialog'>
                                             <div class='modal-content'>
-                                                <div class='modal-header'>
+                                                <div class='modal-header bg-primary text-white'>
                                                     <h5 class='modal-title' id='modalLabel{$usuario["id_usuario"]}'>Editar Usuario</h5>
                                                     <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Cerrar'></button>
                                                 </div>
                                                 <div class='modal-body'>
-                                                    <form method='POST' action='../controlador/actualizar_usuario.php'>
+                                                    <form method='POST' action='../controlador/gestionar_usuarios.php'>
                                                         <input type='hidden' name='id_usuario' value='{$usuario["id_usuario"]}'>
                                                         
                                                         <div class='mb-3'>
@@ -144,7 +142,10 @@
                                                             </select>
                                                         </div>
 
-                                                        <button type='submit' class='btn btn-success'>Guardar Cambios</button>
+                                                        <div class='modal-footer'>
+                                                            <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cancelar</button>
+                                                            <button type='submit' class='btn btn-primary'>Guardar cambios</button>
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>

@@ -42,7 +42,7 @@
                             <i class="bi bi-person-circle ms-5 fs-5"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Mis datos</a></li>
+                            <li><a class="dropdown-item" href="../vista/mis_datos.php">Mis datos</a></li>
                             <li><a class="dropdown-item" href="../controlador/cerrar_sesion.php">Cerrar sesión</a></li>
                         </ul>
                     </li>

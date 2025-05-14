@@ -87,6 +87,10 @@
             opacity: 0;
             pointer-events: none;
         }
+
+        .titulo-azul-oscuro {
+            color: #052c65 !important;
+        }
     </style>
 </head>
 <body>
@@ -124,8 +128,21 @@
             unset($_SESSION["pacientes_por_migr"], $_SESSION["pacientes_por_cs"]);
         }
         if (isset($_SESSION["pacientes_por_cs"])) {
-            echo "<div class='table-responsive-md m-5'>
-                <h1>Pacientes del centro con código: {$_SESSION["pacientes_por_cs"][0]["codigo_centro"]}</h1>
+            echo "
+            <div class='row mx-5 mt-4'>
+                <div class='col-md-12'>
+                    <div class='card shadow-sm bg-primary-subtle'>
+                        <div class='card-body py-3'>
+                            <div class='d-flex flex-column flex-md-row justify-content-center align-items-center'>
+                                <h3 class='card-title mb-2 fw-bold titulo-azul-oscuro'>
+                                    PACIENTES DEL CENTRO CON CÓDIGO: {$_SESSION["pacientes_por_cs"][0]["codigo_centro"]}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='table-responsive-md mx-5'>
                 <div class='row d-flex justify-content-between align-items-center mb-3'>
                     <div class='col-sm-6 col-md-3'>
                         <input type='text' class='form-control' id='buscar' placeholder='Filtrar por apellido ...'>

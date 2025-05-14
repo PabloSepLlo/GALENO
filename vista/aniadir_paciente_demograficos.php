@@ -89,9 +89,14 @@
                         echo "<form method='POST'>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='nhc' class='form-label fw-bold'>N. H. C.</label>
-                                    <input type='text' class='form-control' id='nhc' name='nhc' value='" . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "' required>
-                                </div>
+                                    <label for='nhc' class='form-label fw-bold'>N. H. C.</label>";
+                                    if (isset($_SESSION["editando"])) {
+                                        echo "<input type='text' class='form-control' id='nhc' name='nhc' value='" . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "' disabled>";
+                                    }
+                                    else {
+                                        echo "<input type='text' class='form-control' id='nhc' name='nhc' value='" . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "' required>";
+                                    }
+                                echo "</div>
                                 <div class='col-md-6 mb-3'>
                                     <label for='nombre' class='form-label fw-bold'>Nombre</label>
                                     <input type='text' class='form-control' id='nombre' name='nombre' value='" . (isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : "") . "' required>

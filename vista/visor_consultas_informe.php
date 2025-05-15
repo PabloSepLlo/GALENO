@@ -194,7 +194,12 @@
         if (isset($_GET["informe_generado"])) {
             echo "
                 <div class='container mt-4 mb-5'>
-                    <div class='col-auto d-flex justify-content-end m-2'>
+                    <div class='col-auto d-flex justify-content-between m-2'>
+                        <a href='../controlador/generar_informe_pdf.php' 
+                            class='btn btn-link p-0 text-primary d-flex align-items-center fs-2' 
+                            title='Generar pdf'>
+                            <i class='bi bi-file-arrow-down'></i>
+                        </a>
                         <a href='../controlador/borrar_datos_formulario.php' 
                             class='btn btn-link p-0 text-danger d-flex align-items-center' 
                             title='Borrar datos y salir'>

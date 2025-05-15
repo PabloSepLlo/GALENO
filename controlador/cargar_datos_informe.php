@@ -30,7 +30,7 @@
     }
     else {
         $_SESSION["err"] = "No se ha podido generar el PDF, revise los datos";
-        header('Location: ../vista/gestionar_usuarios.php');
+        header('Location: ../vista/menu.php');
         exit();
     }
 ?>

@@ -153,8 +153,8 @@
                             </div>
 
                             <div class='d-flex justify-content-end'>
-                                    <button type='submit' formaction='../controlador/guardar_demograficos.php' class='btn btn-outline-primary d-flex align-items-center rounded-pill shadow-sm px-4'>
-                                    Siguiente <i class='bi bi-arrow-right ms-2'></i>
+                                <button type='submit' formaction='../controlador/guardar_demograficos.php' class='btn btn-outline-primary d-flex align-items-center rounded-pill shadow-sm px-4'>
+                                    <span class='d-none d-md-inline'>Siguiente</span> <i class='bi bi-arrow-right ms-2'></i>
                                 </button>
                             </div>
                         </form>

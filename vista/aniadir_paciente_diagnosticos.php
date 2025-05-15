@@ -230,10 +230,10 @@
 
                             <div class='d-flex justify-content-between'>
                                 <a href='./aniadir_paciente_demograficos.php' class='btn btn-outline-primary d-flex align-items-center rounded-pill shadow-sm px-4'>
-                                    <i class='bi bi-arrow-left me-2'></i> Atrás
+                                    <i class='bi bi-arrow-left me-2'></i><span class='d-none d-md-inline'>Atrás</span>
                                 </a>
                                 <button type='submit' formaction='../controlador/guardar_diagnosticos.php' class='btn btn-outline-primary d-flex align-items-center rounded-pill shadow-sm px-4'>
-                                    Siguiente <i class='bi bi-arrow-right ms-2'></i>
+                                    <span class='d-none d-md-inline'>Siguiente</span> <i class='bi bi-arrow-right ms-2'></i>
                                 </button>
                             </div>
                         </form>

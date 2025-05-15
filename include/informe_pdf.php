@@ -25,6 +25,7 @@
             text-align: center;
             margin-bottom: 1rem;
             font-weight: bold;
+
         }
 
         .informe-geriatrico h1 {

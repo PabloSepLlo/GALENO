@@ -6,7 +6,7 @@
          * @return bool
          */
         public static function validar_NHC(?string $nhc) {
-            return preg_match('/^[0-9]{6,7}$/', $nhc);
+            return preg_match('/^[0-9]{6,8}$/', $nhc);
         }
     }
 ?>

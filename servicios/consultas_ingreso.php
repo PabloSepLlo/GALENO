@@ -22,20 +22,21 @@
 
         public function get_datos_ingresos($inicio, $fin) {
             $stmt = $this->pdo->prepare("
+                WITH ultimos_ingresos AS (
+                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
+                    FROM ingreso
+                    GROUP BY nhc
+                )
                 SELECT 
-                    ROUND(SUM(CASE WHEN i.reingreso = 'SÍ' THEN 1 ELSE 0 END) * 100 / NULLIF(SUM(CASE WHEN i.reingreso IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS reingreso,
+                    ROUND(SUM(CASE WHEN i.reingreso = 'SÍ' THEN 1 ELSE 0 END) * 100 / 
+                        NULLIF(SUM(CASE WHEN i.reingreso IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS reingreso,
                     SUM(i.analitica) AS analiticas,
                     SUM(i.eco) AS eco,
                     SUM(i.minimental) AS minimental,
                     SUM(i.cultivo) AS cultivo,
                     SUM(i.num_visit) AS num_visit
-                FROM ingreso AS i
-                JOIN (
-                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
-                    FROM ingreso
-                    GROUP BY nhc
-                ) AS ultimos 
-                ON i.nhc = ultimos.nhc AND i.fecha_ingreso = ultimos.fecha_max
+                FROM ingreso i
+                JOIN ultimos_ingresos u ON i.nhc = u.nhc AND i.fecha_ingreso = u.fecha_max
                 WHERE i.fecha_ingreso <= :fin
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio);
             ");
@@ -47,17 +48,17 @@
         
         public function get_datos_crm($inicio, $fin) {
             $stmt = $this->pdo->prepare("
+                WITH ultimos_ingresos AS (
+                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
+                    FROM ingreso
+                    GROUP BY nhc
+                )
                 SELECT 
                     ROUND(SUM(CASE WHEN i.crm = '0' OR i.crm = '1' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crm IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crm_1,
                     ROUND(SUM(CASE WHEN i.crm = '2' OR i.crm = '3' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crm IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crm_2_3,
                     ROUND(SUM(CASE WHEN i.crm = '4' OR i.crm = '5' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crm IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crm_4_5
                 FROM ingreso AS i
-                JOIN (
-                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
-                    FROM ingreso
-                    GROUP BY nhc
-                ) AS ultimos 
-                ON i.nhc = ultimos.nhc AND i.fecha_ingreso = ultimos.fecha_max
+                JOIN ultimos_ingresos u ON i.nhc = u.nhc AND i.fecha_ingreso = u.fecha_max
                 WHERE i.fecha_ingreso <= :fin
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio);
             ");
@@ -69,18 +70,18 @@
         
         public function get_datos_crf($inicio, $fin) {
             $stmt = $this->pdo->prepare("
+                WITH ultimos_ingresos AS (
+                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
+                    FROM ingreso
+                    GROUP BY nhc
+                )
                 SELECT 
                     ROUND(SUM(CASE WHEN i.crf = '0' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crf_0,
                     ROUND(SUM(CASE WHEN i.crf = '1' OR i.crf = '2' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crf_1_2,
                     ROUND(SUM(CASE WHEN i.crf = '3' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crf_3,
                     ROUND(SUM(CASE WHEN i.crf = '4' OR i.crf = 5 THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crf_4_5
                 FROM ingreso AS i
-                JOIN (
-                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
-                    FROM ingreso
-                    GROUP BY nhc
-                ) AS ultimos 
-                ON i.nhc = ultimos.nhc AND i.fecha_ingreso = ultimos.fecha_max
+                JOIN ultimos_ingresos u ON i.nhc = u.nhc AND i.fecha_ingreso = u.fecha_max
                 WHERE i.fecha_ingreso <= :fin
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio);
             ");
@@ -92,18 +93,18 @@
         
         public function get_datos_barthel($inicio, $fin) {
             $stmt = $this->pdo->prepare("
+                WITH ultimos_ingresos AS (
+                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
+                    FROM ingreso
+                    GROUP BY nhc
+                )
                 SELECT 
                     ROUND(SUM(CASE WHEN i.barthel < '45' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS barthel_menos_45,
                     ROUND(SUM(CASE WHEN i.barthel >= '45' AND i.barthel <= '59' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS barthel_45_59,
                     ROUND(SUM(CASE WHEN i.barthel >= '60' AND i.barthel <= '80' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS barthel_60_80,
                     ROUND(SUM(CASE WHEN i.barthel > '80' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS barthel_mas_80
                 FROM ingreso AS i
-                JOIN (
-                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
-                    FROM ingreso
-                    GROUP BY nhc
-                ) AS ultimos 
-                ON i.nhc = ultimos.nhc AND i.fecha_ingreso = ultimos.fecha_max
+                JOIN ultimos_ingresos u ON i.nhc = u.nhc AND i.fecha_ingreso = u.fecha_max
                 WHERE i.fecha_ingreso <= :fin
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio);
             ");
@@ -115,16 +116,16 @@
 
         public function get_datos_pfeiffer($inicio, $fin) {
             $stmt = $this->pdo->prepare("
+                WITH ultimos_ingresos AS (
+                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
+                    FROM ingreso
+                    GROUP BY nhc
+                )
                 SELECT 
                     ROUND(SUM(CASE WHEN i.pfeiffer <= '4' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.pfeiffer IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS pfeiffer_menor_4,
                     ROUND(SUM(CASE WHEN i.pfeiffer > '4' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.pfeiffer IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS pfeiffer_mas_4
                 FROM ingreso AS i
-                JOIN (
-                    SELECT nhc, MAX(fecha_ingreso) AS fecha_max
-                    FROM ingreso
-                    GROUP BY nhc
-                ) AS ultimos 
-                ON i.nhc = ultimos.nhc AND i.fecha_ingreso = ultimos.fecha_max
+                JOIN ultimos_ingresos u ON i.nhc = u.nhc AND i.fecha_ingreso = u.fecha_max
                 WHERE i.fecha_ingreso <= :fin
                 AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio);
             ");
@@ -133,7 +134,7 @@
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
-        
+        //seguir cambiando a with
         public function get_ingreso_pr($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 SELECT 

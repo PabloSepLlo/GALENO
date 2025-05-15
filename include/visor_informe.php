@@ -209,8 +209,8 @@
         <tr>
             <td><span class="dato-label">Analíticas:</span> <?php echo $_SESSION['inf_datos_ingresos']['analiticas'] ?? "-"; ?></td>
             <td><span class="dato-label">Ecografías:</span> <?php echo $_SESSION['inf_datos_ingresos']['eco'] ?? "-" ?></td>
-            <td><span class="dato-label">Cultivos:</span> <?php echo $_SESSION['inf_datos_ingresos']['cultivo'] ?? "-" ?>%</td>
-            <td><span class="dato-label">Minimental:</span> <?php echo $_SESSION['inf_datos_ingresos']['minimental'] ?? "-" ?>%</td>
+            <td><span class="dato-label">Cultivos:</span> <?php echo $_SESSION['inf_datos_ingresos']['cultivo'] ?? "-" ?></td>
+            <td><span class="dato-label">Minimental:</span> <?php echo $_SESSION['inf_datos_ingresos']['minimental'] ?? "-" ?></td>
         </tr>
     </table>
 </section>

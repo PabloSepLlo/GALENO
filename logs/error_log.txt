@@ -1,0 +1,1 @@
+[15-May-2025 20:55:17 Europe/Berlin] PHP Warning:  Undefined variable $descripcion_procedencia in C:\xampp\htdocs\php\PROYECTO_FINAL\TFG\controlador\actualizar_ingreso.php on line 35

@@ -66,6 +66,12 @@
         .dropdown-item:hover {
             background-color: #e2e6ea;
         }
+        .tooltip-personalizado {
+            --bs-tooltip-bg: var(--bs-primary);
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
 
     </style>
 </head>

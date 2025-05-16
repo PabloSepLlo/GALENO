@@ -66,6 +66,13 @@
         .dropdown-item:hover {
             background-color: #e2e6ea;
         }
+
+        .tooltip-personalizado {
+            --bs-tooltip-bg: var(--bs-primary);
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
         
     </style>
 </head>
@@ -103,7 +110,7 @@
                                     <label for='co_morb' class='form-label fw-bold'>Comorbilidad</label><i class='bi bi-info-circle text-primary ms-3' 
                                                                                 data-bs-toggle='tooltip' 
                                                                                 data-bs-placement='top' 
-                                                                                data-bs-custom-class='custom-tooltip'
+                                                                                data-bs-custom-class='tooltip-personalizado'
                                                                                 data-bs-title='This top tooltip is themed via CSS variables'></i>
                                     <input type='number' class='form-control' id='co_morb' name='co_morb' value='" . (isset($_SESSION["co_morb"]) ? $_SESSION["co_morb"] : "") . "'>
                                 </div>

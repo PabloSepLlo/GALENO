@@ -186,7 +186,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='sv' class='form-label fw-bold'>SV</label>
+                                    <label for='sv' class='form-label fw-bold'>Sonda vesical</label>
                                     <select class='form-select' id='sv' name='sv'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["sv"]) && $_SESSION["sv"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -204,7 +204,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='sng' class='form-label fw-bold'>SNG</label>
+                                    <label for='sng' class='form-label fw-bold'>SNG-Gastrostomía</label>
                                     <select class='form-select' id='sng' name='sng'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["sng"]) && $_SESSION["sng"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -214,7 +214,7 @@
                             </div>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='sob_cui' class='form-label fw-bold'>Sob_cui</label>
+                                    <label for='sob_cui' class='form-label fw-bold'>Sobrecarga cuidador</label>
                                     <select class='form-select' id='sob_cui' name='sob_cui'>
                                         <option value=''>-</option>
                                         <option value='SÍ'" . (isset($_SESSION["sob_cui"]) && $_SESSION["sob_cui"] == "SÍ" ? " selected" : "") . ">SÍ</option>
@@ -222,7 +222,7 @@
                                     </select>
                                 </div>
                                 <div class='col-md-6 mb-3'>
-                                    <label for='ocd' class='form-label fw-bold'>OCD</label><i class='bi bi-info-circle text-primary ms-3' 
+                                    <label for='ocd' class='form-label fw-bold'>Oxigenoterapia</label><i class='bi bi-info-circle text-primary ms-3' 
                                                                                 data-bs-toggle='tooltip' 
                                                                                 data-bs-placement='top' 
                                                                                 data-bs-custom-class='tooltip-personalizado'

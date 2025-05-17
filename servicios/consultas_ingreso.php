@@ -31,8 +31,8 @@
                     ROUND(SUM(CASE WHEN i.reingreso = 'SÍ' THEN 1 ELSE 0 END) * 100 / 
                         NULLIF(SUM(CASE WHEN i.reingreso IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS reingreso,
                     SUM(i.analitica) AS analiticas,
-                    SUM(i.eco) AS eco,
-                    SUM(i.minimental) AS minimental,
+                    SUM(CASE WHEN i.eco = 'SÍ' THEN 1 ELSE 0 END) AS eco,
+                    ROUND(AVG(i.minimental), 2) AS minimental,
                     SUM(i.cultivo) AS cultivo,
                     SUM(i.num_visit) AS num_visit
                 FROM ingreso i

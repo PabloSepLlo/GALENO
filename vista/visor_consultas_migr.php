@@ -143,20 +143,19 @@
                     </div>
                 </div>
             </div>
-            
-            <div class='table-responsive-md mx-5'>
-                <div class='row d-flex justify-content-between align-items-center mb-3'>
-                    <div class='col-sm-6 col-md-3'>
-                        <input type='text' class='form-control' id='buscar' placeholder='Filtrar por apellido ...'>
-                    </div>
-                    <div class='col-sm-2 col-md-1 d-flex justify-content-center'>
-                        <a href='../controlador/borrar_datos_formulario.php' 
-                        class='btn btn-link text-danger' 
-                        title='Borrar datos y salir'>
-                            <i class='bi bi-x-lg fs-3'></i>
-                        </a>
-                    </div>
+            <div class='row d-flex justify-content-between align-items-center mb-3 mx-5'>
+                <div class='col-sm-6 col-md-3'>
+                    <input type='text' class='form-control' id='buscar' placeholder='Filtrar por apellido ...'>
                 </div>
+                <div class='col-sm-2 col-md-1 d-flex justify-content-center'>
+                    <a href='../controlador/borrar_datos_formulario.php' 
+                    class='btn btn-link text-danger' 
+                    title='Borrar datos y salir'>
+                        <i class='bi bi-x-lg fs-3'></i>
+                    </a>
+                </div>
+            </div>
+            <div class='table-responsive-md mx-5'>
                 <table class='table table-primary table-striped table-hover table-bordered'>
                     <thead>
                         <tr>

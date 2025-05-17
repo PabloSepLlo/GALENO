@@ -54,9 +54,9 @@
                     GROUP BY nhc
                 )
                 SELECT 
-                    ROUND(SUM(CASE WHEN i.crm = '0' OR i.crm = '1' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crm IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crm_1,
-                    ROUND(SUM(CASE WHEN i.crm = '2' OR i.crm = '3' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crm IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crm_2_3,
-                    ROUND(SUM(CASE WHEN i.crm = '4' OR i.crm = '5' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crm IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crm_4_5
+                    ROUND(SUM(CASE WHEN i.crm = '0' OR i.crm = '1' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crm IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'CRM 1',
+                    ROUND(SUM(CASE WHEN i.crm = '2' OR i.crm = '3' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crm IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'CRM 2-3',
+                    ROUND(SUM(CASE WHEN i.crm = '4' OR i.crm = '5' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crm IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'CRM 4-5'
                 FROM ingreso AS i
                 JOIN ultimos_ingresos u ON i.nhc = u.nhc AND i.fecha_ingreso = u.fecha_max
                 WHERE i.fecha_ingreso <= :fin
@@ -76,10 +76,10 @@
                     GROUP BY nhc
                 )
                 SELECT 
-                    ROUND(SUM(CASE WHEN i.crf = '0' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crf_0,
-                    ROUND(SUM(CASE WHEN i.crf = '1' OR i.crf = '2' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crf_1_2,
-                    ROUND(SUM(CASE WHEN i.crf = '3' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crf_3,
-                    ROUND(SUM(CASE WHEN i.crf = '4' OR i.crf = 5 THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS crf_4_5
+                    ROUND(SUM(CASE WHEN i.crf = '0' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'CRF 0',
+                    ROUND(SUM(CASE WHEN i.crf = '1' OR i.crf = '2' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'CRF 1-2',
+                    ROUND(SUM(CASE WHEN i.crf = '3' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'CRF 3',
+                    ROUND(SUM(CASE WHEN i.crf = '4' OR i.crf = 5 THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.crf IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'CRF 4-5'
                 FROM ingreso AS i
                 JOIN ultimos_ingresos u ON i.nhc = u.nhc AND i.fecha_ingreso = u.fecha_max
                 WHERE i.fecha_ingreso <= :fin
@@ -99,10 +99,10 @@
                     GROUP BY nhc
                 )
                 SELECT 
-                    ROUND(SUM(CASE WHEN i.barthel < '45' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS barthel_menos_45,
-                    ROUND(SUM(CASE WHEN i.barthel >= '45' AND i.barthel <= '59' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS barthel_45_59,
-                    ROUND(SUM(CASE WHEN i.barthel >= '60' AND i.barthel <= '80' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS barthel_60_80,
-                    ROUND(SUM(CASE WHEN i.barthel > '80' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS barthel_mas_80
+                    ROUND(SUM(CASE WHEN i.barthel < '45' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'Barthel menor que 45',
+                    ROUND(SUM(CASE WHEN i.barthel >= '45' AND i.barthel <= '59' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'Barthel entre 45 y 59',
+                    ROUND(SUM(CASE WHEN i.barthel >= '60' AND i.barthel <= '80' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'Barthel entre 60 y 80',
+                    ROUND(SUM(CASE WHEN i.barthel > '80' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.barthel IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'Barthel mayor que 80'
                 FROM ingreso AS i
                 JOIN ultimos_ingresos u ON i.nhc = u.nhc AND i.fecha_ingreso = u.fecha_max
                 WHERE i.fecha_ingreso <= :fin
@@ -122,8 +122,8 @@
                     GROUP BY nhc
                 )
                 SELECT 
-                    ROUND(SUM(CASE WHEN i.pfeiffer <= '4' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.pfeiffer IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS pfeiffer_menor_4,
-                    ROUND(SUM(CASE WHEN i.pfeiffer > '4' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.pfeiffer IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS pfeiffer_mas_4
+                    ROUND(SUM(CASE WHEN i.pfeiffer <= '4' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.pfeiffer IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'Pfeiffer menor o igual que 4',
+                    ROUND(SUM(CASE WHEN i.pfeiffer > '4' THEN 1 ELSE 0 END) * 100.0 / NULLIF(SUM(CASE WHEN i.pfeiffer IS NOT NULL THEN 1 ELSE 0 END), 0), 2) AS 'Pfeiffer mayor que 4'
                 FROM ingreso AS i
                 JOIN ultimos_ingresos u ON i.nhc = u.nhc AND i.fecha_ingreso = u.fecha_max
                 WHERE i.fecha_ingreso <= :fin
@@ -137,24 +137,28 @@
         //seguir cambiando a with
         public function get_ingreso_pr($inicio, $fin) {
             $stmt = $this->pdo->prepare("
+                WITH pacientes_validos AS (
+                    SELECT DISTINCT nhc, id_procedencia
+                    FROM ingreso
+                    WHERE fecha_ingreso <= :fin
+                    AND (fecha_alta IS NULL OR fecha_alta >= :inicio)
+                ),
+                total_pacientes_con_procedencia AS (
+                    SELECT COUNT(DISTINCT nhc) AS total
+                    FROM pacientes_validos
+                    WHERE id_procedencia IS NOT NULL
+                )
+
                 SELECT 
-                    pr.descripcion,
+                    pr.descripcion AS descripcion,
                     ROUND(
-                        COUNT(DISTINCT i.nhc) * 100.0 / 
-                        NULLIF(
-                            (SELECT COUNT(DISTINCT i2.nhc)
-                            FROM ingreso i2
-                            WHERE i2.fecha_ingreso <= :fin
-                            AND (i2.fecha_alta IS NULL OR i2.fecha_alta >= :inicio)
-                            AND i2.id_procedencia IS NOT NULL)
-                        , 0)
-                    , 2) AS porcentaje
+                        COUNT(pv.nhc) * 100.0 / 
+                        NULLIF((SELECT total FROM total_pacientes_con_procedencia), 0),
+                    2) AS porcentaje
                 FROM procedencia pr
-                LEFT JOIN ingreso i ON i.id_procedencia = pr.id_procedencia
-                    AND i.fecha_ingreso <= :fin
-                    AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
-                GROUP BY pr.descripcion
-            ");
+                LEFT JOIN pacientes_validos pv ON pv.id_procedencia = pr.id_procedencia
+                GROUP BY pr.descripcion;
+                ");
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);
             $stmt->execute();
@@ -162,23 +166,26 @@
         }
         public function get_ingreso_migr($inicio, $fin) {
             $stmt = $this->pdo->prepare("
+                WITH pacientes_validos AS (
+                    SELECT DISTINCT nhc, id_motivo_ingreso
+                    FROM ingreso
+                    WHERE fecha_ingreso <= :fin
+                    AND (fecha_alta IS NULL OR fecha_alta >= :inicio)
+                ),
+                total_pacientes_con_motivo_ingreso AS (
+                    SELECT COUNT(DISTINCT nhc) AS total
+                    FROM pacientes_validos
+                    WHERE id_motivo_ingreso IS NOT NULL
+                )
                 SELECT 
-                    migr.descripcion,
+                    migr.descripcion AS descripcion,
                     ROUND(
-                        COUNT(DISTINCT i.nhc) * 100.0 / 
-                        NULLIF(
-                            (SELECT COUNT(DISTINCT i2.nhc)
-                            FROM ingreso i2
-                            WHERE i2.fecha_ingreso <= :fin
-                            AND (i2.fecha_alta IS NULL OR i2.fecha_alta >= :inicio)
-                            AND i2.id_motivo_ingreso IS NOT NULL)
-                        , 0)
-                    , 2) AS porcentaje
+                        COUNT(pv.nhc) * 100.0 / 
+                        NULLIF((SELECT total FROM total_pacientes_con_motivo_ingreso), 0),
+                    2) AS porcentaje
                 FROM motivo_ingreso migr
-                LEFT JOIN ingreso i ON i.id_motivo_ingreso = migr.id_motivo_ingreso
-                    AND i.fecha_ingreso <= :fin
-                    AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
-                GROUP BY migr.descripcion
+                LEFT JOIN pacientes_validos pv ON pv.id_motivo_ingreso = migr.id_motivo_ingreso
+                GROUP BY migr.descripcion;
             ");
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);
@@ -188,23 +195,26 @@
 
         public function get_ingreso_de($inicio, $fin) {
             $stmt = $this->pdo->prepare("
+                WITH pacientes_validos AS (
+                    SELECT DISTINCT nhc, id_destino
+                    FROM ingreso
+                    WHERE fecha_ingreso <= :fin
+                    AND (fecha_alta IS NULL OR fecha_alta >= :inicio)
+                ),
+                total_pacientes_con_destino AS (
+                    SELECT COUNT(DISTINCT nhc) AS total
+                    FROM pacientes_validos
+                    WHERE id_destino IS NOT NULL
+                )
                 SELECT 
-                    de.descripcion,
+                    de.descripcion AS descripcion,
                     ROUND(
-                        COUNT(DISTINCT i.nhc) * 100.0 / 
-                        NULLIF(
-                            (SELECT COUNT(DISTINCT i2.nhc)
-                            FROM ingreso i2
-                            WHERE i2.fecha_ingreso <= :fin
-                            AND (i2.fecha_alta IS NULL OR i2.fecha_alta >= :inicio)
-                            AND i2.id_destino IS NOT NULL)
-                        , 0)
-                    , 2) AS porcentaje
+                        COUNT(pv.nhc) * 100.0 / 
+                        NULLIF((SELECT total FROM total_pacientes_con_destino), 0),
+                    2) AS porcentaje
                 FROM destino de
-                LEFT JOIN ingreso i ON i.id_destino = de.id_destino
-                    AND i.fecha_ingreso <= :fin
-                    AND (i.fecha_alta IS NULL OR i.fecha_alta >= :inicio)
-                GROUP BY de.descripcion
+                LEFT JOIN pacientes_validos pv ON pv.id_destino = de.id_destino
+                GROUP BY de.descripcion;
             ");
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);
@@ -265,9 +275,9 @@
                     migr.descripcion AS motivo_ingreso,
                     cs.codigo_centro as codigo_centro
                 FROM datos_paciente AS dp
-                JOIN centro_salud AS cs ON dp.id_centro_salud = cs.id_centro_salud
-                JOIN motivo_inc AS mi ON dp.id_motivo_inc = mi.id_motivo_inc
+                LEFT JOIN centro_salud AS cs ON dp.id_centro_salud = cs.id_centro_salud
                 JOIN ingreso AS i ON i.nhc = dp.nhc
+                LEFT JOIN motivo_inc AS mi ON dp.id_motivo_inc = mi.id_motivo_inc
                 JOIN motivo_ingreso AS migr ON i.id_motivo_ingreso = migr.id_motivo_ingreso
                 WHERE i.fecha_alta IS NULL 
                 AND i.id_motivo_ingreso = :id_motivo_ingreso;

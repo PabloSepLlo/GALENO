@@ -225,7 +225,7 @@
                                     <label for='ocd' class='form-label fw-bold'>OCD</label><i class='bi bi-info-circle text-primary ms-3' 
                                                                                 data-bs-toggle='tooltip' 
                                                                                 data-bs-placement='top' 
-                                                                                data-bs-custom-class='custom-tooltip'
+                                                                                data-bs-custom-class='tooltip-personalizado'
                                                                                 data-bs-title='This top tooltip is themed via CSS variables'></i>
                                     <select class='form-select' id='ocd' name='ocd'>
                                         <option value=''>-</option>

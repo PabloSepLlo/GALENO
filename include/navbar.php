@@ -22,10 +22,10 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown mx-3">
-                        <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle fs-5 fw-bold" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             GESTIÓN PACIENTE
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-lg-end">
                             <li><a class="dropdown-item" href="../controlador/cargar_datos_form_pacientes.php">Añadir paciente</a></li>
                             <li><a class="dropdown-item" href="./aniadir_ingreso_generales.php?ingresando">Añadir ingreso</a></li>
                             <li><a class="dropdown-item" href="./aniadir_paciente_demograficos.php?editando">Editar paciente</a></li>

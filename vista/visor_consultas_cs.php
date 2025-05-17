@@ -78,22 +78,9 @@
         .dropdown-item:hover {
             background-color: #e2e6ea;
         }
-        /* Buscador */
-        tr {
-            transition: opacity 0.5s ease;
-        }
-
-        .oculto {
-            opacity: 0;
-            pointer-events: none;
-        }
 
         .titulo-azul-oscuro {
             color: #052c65 !important;
-        }
-
-        .table {
-
         }
 
     </style>

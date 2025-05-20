@@ -79,6 +79,14 @@
             background-color: #e2e6ea;
         }
 
+        .tooltip-personalizado .tooltip-inner {
+            --bs-tooltip-bg: var(--bs-warning);
+            font-size: 0.9rem;
+            color: black;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
     </style>
 </head>
 <body>
@@ -165,7 +173,7 @@
         <div class='modal fade' id='cambiarPasswordModal' tabindex='-1'>
             <div class='modal-dialog modal-dialog-centered'>
                 <div class='modal-content'>
-                    <div class='modal-header bg-warning text-white'>
+                    <div class='modal-header bg-warning'>
                         <h5 class='modal-title'>Cambiar Contraseña</h5>
                         <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
                     </div>
@@ -179,7 +187,21 @@
                             </div>
                             
                             <div class='mb-3'>
-                                <label class='form-label'>Nueva Contraseña</label>
+                                <label class='form-label'>Nueva Contraseña</label><i class='bi bi-info-circle text-black ms-3' 
+                                                                                data-bs-toggle='tooltip' 
+                                                                                data-bs-placement='right' 
+                                                                                data-bs-html='true'
+                                                                                data-bs-custom-class='tooltip-personalizado'
+                                                                                data-bs-title='<span>
+                                                                                    La contraseña debe tener al menos:
+                                                                                    <ul>
+                                                                                        <li>8 caracteres</li>
+                                                                                        <li>1 letra mayúscula</li>
+                                                                                        <li>1 letra minúscula</li>
+                                                                                        <li>1 número</li>
+                                                                                        <li>1 símbolo (ej. @, #, $, %, etc.)</li>
+                                                                                    </ul>
+                                                                                </span>'></i>
                                 <input type='password' id='new_pass' name='pass1' class='form-control' required>
                             </div>
                             
@@ -202,6 +224,9 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
         window.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {

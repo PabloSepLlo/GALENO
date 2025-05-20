@@ -7,11 +7,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registrar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
         .img-fluid {
             object-fit: cover;
             height: 100%;
+        }
+        .tooltip-personalizado .tooltip-inner {
+            --bs-tooltip-bg: var(--bs-warning);
+            font-size: 0.9rem;
+            color: black;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
         }
     </style>
 </head>
@@ -47,7 +60,21 @@
                                     <input type="text" name="ape2" class="form-control" id="ape2Usu">
                                 </div> 
                                 <div class="mb-2">
-                                    <label for="pass1" class="form-label">Contraseña</label>
+                                    <label for="pass1" class="form-label">Contraseña</label><i class='bi bi-info-circle text-black ms-3' 
+                                                                                                data-bs-toggle='tooltip' 
+                                                                                                data-bs-placement='right' 
+                                                                                                data-bs-html='true'
+                                                                                                data-bs-custom-class='tooltip-personalizado'
+                                                                                                data-bs-title='<span>
+                                                                                                    La contraseña debe tener al menos:
+                                                                                                    <ul>
+                                                                                                        <li>8 caracteres</li>
+                                                                                                        <li>1 letra mayúscula</li>
+                                                                                                        <li>1 letra minúscula</li>
+                                                                                                        <li>1 número</li>
+                                                                                                        <li>1 símbolo (ej. @, #, $, %, etc.)</li>
+                                                                                                    </ul>
+                                                                                                    </span>'></i>
                                     <input type="password" name="pass1" class="form-control" id="new_pass" required>
                                 </div>
                                 <div class="mb-2">
@@ -70,6 +97,9 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
         window.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {

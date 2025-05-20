@@ -11,6 +11,11 @@
       $usuario->cargar_datos_desde_BBDD($_SESSION["id_usuario"]);
       $datos = $usuario->get_datos();
     }
+    if (isset($_SESSION["nhc"])) {
+        header("Location: ../controlador/borrar_datos_formulario.php");
+        exit();
+    }
+
 ?>
 <!doctype html>
 <html lang="en">

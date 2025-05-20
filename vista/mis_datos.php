@@ -34,6 +34,10 @@
             background-color: #f4f6f9; /* Fondo claro */
         }
 
+        .offcanvas {
+            background-color: #f4f6f9; 
+        }
+
         /* Navbar */
         .navbar {
             background-color: #007bff; /* Azul hospitalario */
@@ -144,6 +148,13 @@
                     </div>
                     <div class='modal-body'>
                         <form method='POST' action='../controlador/actualizar_usuario.php'>
+                            <div class='mb-3'>
+                                <label class='form-label'>Nombre de Usuario</label>
+                                <div class='input-group'>
+                                    <span class='input-group-text'><i class='bi bi-person-fill'></i></span>
+                                    <input type='text' name='nombre_usuario' value='{$datos["user_name"]}' class='form-control' placeholder='Ingresa tu usuario'>
+                                </div>
+                            </div>
                             <input type='hidden' name='id_usuario' value='{$datos["id_usuario"]}'>
                             <input type='hidden' name='administrador' value='{$datos["administrador"]}'>
                             <div class='mb-3'>
@@ -155,11 +166,6 @@
                                 <label class='form-label'>Apellidos</label>
                                 <input type='text' name='ape1' value='{$datos["ape1"]}' class='form-control'>
                                 <input type='text' name='ape2' value='{$datos["ape2"]}' class='form-control'>
-                            </div>
-
-                            <div class='mb-3'>
-                                <label class='form-label'>Nombre de Usuario</label>
-                                <input type='text' name='nombre_usuario' value='{$datos["user_name"]}' class='form-control'>
                             </div>
                             <div class='modal-footer'>
                                 <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cancelar</button>
@@ -183,33 +189,26 @@
                             
                             <div class='mb-3'>
                                 <label class='form-label'>Contraseña Actual</label>
-                                <input type='password' name='pass_actual' class='form-control' required>
+                                <div class='input-group'>
+                                    <span class='input-group-text'><i class='bi bi-lock'></i></span>
+                                    <input type='password' name='pass_actual' class='form-control' required>
+                                </div>
                             </div>
-                            
-                            <div class='mb-3'>
-                                <label class='form-label'>Nueva Contraseña</label><i class='bi bi-info-circle text-black ms-3' 
-                                                                                data-bs-toggle='tooltip' 
-                                                                                data-bs-placement='right' 
-                                                                                data-bs-html='true'
-                                                                                data-bs-custom-class='tooltip-personalizado'
-                                                                                data-bs-title='<span>
-                                                                                    La contraseña debe tener al menos:
-                                                                                    <ul>
-                                                                                        <li>8 caracteres</li>
-                                                                                        <li>1 letra mayúscula</li>
-                                                                                        <li>1 letra minúscula</li>
-                                                                                        <li>1 número</li>
-                                                                                        <li>1 símbolo (ej. @, #, $, %, etc.)</li>
-                                                                                    </ul>
-                                                                                </span>'></i>
-                                <input type='password' id='new_pass' name='pass1' class='form-control' required>
+                            <div class='mb-2'>
+                                <label for='pass1' class='form-label'>Nueva contraseña</label>
+                                <div class='input-group'>
+                                    <span class='input-group-text'><i class='bi bi-lock-fill'></i></span>
+                                    <input type='password' name='pass1' class='form-control' id='new_pass' required>
+                                </div>
+                                <small class='text-muted'>
+                                    <i class='bi bi-info-circle me-1'></i>Debe contener 8+ caracteres, mayúsculas, minúsculas, números y símbolos
+                                </small>
                             </div>
-                            
-                            <div class='mb-3'>
-                                <label class='form-label'>Confirmar Nueva Contraseña</label>
-                                <input type='password' id='confirm_pass' name='pass2' class='form-control' required>
-                                <div class='text-danger small mt-1' id='pass_error' style='display:none;'>
-                                    <i class='bi bi-exclamation-circle'></i> Las contraseñas no coinciden
+                            <div class='mb-2'>
+                                <label for='pass2' class='form-label'>Confirmar nueva contraseña</label>
+                                <div class='input-group'>
+                                    <span class='input-group-text'><i class='bi bi-lock-fill'></i></span>
+                                    <input type='password' id='confirm_pass' name='pass2' class='form-control' required>
                                 </div>
                             </div>
                             <div class='modal-footer'>

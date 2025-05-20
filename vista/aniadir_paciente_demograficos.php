@@ -34,6 +34,10 @@
             background-color: #f4f6f9;
         }
 
+        .offcanvas {
+            background-color: #f4f6f9; 
+        }
+
         /* Navbar */
         .navbar {
             background-color: #007bff;

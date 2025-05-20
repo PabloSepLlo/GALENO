@@ -26,13 +26,25 @@
             padding: 0.5rem;
             border-radius: 0.5rem;
         }
+        .animacion_form {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: animacion_form 0.8s ease-out forwards;
+        }
+
+        @keyframes animacion_form {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
     <?php 
         include("../include/aviso.php");
     ?>      
-    <div class="container-fluid my-2">
+    <div class="container-fluid my-2 animacion_form">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="card border-primary-subtle mb-3 w-100 p-0 m-0 shadow-lg" style="max-width: 50vw;"> 
                 <div class="row g-0">
@@ -43,52 +55,57 @@
                         <div class="card-body h-100 f-size">
                             <form class="d-flex flex-column justify-content-center h-100" method="POST" action="../controlador/registrar.php">
                                 <h3 class="text-center text-primary fw-light mb-4">Regístrate</h3>
+                                
                                 <div class="mb-2">
                                     <label for="nombreUsu" class="form-label">Nombre de usuario</label>
-                                    <input type="text" name="user_name" class="form-control" id="nombreUsu" required>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                                        <input type="text" name="user_name" class="form-control" id="nombreUsu" placeholder="Ingresa tu usuario">
+                                    </div>
                                 </div> 
+                                
                                 <div class="mb-2">
                                     <label for="nombre" class="form-label">Nombre</label>
                                     <input type="text" name="nombre" class="form-control" id="nombre" required>
                                 </div> 
+                                
                                 <div class="mb-2">
                                     <label for="ape1Usu" class="form-label">Primer apellido</label>
                                     <input type="text" name="ape1" class="form-control" id="ape1Usu" required>
                                 </div> 
+                                
                                 <div class="mb-2">
                                     <label for="ape2Usu" class="form-label">Segundo apellido</label>
                                     <input type="text" name="ape2" class="form-control" id="ape2Usu">
                                 </div> 
+                                
                                 <div class="mb-2">
-                                    <label for="pass1" class="form-label">Contraseña</label><i class='bi bi-info-circle text-black ms-3' 
-                                                                                                data-bs-toggle='tooltip' 
-                                                                                                data-bs-placement='right' 
-                                                                                                data-bs-html='true'
-                                                                                                data-bs-custom-class='tooltip-personalizado'
-                                                                                                data-bs-title='<span>
-                                                                                                    La contraseña debe tener al menos:
-                                                                                                    <ul>
-                                                                                                        <li>8 caracteres</li>
-                                                                                                        <li>1 letra mayúscula</li>
-                                                                                                        <li>1 letra minúscula</li>
-                                                                                                        <li>1 número</li>
-                                                                                                        <li>1 símbolo (ej. @, #, $, %, etc.)</li>
-                                                                                                    </ul>
-                                                                                                    </span>'></i>
-                                    <input type="password" name="pass1" class="form-control" id="new_pass" required>
+                                    <label for="pass1" class="form-label">Contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                        <input type="password" name="pass1" class="form-control" id="new_pass" required>
+                                    </div>
+                                    <small class="text-muted">
+                                        <i class="bi bi-info-circle me-1"></i>Debe contener 8+ caracteres, mayúsculas, minúsculas, números y símbolos
+                                    </small>
                                 </div>
+                                
                                 <div class="mb-2">
                                     <label for="pass2" class="form-label">Repita la contraseña</label>
-                                    <input type='password' id='confirm_pass' name='pass2' class='form-control' required>
-                                    <div class='text-danger small mt-1' id='pass_error' style='display:none;'>
-                                        <i class='bi bi-exclamation-circle'></i> Las contraseñas no coinciden
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                        <input type="password" id="confirm_pass" name="pass2" class="form-control" required>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-50 mx-auto btn-sm mt-4 mb-1">Registrar</button>
+                                
+                                <button type="submit" class="btn btn-primary w-50 mx-auto btn-sm mt-4 mb-1">
+                                    Registrar
+                                </button>
+                                
                                 <div class="text-center mt-2">
                                     ¿Ya tienes cuenta? <a href="./iniciar_sesion.php">Inicia sesión aquí</a>
                                 </div>
-                            </form>  
+                            </form>
                         </div>
                     </div>
                 </div>

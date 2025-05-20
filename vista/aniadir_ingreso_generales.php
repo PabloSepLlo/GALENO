@@ -34,6 +34,10 @@
             background-color: #f4f6f9; /* Fondo claro */
         }
 
+        .offcanvas {
+            background-color: #f4f6f9; 
+        }
+
         /* Navbar */
         .navbar {
             background-color: #007bff; /* Azul hospitalario */

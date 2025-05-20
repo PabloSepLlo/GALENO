@@ -33,10 +33,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
-        /* Estilos generales */
+        
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f4f6f9; /* Fondo claro */
+            background-color: #f4f6f9; 
+        }
+
+        .offcanvas {
+            background-color: #f4f6f9; 
         }
 
         /* Navbar */

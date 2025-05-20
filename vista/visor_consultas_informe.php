@@ -39,6 +39,10 @@
             background-color: #007bff; /* Azul hospitalario */
         }
 
+        .offcanvas {
+            background-color: #f4f6f9; 
+        }
+
         .nav-link {
             color: white;
             font-weight: 500;

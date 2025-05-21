@@ -72,6 +72,9 @@
                                 <a href="../controlador/cargar_datos_migr.php" class="list-group-item list-group-item-action">
                                     Pacientes por motivo de ingreso
                                 </a>
+                                <a href="../controlador/cargar_datos_tr.php" class="list-group-item list-group-item-action">
+                                    Pacientes por tratamiento
+                                </a>
                                 <a href="../vista/visor_consultas_nhc.php?filtroNHC" class="list-group-item list-group-item-action">
                                     Paciente por N.H.C.
                                 </a>

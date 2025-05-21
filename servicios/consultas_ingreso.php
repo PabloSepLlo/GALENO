@@ -286,5 +286,33 @@
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        public function datos_paciente_por_tr($id_tratamiento) {
+            $stmt = $this->pdo->prepare("
+                SELECT 
+                    dp.nhc, 
+                    dp.nombre, 
+                    dp.ape1, 
+                    dp.ape2, 
+                    dp.edad, 
+                    dp.medico,
+                    mi.descripcion AS motivo_inc, 
+                    migr.descripcion AS motivo_ingreso,
+                    cs.codigo_centro as codigo_centro,
+                    tr.descripcion as tratamiento
+                FROM datos_paciente AS dp
+                LEFT JOIN centro_salud AS cs ON dp.id_centro_salud = cs.id_centro_salud
+                JOIN ingreso AS i ON i.nhc = dp.nhc
+                JOIN ingreso_tratamiento AS it ON it.id_ingreso = i.id_ingreso
+                JOIN tratamiento AS tr ON it.id_tratamiento = tr.id_tratamiento
+                LEFT JOIN motivo_inc AS mi ON dp.id_motivo_inc = mi.id_motivo_inc
+                JOIN motivo_ingreso AS migr ON i.id_motivo_ingreso = migr.id_motivo_ingreso
+                WHERE i.fecha_alta IS NULL 
+                AND tr.id_tratamiento = :id_tratamiento;
+            ");
+            $stmt->bindParam(":id_tratamiento", $id_tratamiento);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 ?>

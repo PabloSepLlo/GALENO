@@ -3,7 +3,7 @@
     class Usuario {
         private ?int $id;
         private string $user_name;
-        public string $nombre;
+        private string $nombre;
         private string $ape1;
         private string $ape2;
         private string $pass;

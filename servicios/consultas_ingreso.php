@@ -134,7 +134,7 @@
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
-        //seguir cambiando a with
+        
         public function get_ingreso_pr($inicio, $fin) {
             $stmt = $this->pdo->prepare("
                 WITH pacientes_validos AS (

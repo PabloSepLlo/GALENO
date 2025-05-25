@@ -1,11 +1,9 @@
 <?php
-    // Incluir autoload de Composer
     require __DIR__ . '/../vendor/autoload.php';
 
     use Dompdf\Dompdf;
     use Dompdf\Options;
 
-    // Configurar DOMPDF
     $options = new Options();
     $options->set('defaultFont', 'DejaVu Sans');
     $options->set('isHtml5ParserEnabled', true);
@@ -27,5 +25,4 @@
     $filename = "informe_" . $_SESSION['fecha_inicio'] . "_" . $_SESSION['fecha_fin'] . ".pdf";
     
     $dompdf->stream($filename, ["Attachment" => true]);
-
 ?>

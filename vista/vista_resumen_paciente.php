@@ -307,20 +307,38 @@
             ?>
         </div>
     </div>
-    <div class="container text-center my-4">
+    <div class="container text-center my-4 d-flex justify-content-around">
         <?php
             if (isset($_SESSION["editando"])) {
                 echo "
-                    <a href='./aniadir_paciente_datos_generales.php' class='btn btn-primary me-2'>Volver a editar</a>
-                    <a href='../controlador/actualizar_paciente.php' class='btn btn-success me-2'>Guardar los cambios</a>
-                    <a href='../controlador/borrar_datos_formulario.php' class='btn btn-danger'>Cancelar</a> 
+                    <a href='./aniadir_paciente_datos_generales.php' class='btn btn-primary'>
+                        <span class='d-none d-md-inline'>Volver a editar</span>
+                        <i class='bi bi-pencil d-md-none'></i>
+                    </a>
+                    <a href='../controlador/actualizar_paciente.php' class='btn btn-success'>
+                        <span class='d-none d-md-inline'>Actualizar paciente</span>
+                        <i class='bi bi-floppy d-md-none'></i>
+                    </a>
+                    <a href='../controlador/borrar_datos_formulario.php' class='btn btn-danger'>
+                        <span class='d-none d-md-inline'>Cancelar</span>
+                        <i class='bi bi-trash d-md-none'></i>
+                    </a>
                 ";
             }
             else {
                 echo "
-                    <a href='./aniadir_paciente_datos_generales.php' class='btn btn-primary me-2'>Volver a editar</a>
-                    <a href='../controlador/aniadir_paciente.php' class='btn btn-success me-2'>Guardar paciente</a>
-                    <a href='../controlador/borrar_datos_formulario.php' class='btn btn-danger'>Cancelar</a> 
+                    <a href='./aniadir_paciente_datos_generales.php' class='btn btn-primary'>
+                        <span class='d-none d-md-inline'>Volver a editar</span>
+                        <i class='bi bi-pencil d-md-none'></i>
+                    </a>
+                    <a href='../controlador/aniadir_paciente.php' class='btn btn-success'>
+                        <span class='d-none d-md-inline'>Guardar paciente</span>
+                        <i class='bi bi-save-fill d-md-none'></i>
+                    </a>
+                    <a href='../controlador/borrar_datos_formulario.php' class='btn btn-danger'>
+                        <span class='d-none d-md-inline'>Cancelar</span>
+                        <i class='bi bi-trash d-md-none'></i>
+                    </a>
                 ";
             }
 

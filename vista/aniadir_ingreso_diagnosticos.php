@@ -106,6 +106,21 @@
             border-radius: 0.5rem;
         }
 
+        .animacion_form {
+        animation: animacion_form 0.8s ease-out forwards;
+        }
+
+        @keyframes animacion_form {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -113,8 +128,8 @@
     <?php
         if (!isset($_GET["ingresando"]) && isset($_SESSION["datos_migr"], $_SESSION["datos_pr"], $_SESSION["datos_de"], $_SESSION["datos_tr"])){
             echo "
-                <div class='container d-flex justify-content-center align-items-center my-4'>
-                    <div class='card p-4 shadow-lg w-50'>
+                <div class='container-fluid d-flex justify-content-center align-items-center my-4 row'>
+                    <div class='card p-4 shadow-lg col-10 col-md-6 animacion_form'>
                         <h2 class='mb-4 text-center fw-bold  text-primary'>DIAGNÓSTICOS</h2>
                         <div class='row align-items-center justify-content-between mb-3'>
                             <div class='col-auto'>
@@ -128,11 +143,10 @@
                                         <strong>N.H.C:</strong> {$_SESSION['nhc']}
                                 '></i>
                             </div>
-                            <div class='col-auto text-end'>
+                            <div class='col-auto'>
                                 <a href='../controlador/borrar_datos_formulario.php' 
-                                    class='btn btn-link p-0 text-danger d-flex align-items-center' 
-                                    title='Borrar datos de paciente y salir'>
-                                    <i class='bi bi-x-lg fs-3'></i>
+                                class='btn btn-outline-danger d-flex align-items-center rounded-pill shadow-sm px-4'>
+                                        <span class='d-none d-md-inline me-2'>Borrar datos y salir</span><i class='bi bi-trash'></i>
                                 </a>
                             </div>
                         </div>";

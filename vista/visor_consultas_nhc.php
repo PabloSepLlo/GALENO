@@ -115,11 +115,10 @@
         if (isset($_GET["consultando"])) {
             echo "
                 <div class='container-fluid my-4'>
-                    <div class='row d-flex justify-content-end'>
+                    <div class='d-flex justify-content-end mb-2'>
                         <a href='../controlador/borrar_datos_formulario.php' 
-                        class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
-                        title='Salir del visor de consultas'>
-                            <i class='bi bi-x-lg fs-3'></i>
+                            class='btn btn-outline-danger d-flex align-items-center rounded-pill shadow-sm px-4'>
+                            <span class='d-none d-md-inline me-2'>Salir</span><i class='bi bi-x-lg'></i>
                         </a>
                     </div>
                     <div class='accordion' id='accordionPanelsStayOpenExample'>

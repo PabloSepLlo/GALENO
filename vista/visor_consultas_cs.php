@@ -138,15 +138,14 @@
                     </div>
                 </div>
             </div>
-            <div class='row d-flex justify-content-between align-items-center mx-5 mb-3'>
-                <div class='col-sm-6 col-md-3'>
+            <div class='row d-flex justify-content-between align-items-center mx-5 my-2'>
+                <div class='col-sm-6 col-md-3 mt-1'>
                     <input type='text' class='form-control' id='buscar' placeholder='Filtrar por apellido ...'>
                 </div>
-                <div class='col-sm-2 col-md-1 d-flex justify-content-center'>
+                <div class='col-sm-2 col-md-1 d-flex justify-content-center mt-1'>
                     <a href='../controlador/borrar_datos_formulario.php' 
-                    class='btn btn-link text-danger' 
-                    title='Borrar datos y salir'>
-                        <i class='bi bi-x-lg fs-3'></i>
+                    class='btn btn-outline-danger d-flex align-items-center rounded-pill shadow-sm px-4'>
+                            <span class='d-none d-md-inline me-2'>Salir</span><i class='bi bi-x-lg'></i>
                     </a>
                 </div>
             </div>

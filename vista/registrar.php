@@ -49,9 +49,9 @@
     <?php 
         include("../include/aviso.php");
     ?>      
-    <div class="container-fluid my-2 animacion_form">
+    <div class="container-fluid my-2">
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="card border-primary-subtle mb-3 w-100 p-0 m-0 shadow-lg" style="max-width: 50vw;"> 
+            <div class="card border-primary-subtle mb-3 w-100 p-0 m-0 shadow-lg animacion_form" style="max-width: 50vw;"> 
                 <div class="row g-0">
                     <div class="col-lg-7 d-none d-lg-block">
                         <img src="../images/registro.jpeg" class="img-fluid rounded-start" alt="Imagen de fondo">

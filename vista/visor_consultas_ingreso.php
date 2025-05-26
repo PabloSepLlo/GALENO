@@ -94,19 +94,17 @@
         if (isset($_GET["consultando"])) {
             echo "
             <div class='container-fluid my-4'>
-                <div class='row d-flex justify-content-between'>
+                <div class='row d-flex justify-content-between mx-2'>
                     <a href='./visor_consultas_nhc.php?consultando' 
-                    class='btn btn-link p-0 text-primary col-sm-2 col-md-1 d-flex justify-content-center align-items-center'
-                    title='Volver a datos del paciente'>
-                        <i class='bi bi-arrow-left fs-3'></i>
+                    class='btn btn-outline-primary col-auto d-flex align-items-center rounded-pill shadow-sm px-4'>
+                        <i class='bi bi-arrow-left'></i><span class='d-none d-md-inline me-2'>Volver</span>
                     </a>
                     <a href='../controlador/borrar_datos_formulario.php' 
-                    class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
-                    title='Salir del visor de consultas'>
-                        <i class='bi bi-x-lg fs-3'></i>
+                        class='btn btn-outline-danger col-auto d-flex align-items-center rounded-pill shadow-sm px-4'>
+                        <span class='d-none d-md-inline me-2'>Salir</span><i class='bi bi-x'></i>
                     </a>
                 </div>
-                <div class='row mb-4'>
+                <div class='row my-4'>
                     <div class='col-md-12'>
                         <div class='card shadow-sm bg-primary-subtle'>
                             <div class='card-body py-3'>

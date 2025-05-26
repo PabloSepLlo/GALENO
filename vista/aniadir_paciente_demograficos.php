@@ -78,6 +78,21 @@
             border-radius: 0.5rem;
         }
 
+        .animacion_form {
+        animation: animacion_form 0.8s ease-out forwards;
+        }
+
+        @keyframes animacion_form {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -86,14 +101,14 @@
     <?php
         if (!isset($_GET["editando"]) && isset($_SESSION["datos_cs"], $_SESSION["datos_as"], $_SESSION["datos_c"], $_SESSION["datos_mi"], $_SESSION["datos_pc"])){
             echo "
-                <div class='container d-flex justify-content-center align-items-center my-4'>
-                    <div class='card p-4 shadow-lg w-50'>
+                <div class='container-fluid d-flex justify-content-center align-items-center my-4 row'>
+                    <div class='card p-4 shadow-lg col-10 col-md-6 animacion_form'>
                         <h2 class='mb-4 text-center fw-bold text-primary'>DEMOGRÁFICOS</h2>
-                        <div class='row d-flex justify-content-end'>
+                        <div class='d-flex justify-content-end mb-2'>
                             <a href='../controlador/borrar_datos_formulario.php' 
-                            class='btn btn-link p-0 text-danger col-sm-2 col-md-1 d-flex justify-content-center align-items-center' 
-                            title='Borrar datos de paciente y salir'>
-                                <i class='bi bi-x-lg fs-3'></i>
+                            class='btn btn-outline-danger d-flex align-items-center rounded-pill shadow-sm px-4'>
+                                    <span class='d-none d-md-inline me-2'>Borrar datos y salir</span><i class='bi bi-trash'></i>
+                            
                             </a>
                         </div>";
                         include('../include/aviso.php'); 
@@ -108,39 +123,39 @@
                                         echo "<input type='text' class='form-control' id='nhc' name='nhc' value='" . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "' required>";
                                     }
                                 echo "</div>
-                                <div class='col-md-6 mb-3'>
+                                <div class='col-12 col-md-6 mb-3'>
                                     <label for='nombre' class='form-label fw-bold'>Nombre</label>
                                     <input type='text' class='form-control' id='nombre' name='nombre' value='" . (isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : "") . "' required>
                                 </div>
                             </div>
 
                             <div class='row'>
-                                <div class='col-md-6 mb-3'>
+                                <div class='col-12 col-md-6 mb-3'>
                                     <label for='ape1' class='form-label fw-bold'>Primer Apellido</label>
                                     <input type='text' class='form-control' id='ape1' name='ape1' value='" . (isset($_SESSION["ape1"]) ? $_SESSION["ape1"] : "") . "' required>
                                 </div>
-                                <div class='col-md-6 mb-3'>
+                                <div class='col-12 col-md-6 mb-3'>
                                     <label for='ape2' class='form-label fw-bold'>Segundo Apellido</label>
                                     <input type='text' class='form-control' id='ape2' name='ape2' value='" . (isset($_SESSION["ape2"]) ? $_SESSION["ape2"] : "") . "'>
                                 </div>
                             </div>
 
                             <div class='row'>
-                                <div class='col-md-6 mb-3'>
+                                <div class='col-12 col-md-6 mb-3'>
                                     <label for='sexo' class='form-label fw-bold'>Sexo</label>
                                     <select class='form-select' id='sexo' name='sexo' required>
                                         <option value='F'" . (isset($_SESSION["sexo"]) && $_SESSION["sexo"] == "F" ? " selected" : "") . ">Femenino</option>
                                         <option value='M'" . (isset($_SESSION["sexo"]) && $_SESSION["sexo"] == "M" ? " selected" : "") . ">Masculino</option>
                                     </select>
                                 </div>
-                                <div class='col-md-6 mb-3'>
+                                <div class='col-12 col-md-6 mb-3'>
                                     <label for='edad' class='form-label fw-bold'>Edad</label>
                                     <input type='number' class='form-control' id='edad' name='edad' value='" . (isset($_SESSION["edad"]) ? $_SESSION["edad"] : "") . "' required>
                                 </div>
                             </div>
 
                             <div class='row'>
-                                <div class='col-md-12 mb-3'>
+                                <div class='col-12 col-md-12 mb-3'>
                                     <label for='centro_salud' class='form-label fw-bold'>Centro de Salud</label>
                                     <select class='form-select' id='centro_salud' name='centro_salud'>
                                         <option value=''>-</option>";
@@ -153,11 +168,11 @@
                             </div>
 
                             <div class='row'>
-                                <div class='col-md-6 mb-3'>
+                                <div class='col-12 col-md-6 mb-3'>
                                     <label for='med' class='form-label fw-bold'>Médico/a</label>
                                     <input type='text' class='form-control' id='med' name='med' value='" . (isset($_SESSION["med"]) ? $_SESSION["med"] : "") . "'>
                                 </div>
-                                <div class='col-md-6 mb-3'>
+                                <div class='col-12 col-md-6 mb-3'>
                                     <label for='enf' class='form-label fw-bold'>Enfermero/a</label>
                                     <input type='text' class='form-control' id='enf' name='enf' value='" . (isset($_SESSION["enf"]) ? $_SESSION["enf"] : "") . "'>
                                 </div>

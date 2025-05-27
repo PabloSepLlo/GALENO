@@ -1,0 +1,87 @@
+\doxysection{Motivo\+\_\+inc Class Reference}
+\hypertarget{class_motivo__inc}{}\label{class_motivo__inc}\index{Motivo\_inc@{Motivo\_inc}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_motivo__inc_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_motivo__inc_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_motivo__inc_a1f391c17c4ec41ab6a922af1496634d9}{cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD}} (\$id\+\_\+motivo\+\_\+inc)
+\item 
+\mbox{\hyperlink{class_motivo__inc_a282ed9ce57be11ac81166e8a414184d8}{get\+\_\+mi}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_motivo__inc_a25908f5cc5773ce74f0d2ca12e0dff59}{get\+\_\+datos\+\_\+mi}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que representa un motivo de incapacidad(\+Motivo\+\_\+inc), con sus datos básicos y métodos para cargar datos desde la base de datos y obtenerlos.
+
+\begin{DoxyAuthor}{Author}
+Pablo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_motivo__inc_a095c5d389db211932136b53f25f39685}\index{Motivo\_inc@{Motivo\_inc}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Motivo\_inc@{Motivo\_inc}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_motivo__inc_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_motivo__inc_a421831a265621325e1fdd19aace0c758}\index{Motivo\_inc@{Motivo\_inc}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!Motivo\_inc@{Motivo\_inc}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily \label{class_motivo__inc_a421831a265621325e1fdd19aace0c758} 
+\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_motivo__inc_a1f391c17c4ec41ab6a922af1496634d9}\index{Motivo\_inc@{Motivo\_inc}!cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}}
+\index{cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}!Motivo\_inc@{Motivo\_inc}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_desde\_BBDD()}{cargar\_datos\_desde\_BBDD()}}
+{\footnotesize\ttfamily \label{class_motivo__inc_a1f391c17c4ec41ab6a922af1496634d9} 
+cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD (\begin{DoxyParamCaption}\item[{}]{\$id\+\_\+motivo\+\_\+inc}{}\end{DoxyParamCaption})}
+
+Carga los datos del motivo de incapacidad desde la base de datos usando su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+motivo\+\_\+inc} & ID del motivo de incapacidad. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_motivo__inc_a25908f5cc5773ce74f0d2ca12e0dff59}\index{Motivo\_inc@{Motivo\_inc}!get\_datos\_mi@{get\_datos\_mi}}
+\index{get\_datos\_mi@{get\_datos\_mi}!Motivo\_inc@{Motivo\_inc}}
+\doxysubsubsection{\texorpdfstring{get\_datos\_mi()}{get\_datos\_mi()}}
+{\footnotesize\ttfamily \label{class_motivo__inc_a25908f5cc5773ce74f0d2ca12e0dff59} 
+static get\+\_\+datos\+\_\+mi (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Método estático que devuelve todos los motivos de ingreso de la base de datos.
+
+\begin{DoxyReturn}{Returns}
+array Lista de motivos de ingreso como arrays asociativos. 
+\end{DoxyReturn}
+\Hypertarget{class_motivo__inc_a282ed9ce57be11ac81166e8a414184d8}\index{Motivo\_inc@{Motivo\_inc}!get\_mi@{get\_mi}}
+\index{get\_mi@{get\_mi}!Motivo\_inc@{Motivo\_inc}}
+\doxysubsubsection{\texorpdfstring{get\_mi()}{get\_mi()}}
+{\footnotesize\ttfamily \label{class_motivo__inc_a282ed9ce57be11ac81166e8a414184d8} 
+get\+\_\+mi (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve un array asociativo con los datos del motivo de incapacidad.
+
+\begin{DoxyReturn}{Returns}
+array Datos con claves "{}id"{} y "{}descripcion"{}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modelo/\mbox{\hyperlink{motivo__inc_8php}{motivo\+\_\+inc.\+php}}\end{DoxyCompactItemize}

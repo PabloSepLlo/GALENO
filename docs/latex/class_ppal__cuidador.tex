@@ -1,0 +1,90 @@
+\doxysection{Ppal\+\_\+cuidador Class Reference}
+\hypertarget{class_ppal__cuidador}{}\label{class_ppal__cuidador}\index{Ppal\_cuidador@{Ppal\_cuidador}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ppal__cuidador_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_ppal__cuidador_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_ppal__cuidador_a91e72880ce100a72991443949626b2e6}{cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD}} (\$id\+\_\+ppal\+\_\+cuidador)
+\item 
+\mbox{\hyperlink{class_ppal__cuidador_ac297a07c2000eb8d80c5c39d19a90334}{get\+\_\+pc}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_ppal__cuidador_a92692aba81be0a94f62989d64d0f7fb7}{get\+\_\+datos\+\_\+pc}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esta clase permite cargar datos de un cuidador principal desde la base de datos, obtener sus datos y recuperar la lista completa de cuidadores.
+
+\begin{DoxyAuthor}{Author}
+Tu\+Nombre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ppal__cuidador_a095c5d389db211932136b53f25f39685}\index{Ppal\_cuidador@{Ppal\_cuidador}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Ppal\_cuidador@{Ppal\_cuidador}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_ppal__cuidador_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_ppal__cuidador_a421831a265621325e1fdd19aace0c758}\index{Ppal\_cuidador@{Ppal\_cuidador}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!Ppal\_cuidador@{Ppal\_cuidador}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily \label{class_ppal__cuidador_a421831a265621325e1fdd19aace0c758} 
+\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ppal__cuidador_a91e72880ce100a72991443949626b2e6}\index{Ppal\_cuidador@{Ppal\_cuidador}!cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}}
+\index{cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}!Ppal\_cuidador@{Ppal\_cuidador}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_desde\_BBDD()}{cargar\_datos\_desde\_BBDD()}}
+{\footnotesize\ttfamily \label{class_ppal__cuidador_a91e72880ce100a72991443949626b2e6} 
+cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD (\begin{DoxyParamCaption}\item[{}]{\$id\+\_\+ppal\+\_\+cuidador}{}\end{DoxyParamCaption})}
+
+Carga los datos del cuidador principal desde la base de datos usando su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+ppal\+\_\+cuidador} & Identificador del cuidador principal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_ppal__cuidador_a92692aba81be0a94f62989d64d0f7fb7}\index{Ppal\_cuidador@{Ppal\_cuidador}!get\_datos\_pc@{get\_datos\_pc}}
+\index{get\_datos\_pc@{get\_datos\_pc}!Ppal\_cuidador@{Ppal\_cuidador}}
+\doxysubsubsection{\texorpdfstring{get\_datos\_pc()}{get\_datos\_pc()}}
+{\footnotesize\ttfamily \label{class_ppal__cuidador_a92692aba81be0a94f62989d64d0f7fb7} 
+static get\+\_\+datos\+\_\+pc (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene todos los cuidadores principales desde la base de datos.
+
+\begin{DoxyReturn}{Returns}
+array Lista de cuidadores principales como arrays asociativos. 
+\end{DoxyReturn}
+\Hypertarget{class_ppal__cuidador_ac297a07c2000eb8d80c5c39d19a90334}\index{Ppal\_cuidador@{Ppal\_cuidador}!get\_pc@{get\_pc}}
+\index{get\_pc@{get\_pc}!Ppal\_cuidador@{Ppal\_cuidador}}
+\doxysubsubsection{\texorpdfstring{get\_pc()}{get\_pc()}}
+{\footnotesize\ttfamily \label{class_ppal__cuidador_ac297a07c2000eb8d80c5c39d19a90334} 
+get\+\_\+pc (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtiene los datos del cuidador principal en formato array.
+
+\begin{DoxyReturn}{Returns}
+array Array asociativo con \textquotesingle{}id\textquotesingle{} y \textquotesingle{}descripcion\textquotesingle{}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modelo/\mbox{\hyperlink{ppal__cuidador_8php}{ppal\+\_\+cuidador.\+php}}\end{DoxyCompactItemize}

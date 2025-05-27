@@ -1,0 +1,90 @@
+\doxysection{Procedencia Class Reference}
+\hypertarget{class_procedencia}{}\label{class_procedencia}\index{Procedencia@{Procedencia}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_procedencia_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_procedencia_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_procedencia_a5beb445b205340915a5319c05768dbce}{cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD}} (\$id\+\_\+procedencia)
+\item 
+\mbox{\hyperlink{class_procedencia_a24133f7d13cd76ae056c7d820d511924}{get\+\_\+pr}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_procedencia_a87acf832d40f55154b5faaa78d8d002a}{get\+\_\+datos\+\_\+pr}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esta clase permite cargar datos de una procedencia desde la base de datos, obtener sus datos y recuperar la lista completa de procedencias.
+
+\begin{DoxyAuthor}{Author}
+Tu\+Nombre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_procedencia_a095c5d389db211932136b53f25f39685}\index{Procedencia@{Procedencia}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Procedencia@{Procedencia}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_procedencia_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_procedencia_a421831a265621325e1fdd19aace0c758}\index{Procedencia@{Procedencia}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!Procedencia@{Procedencia}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily \label{class_procedencia_a421831a265621325e1fdd19aace0c758} 
+\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_procedencia_a5beb445b205340915a5319c05768dbce}\index{Procedencia@{Procedencia}!cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}}
+\index{cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}!Procedencia@{Procedencia}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_desde\_BBDD()}{cargar\_datos\_desde\_BBDD()}}
+{\footnotesize\ttfamily \label{class_procedencia_a5beb445b205340915a5319c05768dbce} 
+cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD (\begin{DoxyParamCaption}\item[{}]{\$id\+\_\+procedencia}{}\end{DoxyParamCaption})}
+
+Carga los datos de la procedencia desde la base de datos usando su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+procedencia} & Identificador de la procedencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_procedencia_a87acf832d40f55154b5faaa78d8d002a}\index{Procedencia@{Procedencia}!get\_datos\_pr@{get\_datos\_pr}}
+\index{get\_datos\_pr@{get\_datos\_pr}!Procedencia@{Procedencia}}
+\doxysubsubsection{\texorpdfstring{get\_datos\_pr()}{get\_datos\_pr()}}
+{\footnotesize\ttfamily \label{class_procedencia_a87acf832d40f55154b5faaa78d8d002a} 
+static get\+\_\+datos\+\_\+pr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene todas las procedencias desde la base de datos.
+
+\begin{DoxyReturn}{Returns}
+array Lista de procedencias como arrays asociativos. 
+\end{DoxyReturn}
+\Hypertarget{class_procedencia_a24133f7d13cd76ae056c7d820d511924}\index{Procedencia@{Procedencia}!get\_pr@{get\_pr}}
+\index{get\_pr@{get\_pr}!Procedencia@{Procedencia}}
+\doxysubsubsection{\texorpdfstring{get\_pr()}{get\_pr()}}
+{\footnotesize\ttfamily \label{class_procedencia_a24133f7d13cd76ae056c7d820d511924} 
+get\+\_\+pr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtiene los datos de la procedencia en formato array.
+
+\begin{DoxyReturn}{Returns}
+array Array asociativo con \textquotesingle{}id\textquotesingle{} y \textquotesingle{}descripcion\textquotesingle{}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modelo/\mbox{\hyperlink{procedencia_8php}{procedencia.\+php}}\end{DoxyCompactItemize}

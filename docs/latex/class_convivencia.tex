@@ -1,0 +1,92 @@
+\doxysection{Convivencia Class Reference}
+\hypertarget{class_convivencia}{}\label{class_convivencia}\index{Convivencia@{Convivencia}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_convivencia_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_convivencia_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_convivencia_a1ef4828d2319e0e9faa9bf776ea3c3a3}{cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD}} (\$id\+\_\+convivencia)
+\item 
+\mbox{\hyperlink{class_convivencia_ae19457ec622c6ff3e6549cc7a7546b91}{get\+\_\+c}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_convivencia_a3d3c4115b3540b3464bb5ee00735e04d}{get\+\_\+datos\+\_\+c}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase \doxylink{class_convivencia}{Convivencia}
+
+Gestiona los datos asociados a tipos de convivencia. Permite cargar información individual y obtener todos los registros desde la base de datos.
+
+\begin{DoxyAuthor}{Author}
+Pablo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_convivencia_a095c5d389db211932136b53f25f39685}\index{Convivencia@{Convivencia}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Convivencia@{Convivencia}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_convivencia_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_convivencia_a421831a265621325e1fdd19aace0c758}\index{Convivencia@{Convivencia}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!Convivencia@{Convivencia}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily \label{class_convivencia_a421831a265621325e1fdd19aace0c758} 
+\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_convivencia_a1ef4828d2319e0e9faa9bf776ea3c3a3}\index{Convivencia@{Convivencia}!cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}}
+\index{cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}!Convivencia@{Convivencia}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_desde\_BBDD()}{cargar\_datos\_desde\_BBDD()}}
+{\footnotesize\ttfamily \label{class_convivencia_a1ef4828d2319e0e9faa9bf776ea3c3a3} 
+cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD (\begin{DoxyParamCaption}\item[{}]{\$id\+\_\+convivencia}{}\end{DoxyParamCaption})}
+
+Carga los datos de una convivencia específica desde la base de datos.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+convivencia} & ID de la convivencia a cargar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_convivencia_ae19457ec622c6ff3e6549cc7a7546b91}\index{Convivencia@{Convivencia}!get\_c@{get\_c}}
+\index{get\_c@{get\_c}!Convivencia@{Convivencia}}
+\doxysubsubsection{\texorpdfstring{get\_c()}{get\_c()}}
+{\footnotesize\ttfamily \label{class_convivencia_ae19457ec622c6ff3e6549cc7a7546b91} 
+get\+\_\+c (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve los datos de la convivencia como un array asociativo.
+
+\begin{DoxyReturn}{Returns}
+array Datos de la convivencia (id y descripción). 
+\end{DoxyReturn}
+\Hypertarget{class_convivencia_a3d3c4115b3540b3464bb5ee00735e04d}\index{Convivencia@{Convivencia}!get\_datos\_c@{get\_datos\_c}}
+\index{get\_datos\_c@{get\_datos\_c}!Convivencia@{Convivencia}}
+\doxysubsubsection{\texorpdfstring{get\_datos\_c()}{get\_datos\_c()}}
+{\footnotesize\ttfamily \label{class_convivencia_a3d3c4115b3540b3464bb5ee00735e04d} 
+static get\+\_\+datos\+\_\+c (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene todos los registros de convivencia desde la base de datos.
+
+\begin{DoxyReturn}{Returns}
+array Lista de tipos de convivencia. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modelo/\mbox{\hyperlink{convivencia_8php}{convivencia.\+php}}\end{DoxyCompactItemize}

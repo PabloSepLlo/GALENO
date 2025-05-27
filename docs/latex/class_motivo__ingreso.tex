@@ -1,0 +1,87 @@
+\doxysection{Motivo\+\_\+ingreso Class Reference}
+\hypertarget{class_motivo__ingreso}{}\label{class_motivo__ingreso}\index{Motivo\_ingreso@{Motivo\_ingreso}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_motivo__ingreso_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_motivo__ingreso_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_motivo__ingreso_a2336d538a3a112e807d0e431f24db22f}{cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD}} (\$id\+\_\+motivo\+\_\+ingreso)
+\item 
+\mbox{\hyperlink{class_motivo__ingreso_a86535668bb2730e027b27e3c21df03ea}{get\+\_\+migr}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_motivo__ingreso_ab616ff1e0188f63524e67d22ab1217ed}{get\+\_\+datos\+\_\+migr}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que representa un motivo de ingreso con sus propiedades y métodos para cargar datos desde la base de datos y obtenerlos.
+
+\begin{DoxyAuthor}{Author}
+Pablo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_motivo__ingreso_a095c5d389db211932136b53f25f39685}\index{Motivo\_ingreso@{Motivo\_ingreso}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Motivo\_ingreso@{Motivo\_ingreso}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_motivo__ingreso_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_motivo__ingreso_a421831a265621325e1fdd19aace0c758}\index{Motivo\_ingreso@{Motivo\_ingreso}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!Motivo\_ingreso@{Motivo\_ingreso}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily \label{class_motivo__ingreso_a421831a265621325e1fdd19aace0c758} 
+\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_motivo__ingreso_a2336d538a3a112e807d0e431f24db22f}\index{Motivo\_ingreso@{Motivo\_ingreso}!cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}}
+\index{cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}!Motivo\_ingreso@{Motivo\_ingreso}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_desde\_BBDD()}{cargar\_datos\_desde\_BBDD()}}
+{\footnotesize\ttfamily \label{class_motivo__ingreso_a2336d538a3a112e807d0e431f24db22f} 
+cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD (\begin{DoxyParamCaption}\item[{}]{\$id\+\_\+motivo\+\_\+ingreso}{}\end{DoxyParamCaption})}
+
+Carga los datos del motivo de ingreso desde la base de datos usando su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+motivo\+\_\+ingreso} & ID del motivo de ingreso. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_motivo__ingreso_ab616ff1e0188f63524e67d22ab1217ed}\index{Motivo\_ingreso@{Motivo\_ingreso}!get\_datos\_migr@{get\_datos\_migr}}
+\index{get\_datos\_migr@{get\_datos\_migr}!Motivo\_ingreso@{Motivo\_ingreso}}
+\doxysubsubsection{\texorpdfstring{get\_datos\_migr()}{get\_datos\_migr()}}
+{\footnotesize\ttfamily \label{class_motivo__ingreso_ab616ff1e0188f63524e67d22ab1217ed} 
+static get\+\_\+datos\+\_\+migr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Método estático que devuelve todos los motivos de ingreso de la base de datos.
+
+\begin{DoxyReturn}{Returns}
+array Lista de motivos de ingreso como arrays asociativos. 
+\end{DoxyReturn}
+\Hypertarget{class_motivo__ingreso_a86535668bb2730e027b27e3c21df03ea}\index{Motivo\_ingreso@{Motivo\_ingreso}!get\_migr@{get\_migr}}
+\index{get\_migr@{get\_migr}!Motivo\_ingreso@{Motivo\_ingreso}}
+\doxysubsubsection{\texorpdfstring{get\_migr()}{get\_migr()}}
+{\footnotesize\ttfamily \label{class_motivo__ingreso_a86535668bb2730e027b27e3c21df03ea} 
+get\+\_\+migr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve un array asociativo con los datos del motivo de ingreso.
+
+\begin{DoxyReturn}{Returns}
+array Datos con claves "{}id"{} y "{}descripcion"{}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modelo/\mbox{\hyperlink{motivo__ingreso_8php}{motivo\+\_\+ingreso.\+php}}\end{DoxyCompactItemize}

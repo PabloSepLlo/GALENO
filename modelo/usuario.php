@@ -1,5 +1,14 @@
 <?php
+    /**
+     * Esta clase permite cargar, modificar, registrar, autenticar y borrar usuarios,
+     * así como cambiar la contraseña.
+     * 
+     * @author TuNombre
+     * @version 1.0
+     */
+
     require_once("BBDD.php");
+
     class Usuario {
         private ?int $id;
         private string $user_name;
@@ -27,6 +36,17 @@
             $this->pass = "";
             $this->administrador = "";
         }
+
+        /**
+         * Carga los datos del usuario (sin id y administrador) y encripta la contraseña.
+         *
+         * @param string $user_name Nombre de usuario.
+         * @param string $nombre Nombre real.
+         * @param string $ape1 Primer apellido.
+         * @param string $ape2 Segundo apellido.
+         * @param string $pass Contraseña en texto plano.
+         * @return void
+         */
         public function cargar_datos($user_name, $nombre, $ape1, $ape2, $pass){
             $this->user_name = $user_name;
             $this->nombre = $nombre;
@@ -35,6 +55,17 @@
             $this->pass = password_hash($pass, PASSWORD_BCRYPT);
         }
 
+        /**
+         * Carga datos para edición del usuario (incluyendo id y administrador).
+         *
+         * @param int $id Identificador del usuario.
+         * @param string $user_name Nombre de usuario.
+         * @param string $nombre Nombre real.
+         * @param string $ape1 Primer apellido.
+         * @param string $ape2 Segundo apellido.
+         * @param string $administrador Indicador si es administrador ("SI" o "NO").
+         * @return void
+         */
         public function cargar_datos_para_edicion($id, $user_name, $nombre, $ape1, $ape2, $administrador){
             $this->id = $id;
             $this->user_name = $user_name;
@@ -44,6 +75,12 @@
             $this->administrador = $administrador;  
         }
 
+        /**
+         * Carga los datos del usuario desde la base de datos usando su ID.
+         *
+         * @param int $id_usuario Identificador del usuario.
+         * @return void
+         */
         public function cargar_datos_desde_BBDD($id_usuario) {
             $bd = new BBDD();
             $pdo = $bd->getPDO();
@@ -60,6 +97,11 @@
             $this->administrador = $usuario["administrador"];
         }
 
+        /**
+         * Obtiene todos los usuarios de la base de datos.
+         *
+         * @return array Lista de usuarios.
+         */
         public static function get_datos_usuarios() {
             $bd = new BBDD();
             $pdo = $bd->getPDO();
@@ -68,8 +110,13 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
+        /**
+         * Obtiene los datos del usuario actual como array asociativo.
+         *
+         * @return array Datos del usuario.
+         */
         public function get_datos() {
-            $datos = [
+            return [
                 "id_usuario" => $this->id,
                 "user_name" => $this->user_name,
                 "nombre" => $this->nombre,
@@ -78,15 +125,25 @@
                 "pass" => $this->pass,
                 "administrador" => $this->administrador
             ]; 
-            return $datos;
         }
+
+        /**
+         * Borra el usuario de la base de datos.
+         *
+         * @return void
+         */
         public function borrar_usuario() {
             $bd = new BBDD();
             $pdo = $bd->getPDO();
             $stmt = $pdo->prepare("DELETE FROM usuario WHERE id_usuario={$this->id}");
             $stmt->execute();
         }
-        
+
+        /**
+         * Actualiza los datos del usuario en la base de datos.
+         *
+         * @return bool True si la actualización fue exitosa, false en caso contrario.
+         */
         public function actualizar_usuario(){
             $actualizado = false;
             try {
@@ -113,6 +170,11 @@
             }
         }
 
+        /**
+         * Registra un nuevo usuario en la base de datos si no existe uno con el mismo nombre de usuario.
+         *
+         * @return bool True si se registró correctamente, false si el usuario ya existe o hubo un error.
+         */
         public function registrar_usuario() {
             $registrado = false;
             try {
@@ -148,6 +210,14 @@
                 return $registrado;
             }
         }
+
+        /**
+         * Autentica un usuario verificando el nombre y la contraseña.
+         *
+         * @param string $user_name Nombre de usuario.
+         * @param string $pass Contraseña en texto plano.
+         * @return bool True si la autenticación es correcta, false si falla.
+         */
         public function autenticar(string $user_name, string $pass) {
             try {
                 $autenticado = false;
@@ -177,6 +247,13 @@
             }
         }
 
+        /**
+         * Cambia la contraseña del usuario si la contraseña actual es correcta.
+         *
+         * @param string $pass_actual Contraseña actual en texto plano.
+         * @param string $nueva_pass Nueva contraseña en texto plano.
+         * @return bool True si la contraseña se actualizó correctamente, false si falla.
+         */
         public function cambiar_password(string $pass_actual, string $nueva_pass) {
             $actualizada = false;
             try {

@@ -1,0 +1,213 @@
+\doxysection{Ingreso Class Reference}
+\hypertarget{class_ingreso}{}\label{class_ingreso}\index{Ingreso@{Ingreso}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ingreso_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_ingreso_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_ingreso_a474d87f3c06c05f1ceae587c4cf0c3c6}{cargar\+\_\+datos}} (\$fecha\+\_\+ingreso, \$fecha\+\_\+alta, \$reingreso, \$eco, \$crf, \$crm, \$barthel, \$pfeiffer, \$cultivo, \$minimental, \$analitica, \$NUM\+\_\+\+VISIT, \$nhc)
+\item 
+\mbox{\hyperlink{class_ingreso_af3c735e21b51eaeb6c6e527c1ed89f59}{set\+\_\+id}} (\$id)
+\item 
+\mbox{\hyperlink{class_ingreso_aea5a647bc74fbdbd01b3aabded8f1d02}{set\+\_\+motivo\+\_\+ingreso}} (int \$id\+\_\+motivo\+\_\+ingreso)
+\item 
+\mbox{\hyperlink{class_ingreso_a8c8168a88617880fc11ac24cf840af54}{set\+\_\+procedencia}} (int \$id\+\_\+procedencia)
+\item 
+\mbox{\hyperlink{class_ingreso_aa8a6a1a1caf045cbe378806a00a290ca}{set\+\_\+destino}} (int \$id\+\_\+destino)
+\item 
+\mbox{\hyperlink{class_ingreso_a0b4a6da11a431cc698b381f5fe42727b}{set\+\_\+tratamientos}} (\$lista\+\_\+tratamientos)
+\item 
+\mbox{\hyperlink{class_ingreso_af7388d0cd4118c070f01261ed0065011}{aniadir\+\_\+ingreso}} ()
+\item 
+\mbox{\hyperlink{class_ingreso_a396e4b62503cd3637e590c2e26263cd1}{cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD}} (\$id\+\_\+ingreso)
+\item 
+\mbox{\hyperlink{class_ingreso_affa3748d0cdee9195e45c97855014a62}{get\+\_\+datos\+\_\+ingreso}} ()
+\item 
+\mbox{\hyperlink{class_ingreso_a87ad0e3a4f794e74947b655a4e61cb83}{actualizar\+\_\+ingreso}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase \doxylink{class_ingreso}{Ingreso}
+
+Clase que representa un ingreso hospitalario, incluyendo datos clínicos, administrativos y métodos para su persistencia en base de datos.
+
+\begin{DoxyAuthor}{Author}
+Pablo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ingreso_a095c5d389db211932136b53f25f39685}\index{Ingreso@{Ingreso}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_ingreso_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_ingreso_a421831a265621325e1fdd19aace0c758}\index{Ingreso@{Ingreso}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily \label{class_ingreso_a421831a265621325e1fdd19aace0c758} 
+\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ingreso_a87ad0e3a4f794e74947b655a4e61cb83}\index{Ingreso@{Ingreso}!actualizar\_ingreso@{actualizar\_ingreso}}
+\index{actualizar\_ingreso@{actualizar\_ingreso}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{actualizar\_ingreso()}{actualizar\_ingreso()}}
+{\footnotesize\ttfamily \label{class_ingreso_a87ad0e3a4f794e74947b655a4e61cb83} 
+actualizar\+\_\+ingreso (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Actualiza los datos del ingreso en la base de datos, incluyendo tratamientos asociados.
+
+\begin{DoxyReturn}{Returns}
+bool True si se actualizó correctamente, false en caso de error. 
+\end{DoxyReturn}
+\Hypertarget{class_ingreso_af7388d0cd4118c070f01261ed0065011}\index{Ingreso@{Ingreso}!aniadir\_ingreso@{aniadir\_ingreso}}
+\index{aniadir\_ingreso@{aniadir\_ingreso}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{aniadir\_ingreso()}{aniadir\_ingreso()}}
+{\footnotesize\ttfamily \label{class_ingreso_af7388d0cd4118c070f01261ed0065011} 
+aniadir\+\_\+ingreso (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Inserta el ingreso actual en la base de datos, incluyendo relaciones con tratamientos.
+
+\begin{DoxyReturn}{Returns}
+bool True si la operación fue exitosa, false en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_ingreso_a474d87f3c06c05f1ceae587c4cf0c3c6}\index{Ingreso@{Ingreso}!cargar\_datos@{cargar\_datos}}
+\index{cargar\_datos@{cargar\_datos}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos()}{cargar\_datos()}}
+{\footnotesize\ttfamily \label{class_ingreso_a474d87f3c06c05f1ceae587c4cf0c3c6} 
+cargar\+\_\+datos (\begin{DoxyParamCaption}\item[{}]{\$fecha\+\_\+ingreso}{, }\item[{}]{\$fecha\+\_\+alta}{, }\item[{}]{\$reingreso}{, }\item[{}]{\$eco}{, }\item[{}]{\$crf}{, }\item[{}]{\$crm}{, }\item[{}]{\$barthel}{, }\item[{}]{\$pfeiffer}{, }\item[{}]{\$cultivo}{, }\item[{}]{\$minimental}{, }\item[{}]{\$analitica}{, }\item[{}]{\$\+NUM\+\_\+\+VISIT}{, }\item[{}]{\$nhc}{}\end{DoxyParamCaption})}
+
+Carga los datos básicos del ingreso.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$fecha\+\_\+ingreso} & Fecha de ingreso. \\
+\hline
+?string & {\em \$fecha\+\_\+alta} & Fecha de alta. \\
+\hline
+?string & {\em \$reingreso} & Indicador de reingreso. \\
+\hline
+?string & {\em \$eco} & Resultado de ECO. \\
+\hline
+?string & {\em \$crf} & Resultado de CRF. \\
+\hline
+?string & {\em \$crm} & Resultado de CRM. \\
+\hline
+?int & {\em \$barthel} & Índice de Barthel. \\
+\hline
+?int & {\em \$pfeiffer} & Test de Pfeiffer. \\
+\hline
+?int & {\em \$cultivo} & Resultado de cultivo. \\
+\hline
+?int & {\em \$minimental} & Test Minimental. \\
+\hline
+?int & {\em \$analitica} & Resultado de analítica. \\
+\hline
+?int & {\em \$\+NUM\+\_\+\+VISIT} & Número de visitas. \\
+\hline
+int & {\em \$nhc} & Número de historia clínica. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ingreso_a396e4b62503cd3637e590c2e26263cd1}\index{Ingreso@{Ingreso}!cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}}
+\index{cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_desde\_BBDD()}{cargar\_datos\_desde\_BBDD()}}
+{\footnotesize\ttfamily \label{class_ingreso_a396e4b62503cd3637e590c2e26263cd1} 
+cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD (\begin{DoxyParamCaption}\item[{}]{\$id\+\_\+ingreso}{}\end{DoxyParamCaption})}
+
+Carga todos los datos de un ingreso desde la base de datos usando su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+ingreso} & ID del ingreso. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ingreso_affa3748d0cdee9195e45c97855014a62}\index{Ingreso@{Ingreso}!get\_datos\_ingreso@{get\_datos\_ingreso}}
+\index{get\_datos\_ingreso@{get\_datos\_ingreso}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{get\_datos\_ingreso()}{get\_datos\_ingreso()}}
+{\footnotesize\ttfamily \label{class_ingreso_affa3748d0cdee9195e45c97855014a62} 
+get\+\_\+datos\+\_\+ingreso (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve un array asociativo con todos los datos del ingreso.
+
+\begin{DoxyReturn}{Returns}
+array Datos del ingreso. 
+\end{DoxyReturn}
+\Hypertarget{class_ingreso_aa8a6a1a1caf045cbe378806a00a290ca}\index{Ingreso@{Ingreso}!set\_destino@{set\_destino}}
+\index{set\_destino@{set\_destino}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{set\_destino()}{set\_destino()}}
+{\footnotesize\ttfamily \label{class_ingreso_aa8a6a1a1caf045cbe378806a00a290ca} 
+set\+\_\+destino (\begin{DoxyParamCaption}\item[{int}]{\$id\+\_\+destino}{}\end{DoxyParamCaption})}
+
+Asigna el destino del paciente a partir de su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+destino} & ID de destino. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ingreso_af3c735e21b51eaeb6c6e527c1ed89f59}\index{Ingreso@{Ingreso}!set\_id@{set\_id}}
+\index{set\_id@{set\_id}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{set\_id()}{set\_id()}}
+{\footnotesize\ttfamily \label{class_ingreso_af3c735e21b51eaeb6c6e527c1ed89f59} 
+set\+\_\+id (\begin{DoxyParamCaption}\item[{}]{\$id}{}\end{DoxyParamCaption})}
+
+Establece el ID del ingreso.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & ID del ingreso. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ingreso_aea5a647bc74fbdbd01b3aabded8f1d02}\index{Ingreso@{Ingreso}!set\_motivo\_ingreso@{set\_motivo\_ingreso}}
+\index{set\_motivo\_ingreso@{set\_motivo\_ingreso}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{set\_motivo\_ingreso()}{set\_motivo\_ingreso()}}
+{\footnotesize\ttfamily \label{class_ingreso_aea5a647bc74fbdbd01b3aabded8f1d02} 
+set\+\_\+motivo\+\_\+ingreso (\begin{DoxyParamCaption}\item[{int}]{\$id\+\_\+motivo\+\_\+ingreso}{}\end{DoxyParamCaption})}
+
+Asigna el motivo de ingreso a partir de su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+motivo\+\_\+ingreso} & ID del motivo de ingreso. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ingreso_a8c8168a88617880fc11ac24cf840af54}\index{Ingreso@{Ingreso}!set\_procedencia@{set\_procedencia}}
+\index{set\_procedencia@{set\_procedencia}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{set\_procedencia()}{set\_procedencia()}}
+{\footnotesize\ttfamily \label{class_ingreso_a8c8168a88617880fc11ac24cf840af54} 
+set\+\_\+procedencia (\begin{DoxyParamCaption}\item[{int}]{\$id\+\_\+procedencia}{}\end{DoxyParamCaption})}
+
+Asigna la procedencia del paciente a partir de su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+procedencia} & ID de procedencia. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ingreso_a0b4a6da11a431cc698b381f5fe42727b}\index{Ingreso@{Ingreso}!set\_tratamientos@{set\_tratamientos}}
+\index{set\_tratamientos@{set\_tratamientos}!Ingreso@{Ingreso}}
+\doxysubsubsection{\texorpdfstring{set\_tratamientos()}{set\_tratamientos()}}
+{\footnotesize\ttfamily \label{class_ingreso_a0b4a6da11a431cc698b381f5fe42727b} 
+set\+\_\+tratamientos (\begin{DoxyParamCaption}\item[{}]{\$lista\+\_\+tratamientos}{}\end{DoxyParamCaption})}
+
+Asocia una lista de tratamientos al ingreso.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$lista\+\_\+tratamientos} & Array con IDs de tratamientos. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modelo/\mbox{\hyperlink{ingreso_8php}{ingreso.\+php}}\end{DoxyCompactItemize}

@@ -10,6 +10,17 @@
     ini_set('log_errors', 1);  
     ini_set('error_log', 'C:\\xampp\\htdocs\\php\\PROYECTO_FINAL\\TFG\\logs\\error_log.txt');
 
+    /**
+     * Clase Paciente
+     * 
+     * Esta clase representa a un paciente con sus datos personales, clínicos y sociales,
+     * y permite realizar operaciones como cargar datos desde la base de datos, añadir y
+     * actualizar, además de manejar relaciones con otras entidades
+     * como centro de salud, motivo de ingreso, ayuda social, convivencia y cuidador principal.
+     * 
+     * @author Pablo
+     * @version 1.0
+     */
     class Paciente {
         private string $nhc;
         private string $nombre;
@@ -101,6 +112,35 @@
             $this->ppal_cuidador = null;
             $this->lista_ingresos = [];
         }
+
+        /**
+         * Carga los datos del paciente en la instancia.
+         * 
+         * @param string $nhc Número de historia clínica.
+         * @param string $nombre Nombre del paciente.
+         * @param string $ape1 Primer apellido.
+         * @param string $ape2 Segundo apellido.
+         * @param string $sexo Sexo del paciente.
+         * @param int $edad Edad del paciente.
+         * @param string $medico Médico asignado.
+         * @param string $enfermera Enfermero/a asignada.
+         * @param string $co_morb Comorbilidades.
+         * @param int $num_farm Número de fármacos.
+         * @param string $grado_ulcera Grado de úlcera.
+         * @param string $dolor Dolor asociado.
+         * @param string $rip_domi Muerte en domicilio.
+         * @param string $upp Úlceras por presión.
+         * @param string $in_ur Incontinencia urinaria.
+         * @param string $disf Disfagia.
+         * @param string $in_fec Incontinencia fecal.
+         * @param string $sv Sonda vesical.
+         * @param string $insom Insomnio.
+         * @param string $sng Sonda nasogástrica.
+         * @param string $sob_cui Sobrecarga de cuidado.
+         * @param string $ocd Oxigenoterapia.
+         * 
+         * @return void
+         */
         public function cargar_datos($nhc, $nombre, $ape1, $ape2, $sexo, $edad, $medico, $enfermera, $co_morb, $num_farm, $grado_ulcera,
                                                 $dolor, $rip_domi, $upp, $in_ur, $disf, $in_fec, $sv, $insom, $sng, $sob_cui, $ocd){
             $this->nhc = $nhc;
@@ -126,32 +166,72 @@
             $this->sng = $sng;
             $this->ocd = $ocd;
         }
+
+        /**
+         * Establece el centro de salud del paciente.
+         * 
+         * @param int $id_centro_salud ID del centro de salud.
+         * @return void
+         */
         public function set_centro_salud(int $id_centro_salud) {
             $centro_salud = new Centro_salud();
             $centro_salud->cargar_datos_desde_BBDD($id_centro_salud);
             $this->centro_salud = $centro_salud;
         }
+
+        /**
+         * Establece el motivo de ingreso del paciente.
+         * 
+         * @param int $id_motivo_inc ID del motivo de incapacidad.
+         * @return void
+         */
         public function set_motivo_inc(int $id_motivo_inc) {
             $motivo_inc = new Motivo_inc();
             $motivo_inc->cargar_datos_desde_BBDD($id_motivo_inc);
             $this->motivo_inc = $motivo_inc;
         }
+
+        /**
+         * Establece la ayuda social del paciente.
+         * 
+         * @param int $id_ayuda_social ID de la ayuda social.
+         * @return void
+         */
         public function set_ayuda_social(int $id_ayuda_social) {
             $ayuda_social = new Ayuda_social();
             $ayuda_social->cargar_datos_desde_BBDD($id_ayuda_social);
             $this->ayuda_social = $ayuda_social;
         }
+
+        /**
+         * Establece la convivencia del paciente.
+         * 
+         * @param int $id_convivencia ID de la convivencia.
+         * @return void
+         */
         public function set_convivencia(int $id_convivencia) {
             $convivencia = new Convivencia();
             $convivencia->cargar_datos_desde_BBDD($id_convivencia);
             $this->convivencia = $convivencia;
         }
+
+        /**
+         * Establece el cuidador principal del paciente.
+         * 
+         * @param int $id_ppal_cuidador ID del cuidador principal.
+         * @return void
+         */
         public function set_ppal_cuidador(int $id_ppal_cuidador) {
             $ppal_cuidador = new Ppal_cuidador();
             $ppal_cuidador->cargar_datos_desde_BBDD($id_ppal_cuidador);
             $this->ppal_cuidador = $ppal_cuidador;
         }
 
+        /**
+         * Añade un nuevo paciente a la base de datos.
+         * 
+         * @return bool Resultado de la operación (true si se añadió correctamente).
+         */
         public function aniadir_paciente() {
             $aniadido = false;
             try {
@@ -235,6 +315,12 @@
             }
         }
         
+        /**
+         * Carga los datos del paciente desde la base de datos usando su NHC.
+         * 
+         * @param string $nhc Número de historia clínica.
+         * @return bool Resultado de la operación (true si se cargaron los datos).
+         */
         public function cargar_datos_desde_BBDD($nhc) {
             $existe = false;
             $bd = new BBDD();
@@ -305,6 +391,11 @@
             return $existe;
         }
 
+        /**
+         * Obtiene los datos del paciente.
+         * 
+         * @return array Datos del paciente.
+         */
         public function get_datos_paciente() {
             $lista_ingresos = [];
             if (!empty($this->lista_ingresos)) {
@@ -344,14 +435,12 @@
             ]; 
             return $datos;
         }
-        //para datos paciente
-        public function borrar_usuario() {
-            $bd = new BBDD();
-            $pdo = $bd->getPDO();
-            $stmt = $pdo->prepare("DELETE FROM datos_paciente WHERE id_usuario={$this->id}");
-            $stmt->execute();
-        }
         
+        /**
+         * Actualiza los datos del paciente en la base de datos.
+         * 
+         * @return bool Resultado de la operación (true si se actualizó correctamente).
+         */
         public function actualizar_paciente(){
             $actualizado = false;
             try {
@@ -424,6 +513,29 @@
             }
         }
 
+
+        /**
+         * Crea un nuevo ingreso para el paciente con los datos proporcionados.
+         * 
+         * @param string $fecha_ingreso Fecha de ingreso.
+         * @param string $fecha_alta Fecha de alta.
+         * @param mixed $reingreso Indicador de reingreso.
+         * @param mixed $eco Datos de ecografía.
+         * @param mixed $crf Datos CRF.
+         * @param mixed $crm Datos CRM.
+         * @param int $barthel Índice de Barthel.
+         * @param int $pfeiffer Índice de Pfeiffer.
+         * @param mixed $cultivo Resultados de cultivo.
+         * @param mixed $minimental Test de MiniMental.
+         * @param mixed $analitica Resultados analíticos.
+         * @param int $NUM_VISIT Número de visitas.
+         * @param mixed $procedencia Procedencia del ingreso (opcional).
+         * @param mixed $destino Destino tras el alta (opcional).
+         * @param mixed $motivo_ingreso Motivo del ingreso (opcional).
+         * @param array $tratamientos Lista de tratamientos (opcional).
+         * 
+         * @return bool Devuelve true si el ingreso se añadió correctamente, o false si falla.
+         */
         public function ingresar($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, $cultivo,
                                     $minimental, $analitica, $NUM_VISIT, $procedencia, $destino, $motivo_ingreso, $tratamientos){
             $ingreso = new Ingreso();
@@ -445,6 +557,7 @@
                 $this->lista_ingresos[] = $ingreso;
                 return true;
             }
+            return false;
         }
     }
 ?>

@@ -1,0 +1,223 @@
+\doxysection{Usuario Class Reference}
+\hypertarget{class_usuario}{}\label{class_usuario}\index{Usuario@{Usuario}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_usuario_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_usuario_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_usuario_a3a60990cd1d03574f96fd44e52cf2942}{cargar\+\_\+datos}} (\$user\+\_\+name, \$nombre, \$ape1, \$ape2, \$pass)
+\item 
+\mbox{\hyperlink{class_usuario_ae433d936fdd6fb5953417c9dd668cdbe}{cargar\+\_\+datos\+\_\+para\+\_\+edicion}} (\$id, \$user\+\_\+name, \$nombre, \$ape1, \$ape2, \$administrador)
+\item 
+\mbox{\hyperlink{class_usuario_a4fbfe3f1a9a952200e943ac0887cbe57}{cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD}} (\$id\+\_\+usuario)
+\item 
+\mbox{\hyperlink{class_usuario_abf610164783d596dc25f06b490737758}{get\+\_\+datos}} ()
+\item 
+\mbox{\hyperlink{class_usuario_a6fcec1fc91647dcf204751d53ef02ffc}{borrar\+\_\+usuario}} ()
+\item 
+\mbox{\hyperlink{class_usuario_a94793b84d7fa02e2316ae81724da0138}{actualizar\+\_\+usuario}} ()
+\item 
+\mbox{\hyperlink{class_usuario_aefaac9855e7eb1b2907f1c53e75f5ff6}{registrar\+\_\+usuario}} ()
+\item 
+\mbox{\hyperlink{class_usuario_ab2a6924077935a1d94cae809c65e89a2}{autenticar}} (string \$user\+\_\+name, string \$pass)
+\item 
+\mbox{\hyperlink{class_usuario_adc0d3deb1f2ab73a1ab4616de76a573c}{cambiar\+\_\+password}} (string \$pass\+\_\+actual, string \$nueva\+\_\+pass)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_usuario_a73a0a06c4c61d9e702cd3ad4b9954fb3}{get\+\_\+datos\+\_\+usuarios}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esta clase permite cargar, modificar, registrar, autenticar y borrar usuarios, así como cambiar la contraseña.
+
+\begin{DoxyAuthor}{Author}
+Tu\+Nombre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_usuario_a095c5d389db211932136b53f25f39685}\index{Usuario@{Usuario}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_usuario_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_usuario_a421831a265621325e1fdd19aace0c758}\index{Usuario@{Usuario}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily \label{class_usuario_a421831a265621325e1fdd19aace0c758} 
+\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_usuario_a94793b84d7fa02e2316ae81724da0138}\index{Usuario@{Usuario}!actualizar\_usuario@{actualizar\_usuario}}
+\index{actualizar\_usuario@{actualizar\_usuario}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{actualizar\_usuario()}{actualizar\_usuario()}}
+{\footnotesize\ttfamily \label{class_usuario_a94793b84d7fa02e2316ae81724da0138} 
+actualizar\+\_\+usuario (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Actualiza los datos del usuario en la base de datos.
+
+\begin{DoxyReturn}{Returns}
+bool True si la actualización fue exitosa, false en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_ab2a6924077935a1d94cae809c65e89a2}\index{Usuario@{Usuario}!autenticar@{autenticar}}
+\index{autenticar@{autenticar}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{autenticar()}{autenticar()}}
+{\footnotesize\ttfamily \label{class_usuario_ab2a6924077935a1d94cae809c65e89a2} 
+autenticar (\begin{DoxyParamCaption}\item[{string}]{\$user\+\_\+name}{, }\item[{string}]{\$pass}{}\end{DoxyParamCaption})}
+
+Autentica un usuario verificando el nombre y la contraseña.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$user\+\_\+name} & Nombre de usuario. \\
+\hline
+string & {\em \$pass} & Contraseña en texto plano. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si la autenticación es correcta, false si falla. 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_a6fcec1fc91647dcf204751d53ef02ffc}\index{Usuario@{Usuario}!borrar\_usuario@{borrar\_usuario}}
+\index{borrar\_usuario@{borrar\_usuario}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{borrar\_usuario()}{borrar\_usuario()}}
+{\footnotesize\ttfamily \label{class_usuario_a6fcec1fc91647dcf204751d53ef02ffc} 
+borrar\+\_\+usuario (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Borra el usuario de la base de datos.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_adc0d3deb1f2ab73a1ab4616de76a573c}\index{Usuario@{Usuario}!cambiar\_password@{cambiar\_password}}
+\index{cambiar\_password@{cambiar\_password}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{cambiar\_password()}{cambiar\_password()}}
+{\footnotesize\ttfamily \label{class_usuario_adc0d3deb1f2ab73a1ab4616de76a573c} 
+cambiar\+\_\+password (\begin{DoxyParamCaption}\item[{string}]{\$pass\+\_\+actual}{, }\item[{string}]{\$nueva\+\_\+pass}{}\end{DoxyParamCaption})}
+
+Cambia la contraseña del usuario si la contraseña actual es correcta.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$pass\+\_\+actual} & Contraseña actual en texto plano. \\
+\hline
+string & {\em \$nueva\+\_\+pass} & Nueva contraseña en texto plano. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si la contraseña se actualizó correctamente, false si falla. 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_a3a60990cd1d03574f96fd44e52cf2942}\index{Usuario@{Usuario}!cargar\_datos@{cargar\_datos}}
+\index{cargar\_datos@{cargar\_datos}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos()}{cargar\_datos()}}
+{\footnotesize\ttfamily \label{class_usuario_a3a60990cd1d03574f96fd44e52cf2942} 
+cargar\+\_\+datos (\begin{DoxyParamCaption}\item[{}]{\$user\+\_\+name}{, }\item[{}]{\$nombre}{, }\item[{}]{\$ape1}{, }\item[{}]{\$ape2}{, }\item[{}]{\$pass}{}\end{DoxyParamCaption})}
+
+Carga los datos del usuario (sin id y administrador) y encripta la contraseña.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$user\+\_\+name} & Nombre de usuario. \\
+\hline
+string & {\em \$nombre} & Nombre real. \\
+\hline
+string & {\em \$ape1} & Primer apellido. \\
+\hline
+string & {\em \$ape2} & Segundo apellido. \\
+\hline
+string & {\em \$pass} & Contraseña en texto plano. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_a4fbfe3f1a9a952200e943ac0887cbe57}\index{Usuario@{Usuario}!cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}}
+\index{cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_desde\_BBDD()}{cargar\_datos\_desde\_BBDD()}}
+{\footnotesize\ttfamily \label{class_usuario_a4fbfe3f1a9a952200e943ac0887cbe57} 
+cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD (\begin{DoxyParamCaption}\item[{}]{\$id\+\_\+usuario}{}\end{DoxyParamCaption})}
+
+Carga los datos del usuario desde la base de datos usando su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+usuario} & Identificador del usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_ae433d936fdd6fb5953417c9dd668cdbe}\index{Usuario@{Usuario}!cargar\_datos\_para\_edicion@{cargar\_datos\_para\_edicion}}
+\index{cargar\_datos\_para\_edicion@{cargar\_datos\_para\_edicion}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_para\_edicion()}{cargar\_datos\_para\_edicion()}}
+{\footnotesize\ttfamily \label{class_usuario_ae433d936fdd6fb5953417c9dd668cdbe} 
+cargar\+\_\+datos\+\_\+para\+\_\+edicion (\begin{DoxyParamCaption}\item[{}]{\$id}{, }\item[{}]{\$user\+\_\+name}{, }\item[{}]{\$nombre}{, }\item[{}]{\$ape1}{, }\item[{}]{\$ape2}{, }\item[{}]{\$administrador}{}\end{DoxyParamCaption})}
+
+Carga datos para edición del usuario (incluyendo id y administrador).
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & Identificador del usuario. \\
+\hline
+string & {\em \$user\+\_\+name} & Nombre de usuario. \\
+\hline
+string & {\em \$nombre} & Nombre real. \\
+\hline
+string & {\em \$ape1} & Primer apellido. \\
+\hline
+string & {\em \$ape2} & Segundo apellido. \\
+\hline
+string & {\em \$administrador} & Indicador si es administrador ("{}\+SI"{} o "{}\+NO"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_abf610164783d596dc25f06b490737758}\index{Usuario@{Usuario}!get\_datos@{get\_datos}}
+\index{get\_datos@{get\_datos}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{get\_datos()}{get\_datos()}}
+{\footnotesize\ttfamily \label{class_usuario_abf610164783d596dc25f06b490737758} 
+get\+\_\+datos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtiene los datos del usuario actual como array asociativo.
+
+\begin{DoxyReturn}{Returns}
+array Datos del usuario. 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_a73a0a06c4c61d9e702cd3ad4b9954fb3}\index{Usuario@{Usuario}!get\_datos\_usuarios@{get\_datos\_usuarios}}
+\index{get\_datos\_usuarios@{get\_datos\_usuarios}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{get\_datos\_usuarios()}{get\_datos\_usuarios()}}
+{\footnotesize\ttfamily \label{class_usuario_a73a0a06c4c61d9e702cd3ad4b9954fb3} 
+static get\+\_\+datos\+\_\+usuarios (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene todos los usuarios de la base de datos.
+
+\begin{DoxyReturn}{Returns}
+array Lista de usuarios. 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_aefaac9855e7eb1b2907f1c53e75f5ff6}\index{Usuario@{Usuario}!registrar\_usuario@{registrar\_usuario}}
+\index{registrar\_usuario@{registrar\_usuario}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{registrar\_usuario()}{registrar\_usuario()}}
+{\footnotesize\ttfamily \label{class_usuario_aefaac9855e7eb1b2907f1c53e75f5ff6} 
+registrar\+\_\+usuario (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Registra un nuevo usuario en la base de datos si no existe uno con el mismo nombre de usuario.
+
+\begin{DoxyReturn}{Returns}
+bool True si se registró correctamente, false si el usuario ya existe o hubo un error. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modelo/\mbox{\hyperlink{usuario_8php}{usuario.\+php}}\end{DoxyCompactItemize}

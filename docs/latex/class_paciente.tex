@@ -1,0 +1,300 @@
+\doxysection{Paciente Class Reference}
+\hypertarget{class_paciente}{}\label{class_paciente}\index{Paciente@{Paciente}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_paciente_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_paciente_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_paciente_a31e4b76c6e9d77da9f876de740fa1378}{cargar\+\_\+datos}} (\$nhc, \$nombre, \$ape1, \$ape2, \$sexo, \$edad, \$medico, \$enfermera, \$co\+\_\+morb, \$num\+\_\+farm, \$grado\+\_\+ulcera, \$dolor, \$rip\+\_\+domi, \$upp, \$in\+\_\+ur, \$disf, \$in\+\_\+fec, \$sv, \$insom, \$sng, \$sob\+\_\+cui, \$ocd)
+\item 
+\mbox{\hyperlink{class_paciente_a49850d60ed24787488cf787257b34c6f}{set\+\_\+centro\+\_\+salud}} (int \$id\+\_\+centro\+\_\+salud)
+\item 
+\mbox{\hyperlink{class_paciente_a0e719c7d9774207afde2a6e603473564}{set\+\_\+motivo\+\_\+inc}} (int \$id\+\_\+motivo\+\_\+inc)
+\item 
+\mbox{\hyperlink{class_paciente_a16acd3149bd92250bd7d78894afe8123}{set\+\_\+ayuda\+\_\+social}} (int \$id\+\_\+ayuda\+\_\+social)
+\item 
+\mbox{\hyperlink{class_paciente_a113651219928c43847afed815da4c795}{set\+\_\+convivencia}} (int \$id\+\_\+convivencia)
+\item 
+\mbox{\hyperlink{class_paciente_ae3a781023eb3e5c0404f45a9da8984ac}{set\+\_\+ppal\+\_\+cuidador}} (int \$id\+\_\+ppal\+\_\+cuidador)
+\item 
+\mbox{\hyperlink{class_paciente_a022f26be8b71fc5d008a4d3dedb86259}{aniadir\+\_\+paciente}} ()
+\item 
+\mbox{\hyperlink{class_paciente_ab135f71f1155b4f03529cb6600335098}{cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD}} (\$nhc)
+\item 
+\mbox{\hyperlink{class_paciente_af9fb17cd02a1ea5ee1d98f1a15e7c557}{get\+\_\+datos\+\_\+paciente}} ()
+\item 
+\mbox{\hyperlink{class_paciente_a56646f05858e8f50503306f58966a16d}{actualizar\+\_\+paciente}} ()
+\item 
+\mbox{\hyperlink{class_paciente_a41643afd585879ffc163429245263f92}{ingresar}} (\$fecha\+\_\+ingreso, \$fecha\+\_\+alta, \$reingreso, \$eco, \$crf, \$crm, \$barthel, \$pfeiffer, \$cultivo, \$minimental, \$analitica, \$NUM\+\_\+\+VISIT, \$procedencia, \$destino, \$motivo\+\_\+ingreso, \$tratamientos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase \doxylink{class_paciente}{Paciente}
+
+Esta clase representa a un paciente con sus datos personales, clínicos y sociales, y permite realizar operaciones como cargar datos desde la base de datos, añadir y actualizar, además de manejar relaciones con otras entidades como centro de salud, motivo de ingreso, ayuda social, convivencia y cuidador principal.
+
+\begin{DoxyAuthor}{Author}
+Pablo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_paciente_a095c5d389db211932136b53f25f39685}\index{Paciente@{Paciente}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_paciente_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_paciente_a421831a265621325e1fdd19aace0c758}\index{Paciente@{Paciente}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily \label{class_paciente_a421831a265621325e1fdd19aace0c758} 
+\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_paciente_a56646f05858e8f50503306f58966a16d}\index{Paciente@{Paciente}!actualizar\_paciente@{actualizar\_paciente}}
+\index{actualizar\_paciente@{actualizar\_paciente}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{actualizar\_paciente()}{actualizar\_paciente()}}
+{\footnotesize\ttfamily \label{class_paciente_a56646f05858e8f50503306f58966a16d} 
+actualizar\+\_\+paciente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Actualiza los datos del paciente en la base de datos.
+
+\begin{DoxyReturn}{Returns}
+bool Resultado de la operación (true si se actualizó correctamente). 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_a022f26be8b71fc5d008a4d3dedb86259}\index{Paciente@{Paciente}!aniadir\_paciente@{aniadir\_paciente}}
+\index{aniadir\_paciente@{aniadir\_paciente}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{aniadir\_paciente()}{aniadir\_paciente()}}
+{\footnotesize\ttfamily \label{class_paciente_a022f26be8b71fc5d008a4d3dedb86259} 
+aniadir\+\_\+paciente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Añade un nuevo paciente a la base de datos.
+
+\begin{DoxyReturn}{Returns}
+bool Resultado de la operación (true si se añadió correctamente). 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_a31e4b76c6e9d77da9f876de740fa1378}\index{Paciente@{Paciente}!cargar\_datos@{cargar\_datos}}
+\index{cargar\_datos@{cargar\_datos}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos()}{cargar\_datos()}}
+{\footnotesize\ttfamily \label{class_paciente_a31e4b76c6e9d77da9f876de740fa1378} 
+cargar\+\_\+datos (\begin{DoxyParamCaption}\item[{}]{\$nhc}{, }\item[{}]{\$nombre}{, }\item[{}]{\$ape1}{, }\item[{}]{\$ape2}{, }\item[{}]{\$sexo}{, }\item[{}]{\$edad}{, }\item[{}]{\$medico}{, }\item[{}]{\$enfermera}{, }\item[{}]{\$co\+\_\+morb}{, }\item[{}]{\$num\+\_\+farm}{, }\item[{}]{\$grado\+\_\+ulcera}{, }\item[{}]{\$dolor}{, }\item[{}]{\$rip\+\_\+domi}{, }\item[{}]{\$upp}{, }\item[{}]{\$in\+\_\+ur}{, }\item[{}]{\$disf}{, }\item[{}]{\$in\+\_\+fec}{, }\item[{}]{\$sv}{, }\item[{}]{\$insom}{, }\item[{}]{\$sng}{, }\item[{}]{\$sob\+\_\+cui}{, }\item[{}]{\$ocd}{}\end{DoxyParamCaption})}
+
+Carga los datos del paciente en la instancia.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$nhc} & Número de historia clínica. \\
+\hline
+string & {\em \$nombre} & Nombre del paciente. \\
+\hline
+string & {\em \$ape1} & Primer apellido. \\
+\hline
+string & {\em \$ape2} & Segundo apellido. \\
+\hline
+string & {\em \$sexo} & Sexo del paciente. \\
+\hline
+int & {\em \$edad} & Edad del paciente. \\
+\hline
+string & {\em \$medico} & Médico asignado. \\
+\hline
+string & {\em \$enfermera} & Enfermero/a asignada. \\
+\hline
+string & {\em \$co\+\_\+morb} & Comorbilidades. \\
+\hline
+int & {\em \$num\+\_\+farm} & Número de fármacos. \\
+\hline
+string & {\em \$grado\+\_\+ulcera} & Grado de úlcera. \\
+\hline
+string & {\em \$dolor} & Dolor asociado. \\
+\hline
+string & {\em \$rip\+\_\+domi} & Muerte en domicilio. \\
+\hline
+string & {\em \$upp} & Úlceras por presión. \\
+\hline
+string & {\em \$in\+\_\+ur} & Incontinencia urinaria. \\
+\hline
+string & {\em \$disf} & Disfagia. \\
+\hline
+string & {\em \$in\+\_\+fec} & Incontinencia fecal. \\
+\hline
+string & {\em \$sv} & Sonda vesical. \\
+\hline
+string & {\em \$insom} & Insomnio. \\
+\hline
+string & {\em \$sng} & Sonda nasogástrica. \\
+\hline
+string & {\em \$sob\+\_\+cui} & Sobrecarga de cuidado. \\
+\hline
+string & {\em \$ocd} & Oxigenoterapia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_ab135f71f1155b4f03529cb6600335098}\index{Paciente@{Paciente}!cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}}
+\index{cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_desde\_BBDD()}{cargar\_datos\_desde\_BBDD()}}
+{\footnotesize\ttfamily \label{class_paciente_ab135f71f1155b4f03529cb6600335098} 
+cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD (\begin{DoxyParamCaption}\item[{}]{\$nhc}{}\end{DoxyParamCaption})}
+
+Carga los datos del paciente desde la base de datos usando su NHC.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$nhc} & Número de historia clínica. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Resultado de la operación (true si se cargaron los datos). 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_af9fb17cd02a1ea5ee1d98f1a15e7c557}\index{Paciente@{Paciente}!get\_datos\_paciente@{get\_datos\_paciente}}
+\index{get\_datos\_paciente@{get\_datos\_paciente}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{get\_datos\_paciente()}{get\_datos\_paciente()}}
+{\footnotesize\ttfamily \label{class_paciente_af9fb17cd02a1ea5ee1d98f1a15e7c557} 
+get\+\_\+datos\+\_\+paciente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtiene los datos del paciente.
+
+\begin{DoxyReturn}{Returns}
+array Datos del paciente. 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_a41643afd585879ffc163429245263f92}\index{Paciente@{Paciente}!ingresar@{ingresar}}
+\index{ingresar@{ingresar}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{ingresar()}{ingresar()}}
+{\footnotesize\ttfamily \label{class_paciente_a41643afd585879ffc163429245263f92} 
+ingresar (\begin{DoxyParamCaption}\item[{}]{\$fecha\+\_\+ingreso}{, }\item[{}]{\$fecha\+\_\+alta}{, }\item[{}]{\$reingreso}{, }\item[{}]{\$eco}{, }\item[{}]{\$crf}{, }\item[{}]{\$crm}{, }\item[{}]{\$barthel}{, }\item[{}]{\$pfeiffer}{, }\item[{}]{\$cultivo}{, }\item[{}]{\$minimental}{, }\item[{}]{\$analitica}{, }\item[{}]{\$\+NUM\+\_\+\+VISIT}{, }\item[{}]{\$procedencia}{, }\item[{}]{\$destino}{, }\item[{}]{\$motivo\+\_\+ingreso}{, }\item[{}]{\$tratamientos}{}\end{DoxyParamCaption})}
+
+Crea un nuevo ingreso para el paciente con los datos proporcionados.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$fecha\+\_\+ingreso} & Fecha de ingreso. \\
+\hline
+string & {\em \$fecha\+\_\+alta} & Fecha de alta. \\
+\hline
+mixed & {\em \$reingreso} & Indicador de reingreso. \\
+\hline
+mixed & {\em \$eco} & Datos de ecografía. \\
+\hline
+mixed & {\em \$crf} & Datos CRF. \\
+\hline
+mixed & {\em \$crm} & Datos CRM. \\
+\hline
+int & {\em \$barthel} & Índice de Barthel. \\
+\hline
+int & {\em \$pfeiffer} & Índice de Pfeiffer. \\
+\hline
+mixed & {\em \$cultivo} & Resultados de cultivo. \\
+\hline
+mixed & {\em \$minimental} & Test de Mini\+Mental. \\
+\hline
+mixed & {\em \$analitica} & Resultados analíticos. \\
+\hline
+int & {\em \$\+NUM\+\_\+\+VISIT} & Número de visitas. \\
+\hline
+mixed & {\em \$procedencia} & \doxylink{class_procedencia}{Procedencia} del ingreso (opcional). \\
+\hline
+mixed & {\em \$destino} & \doxylink{class_destino}{Destino} tras el alta (opcional). \\
+\hline
+mixed & {\em \$motivo\+\_\+ingreso} & Motivo del ingreso (opcional). \\
+\hline
+array & {\em \$tratamientos} & Lista de tratamientos (opcional).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Devuelve true si el ingreso se añadió correctamente, o false si falla. 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_a16acd3149bd92250bd7d78894afe8123}\index{Paciente@{Paciente}!set\_ayuda\_social@{set\_ayuda\_social}}
+\index{set\_ayuda\_social@{set\_ayuda\_social}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{set\_ayuda\_social()}{set\_ayuda\_social()}}
+{\footnotesize\ttfamily \label{class_paciente_a16acd3149bd92250bd7d78894afe8123} 
+set\+\_\+ayuda\+\_\+social (\begin{DoxyParamCaption}\item[{int}]{\$id\+\_\+ayuda\+\_\+social}{}\end{DoxyParamCaption})}
+
+Establece la ayuda social del paciente.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+ayuda\+\_\+social} & ID de la ayuda social. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_a49850d60ed24787488cf787257b34c6f}\index{Paciente@{Paciente}!set\_centro\_salud@{set\_centro\_salud}}
+\index{set\_centro\_salud@{set\_centro\_salud}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{set\_centro\_salud()}{set\_centro\_salud()}}
+{\footnotesize\ttfamily \label{class_paciente_a49850d60ed24787488cf787257b34c6f} 
+set\+\_\+centro\+\_\+salud (\begin{DoxyParamCaption}\item[{int}]{\$id\+\_\+centro\+\_\+salud}{}\end{DoxyParamCaption})}
+
+Establece el centro de salud del paciente.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+centro\+\_\+salud} & ID del centro de salud. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_a113651219928c43847afed815da4c795}\index{Paciente@{Paciente}!set\_convivencia@{set\_convivencia}}
+\index{set\_convivencia@{set\_convivencia}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{set\_convivencia()}{set\_convivencia()}}
+{\footnotesize\ttfamily \label{class_paciente_a113651219928c43847afed815da4c795} 
+set\+\_\+convivencia (\begin{DoxyParamCaption}\item[{int}]{\$id\+\_\+convivencia}{}\end{DoxyParamCaption})}
+
+Establece la convivencia del paciente.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+convivencia} & ID de la convivencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_a0e719c7d9774207afde2a6e603473564}\index{Paciente@{Paciente}!set\_motivo\_inc@{set\_motivo\_inc}}
+\index{set\_motivo\_inc@{set\_motivo\_inc}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{set\_motivo\_inc()}{set\_motivo\_inc()}}
+{\footnotesize\ttfamily \label{class_paciente_a0e719c7d9774207afde2a6e603473564} 
+set\+\_\+motivo\+\_\+inc (\begin{DoxyParamCaption}\item[{int}]{\$id\+\_\+motivo\+\_\+inc}{}\end{DoxyParamCaption})}
+
+Establece el motivo de ingreso del paciente.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+motivo\+\_\+inc} & ID del motivo de incapacidad. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_paciente_ae3a781023eb3e5c0404f45a9da8984ac}\index{Paciente@{Paciente}!set\_ppal\_cuidador@{set\_ppal\_cuidador}}
+\index{set\_ppal\_cuidador@{set\_ppal\_cuidador}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{set\_ppal\_cuidador()}{set\_ppal\_cuidador()}}
+{\footnotesize\ttfamily \label{class_paciente_ae3a781023eb3e5c0404f45a9da8984ac} 
+set\+\_\+ppal\+\_\+cuidador (\begin{DoxyParamCaption}\item[{int}]{\$id\+\_\+ppal\+\_\+cuidador}{}\end{DoxyParamCaption})}
+
+Establece el cuidador principal del paciente.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+ppal\+\_\+cuidador} & ID del cuidador principal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modelo/\mbox{\hyperlink{paciente_8php}{paciente.\+php}}\end{DoxyCompactItemize}

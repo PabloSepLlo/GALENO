@@ -7,6 +7,16 @@
     error_reporting(E_ALL);
     ini_set('log_errors', 1);  
     ini_set('error_log', 'C:\\xampp\\htdocs\\php\\PROYECTO_FINAL\\TFG\\logs\\error_log.txt');
+
+    /**
+     * Clase Ingreso
+     * 
+     * Clase que representa un ingreso hospitalario, incluyendo datos clínicos,
+     * administrativos y métodos para su persistencia en base de datos.
+     * 
+     * @author Pablo
+     * @version 1.0
+     */
     class Ingreso {
         private ?int $id; 
         private string $fecha_ingreso;
@@ -67,6 +77,23 @@
             $this->destino = null;
             $this->lista_tratamientos = [];
         }
+        /**
+         * Carga los datos básicos del ingreso.
+         *
+         * @param string $fecha_ingreso Fecha de ingreso.
+         * @param ?string $fecha_alta Fecha de alta.
+         * @param ?string $reingreso Indicador de reingreso.
+         * @param ?string $eco Resultado de ECO.
+         * @param ?string $crf Resultado de CRF.
+         * @param ?string $crm Resultado de CRM.
+         * @param ?int $barthel Índice de Barthel.
+         * @param ?int $pfeiffer Test de Pfeiffer.
+         * @param ?int $cultivo Resultado de cultivo.
+         * @param ?int $minimental Test Minimental.
+         * @param ?int $analitica Resultado de analítica.
+         * @param ?int $NUM_VISIT Número de visitas.
+         * @param int $nhc Número de historia clínica.
+         */
         public function cargar_datos($fecha_ingreso, $fecha_alta, $reingreso, $eco, $crf, $crm, $barthel, $pfeiffer, $cultivo, 
                                     $minimental, $analitica, $NUM_VISIT, $nhc) {
             $this->fecha_ingreso = $fecha_ingreso;
@@ -83,24 +110,54 @@
             $this->NUM_VISIT = $NUM_VISIT;
             $this->nhc = $nhc;
         }
+
+        /**
+         * Establece el ID del ingreso.
+         *
+         * @param int $id ID del ingreso.
+         */
         public function set_id($id) {
             $this->id = $id;
         }
+
+        /**
+         * Asigna el motivo de ingreso a partir de su ID.
+         *
+         * @param int $id_motivo_ingreso ID del motivo de ingreso.
+         */
         public function set_motivo_ingreso(int $id_motivo_ingreso) {
             $motivo_ingreso = new Motivo_ingreso();
             $motivo_ingreso->cargar_datos_desde_BBDD($id_motivo_ingreso);
             $this->motivo_ingreso = $motivo_ingreso;
         }
+
+        /**
+         * Asigna la procedencia del paciente a partir de su ID.
+         *
+         * @param int $id_procedencia ID de procedencia.
+         */
         public function set_procedencia(int $id_procedencia) {
             $procedencia = new Procedencia();
             $procedencia->cargar_datos_desde_BBDD($id_procedencia);
             $this->procedencia = $procedencia;
         }
+
+        /**
+         * Asigna el destino del paciente a partir de su ID.
+         *
+         * @param int $id_destino ID de destino.
+         */
         public function set_destino(int $id_destino) {
             $destino = new Destino();
             $destino->cargar_datos_desde_BBDD($id_destino);
             $this->destino = $destino;
         }
+
+        /**
+         * Asocia una lista de tratamientos al ingreso.
+         *
+         * @param array $lista_tratamientos Array con IDs de tratamientos.
+         */
         public function set_tratamientos($lista_tratamientos) {
             foreach($lista_tratamientos as $id_tratamiento) {
                 $tratamiento = new Tratamiento();
@@ -108,6 +165,12 @@
                 $this->lista_tratamientos[] = $tratamiento;
             }
         }
+
+        /**
+         * Inserta el ingreso actual en la base de datos, incluyendo relaciones con tratamientos.
+         *
+         * @return bool True si la operación fue exitosa, false en caso contrario.
+         */
         public function aniadir_ingreso() {
             $aniadido = false;
             try {
@@ -178,6 +241,11 @@
             }
         }
 
+        /**
+         * Carga todos los datos de un ingreso desde la base de datos usando su ID.
+         *
+         * @param int $id_ingreso ID del ingreso.
+         */
         public function cargar_datos_desde_BBDD($id_ingreso) {
             $existe = false;
             $bd = new BBDD();
@@ -226,6 +294,12 @@
             }
         }
 
+
+        /**
+         * Devuelve un array asociativo con todos los datos del ingreso.
+         *
+         * @return array Datos del ingreso.
+         */
         public function get_datos_ingreso() {
             $lista_tratamientos = [];
             if (!empty($this->lista_tratamientos)){
@@ -256,6 +330,11 @@
             return $datos;
         }
 
+        /**
+         * Actualiza los datos del ingreso en la base de datos, incluyendo tratamientos asociados.
+         *
+         * @return bool True si se actualizó correctamente, false en caso de error.
+         */
         public function actualizar_ingreso() {
             $actualizado = false;
             try {

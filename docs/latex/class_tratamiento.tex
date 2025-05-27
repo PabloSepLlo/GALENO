@@ -1,0 +1,90 @@
+\doxysection{Tratamiento Class Reference}
+\hypertarget{class_tratamiento}{}\label{class_tratamiento}\index{Tratamiento@{Tratamiento}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tratamiento_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_tratamiento_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_tratamiento_abc772a1693fb364e9317095b9b1dc0dd}{cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD}} (\$id\+\_\+tratamiento)
+\item 
+\mbox{\hyperlink{class_tratamiento_aba287e1320613b9e81f86597266a7e27}{get\+\_\+tr}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_tratamiento_a9225df8fa098727a6589e08930aab2f4}{get\+\_\+datos\+\_\+tr}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esta clase permite cargar datos de un tratamiento desde la base de datos, obtener sus datos y recuperar la lista completa de tratamientos.
+
+\begin{DoxyAuthor}{Author}
+Tu\+Nombre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_tratamiento_a095c5d389db211932136b53f25f39685}\index{Tratamiento@{Tratamiento}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Tratamiento@{Tratamiento}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_tratamiento_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_tratamiento_a421831a265621325e1fdd19aace0c758}\index{Tratamiento@{Tratamiento}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!Tratamiento@{Tratamiento}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily \label{class_tratamiento_a421831a265621325e1fdd19aace0c758} 
+\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tratamiento_abc772a1693fb364e9317095b9b1dc0dd}\index{Tratamiento@{Tratamiento}!cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}}
+\index{cargar\_datos\_desde\_BBDD@{cargar\_datos\_desde\_BBDD}!Tratamiento@{Tratamiento}}
+\doxysubsubsection{\texorpdfstring{cargar\_datos\_desde\_BBDD()}{cargar\_datos\_desde\_BBDD()}}
+{\footnotesize\ttfamily \label{class_tratamiento_abc772a1693fb364e9317095b9b1dc0dd} 
+cargar\+\_\+datos\+\_\+desde\+\_\+\+BBDD (\begin{DoxyParamCaption}\item[{}]{\$id\+\_\+tratamiento}{}\end{DoxyParamCaption})}
+
+Carga los datos del tratamiento desde la base de datos usando su ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+\_\+tratamiento} & Identificador del tratamiento. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_tratamiento_a9225df8fa098727a6589e08930aab2f4}\index{Tratamiento@{Tratamiento}!get\_datos\_tr@{get\_datos\_tr}}
+\index{get\_datos\_tr@{get\_datos\_tr}!Tratamiento@{Tratamiento}}
+\doxysubsubsection{\texorpdfstring{get\_datos\_tr()}{get\_datos\_tr()}}
+{\footnotesize\ttfamily \label{class_tratamiento_a9225df8fa098727a6589e08930aab2f4} 
+static get\+\_\+datos\+\_\+tr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene todos los tratamientos desde la base de datos.
+
+\begin{DoxyReturn}{Returns}
+array Lista de tratamientos como arrays asociativos. 
+\end{DoxyReturn}
+\Hypertarget{class_tratamiento_aba287e1320613b9e81f86597266a7e27}\index{Tratamiento@{Tratamiento}!get\_tr@{get\_tr}}
+\index{get\_tr@{get\_tr}!Tratamiento@{Tratamiento}}
+\doxysubsubsection{\texorpdfstring{get\_tr()}{get\_tr()}}
+{\footnotesize\ttfamily \label{class_tratamiento_aba287e1320613b9e81f86597266a7e27} 
+get\+\_\+tr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtiene los datos del tratamiento en formato array.
+
+\begin{DoxyReturn}{Returns}
+array Array asociativo con \textquotesingle{}id\textquotesingle{} y \textquotesingle{}descripcion\textquotesingle{}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modelo/\mbox{\hyperlink{tratamiento_8php}{tratamiento.\+php}}\end{DoxyCompactItemize}

@@ -15,6 +15,7 @@
                     exit();
                 }
                 else {
+                    $_SESSION["err"] = "El nombre de usuario ya existe";
                     header('Location: ../vista/registrar.php');
                     exit();
                 } 

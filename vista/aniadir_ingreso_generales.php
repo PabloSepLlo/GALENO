@@ -98,7 +98,7 @@
 <body>
     <?php include('../include/navbar.php'); ?> 
     <?php
-        if (!isset($_GET["ingresando"]) && isset($_SESSION["datos_migr"], $_SESSION["datos_pr"], $_SESSION["datos_de"], $_SESSION["datos_tr"])){
+        if (!isset($_GET["ingresando"])){
             echo "
                 <div class='container-fluid d-flex justify-content-center align-items-center my-4 row'>
                     <div class='card p-4 shadow-lg col-10 col-md-6 animacion_form'>
@@ -118,9 +118,12 @@
                             <div class='col-auto'>
                                 <a href='../controlador/borrar_datos_formulario.php' 
                                     class='btn btn-outline-danger d-flex align-items-center rounded-pill shadow-sm px-4'>
-                                    <span class='d-none d-md-inline me-2'>Borrar datos y salir</span><i class='bi bi-trash'></i>
+                                    <span class='d-none d-md-inline me-2'>Cancelar y salir</span><i class='bi bi-x-lg'></i>
                                 </a>
                             </div>
+                        </div>
+                        <div class='progress my-2'>
+                            <div class='progress-bar progress-bar-striped progress-bar-animated' role='progressbar' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100' style='width: 33%'></div>
                         </div>";
                         include('../include/aviso.php'); 
                         echo "<form method='POST'>
@@ -186,7 +189,7 @@
             ";
         }
         else {
-            unset($_SESSION["datos_migr"], $_SESSION["datos_pr"], $_SESSION["datos_de"], $_SESSION["datos_tr"]);
+
             echo "
                 <div class='modal fade show' id='modalNHC' tabindex='-1' style='display: block; background: rgba(0,0,0,0.5);' aria-labelledby='modalNHCLabel'>
                 <div class='modal-dialog modal-dialog-centered'>

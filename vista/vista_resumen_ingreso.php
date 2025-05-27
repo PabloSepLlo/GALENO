@@ -262,7 +262,7 @@
                     </a>
                     <a href='../controlador/borrar_datos_formulario.php' class='btn btn-danger'>
                         <span class='d-none d-md-inline'>Cancelar</span>
-                        <i class='bi bi-trash d-md-none'></i>
+                        <i class='bi bi-x-lg d-md-none'></i>
                     </a>
                 ";
             }
@@ -278,7 +278,7 @@
                     </a>
                     <a href='../controlador/borrar_datos_formulario.php' class='btn btn-danger'>
                         <span class='d-none d-md-inline'>Cancelar</span>
-                        <i class='bi bi-trash d-md-none'></i>
+                        <i class='bi bi-x-lg d-md-none'></i>
                     </a>
                 ";
             }

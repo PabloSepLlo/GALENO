@@ -2,6 +2,12 @@
     require_once("../modelo/paciente.php");
     session_start();
     if(isset($_SESSION["nhc"], $_SESSION["fecha_ingreso"])){
+        if (!empty($_SESSION["fecha_alta"]) && $_SESSION["fecha_ingreso"] > $_SESSION["fecha_alta"]) {
+            $_SESSION["err"] = "Revise las fechas, la de alta no puede ser anterior a la de ingreso";
+            header("Location: ../vista/vista_resumen_ingreso.php");
+            exit();
+        }
+        else {
             $paciente = new Paciente();
             $paciente->cargar_datos_desde_BBDD($_SESSION["nhc"]);
             if ($paciente->ingresar($_SESSION["fecha_ingreso"], $_SESSION["fecha_alta"], $_SESSION["reingreso"], $_SESSION["eco"],
@@ -17,6 +23,7 @@
                 header("Location: ../vista/vista_resumen_ingreso.php");
                 exit();
             }
+        }    
     }
     else {
         $_SESSION["err"] = "Los valores no se han establecido correctamente";

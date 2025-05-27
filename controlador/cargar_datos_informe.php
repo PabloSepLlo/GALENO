@@ -2,7 +2,7 @@
     require_once("../servicios/consultas_ingreso.php");
     require_once("../servicios/consultas_paciente.php");
     session_start();
-    if (isset($_POST["fecha_inicio"], $_POST["fecha_fin"]) && !empty($_POST["fecha_inicio"]) && !empty($_POST["fecha_fin"])) {
+    if (isset($_POST["fecha_inicio"], $_POST["fecha_fin"]) && !empty($_POST["fecha_inicio"]) && !empty($_POST["fecha_fin"]) && $_POST["fecha_fin"] > $_POST["fecha_inicio"]) {
         $_SESSION["fecha_inicio"] = $_POST["fecha_inicio"];
         $_SESSION["fecha_fin"] = $_POST["fecha_fin"];
         $consultas_ingreso = new Consultas_ingreso();
@@ -29,7 +29,7 @@
         exit();
     }
     else {
-        $_SESSION["err"] = "No se puede generar el informe sin fechas definidas";
+        $_SESSION["err"] = "Las fechas no están definidas o son incorrectas";
         header('Location: ../vista/menu.php');
         exit();
     }

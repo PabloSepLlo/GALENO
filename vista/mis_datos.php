@@ -98,7 +98,7 @@
         include("../include/navbar.php");
         include("../include/aviso.php");
     echo "
-        <div class='container-fluid mt-4'>
+        <div class='container-fluid my-4'>
             <div class='card shadow-lg border-primary' style='max-width: 700px; margin: 0 auto; border-width: 2px;'>
                 <div class='card-header bg-primary text-white d-flex align-items-center'>
                     <i class='bi bi-person-badge fs-3 me-2'></i>

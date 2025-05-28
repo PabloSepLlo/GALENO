@@ -381,11 +381,11 @@
                 $stmt->bindParam(":nhc", $nhc);
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
                 $stmt->execute();
-                while ($datos_ingreso = $stmt->fetch()) {//$stmt->fetchObject
+                while ($datos_ingreso = $stmt->fetch()) {
                     $ingreso = new Ingreso();
                     $ingreso->cargar_datos_desde_BBDD($datos_ingreso["id_ingreso"]);
                     $this->lista_ingresos[] = $ingreso; 
-                }//opcion a ver, revisar si merece la pena hacer funcion que cargue el objeto desde array y otra por id para no repetir
+                }
                 $existe = true;
             }
             return $existe;

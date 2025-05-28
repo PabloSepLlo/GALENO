@@ -205,9 +205,8 @@
                             <span class='d-none d-md-inline me-1'>Descargar PDF</span><i class='bi bi-file-arrow-down'></i>
                         </a>
                         <a href='../controlador/borrar_datos_formulario.php' 
-                            class='btn btn-link p-0 text-danger d-flex align-items-center' 
-                            title='Borrar datos y salir'>
-                            <i class='bi bi-x-lg fs-3'></i>
+                            class='btn btn-outline-danger col-auto d-flex align-items-center rounded-pill shadow-sm px-4'>
+                            <span class='d-none d-md-inline me-2'>Salir</span><i class='bi bi-x'></i>
                         </a>
                     </div>
                     <div class='card shadow-sm'>

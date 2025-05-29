@@ -342,7 +342,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Muestra un modal automáticamente cuando la página termina de cargarse
-        window.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {
                 const sessionModal = new bootstrap.Modal(modalElement);

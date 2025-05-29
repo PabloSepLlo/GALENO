@@ -269,37 +269,35 @@
         // Función para mostrar u ocultar el menú desplegable de los tratamientos
         function toggleDropdown() {
             const list = document.getElementById('dropdownList');
-            // Cambia el estilo de visualización: si está visible, lo oculta, si está oculto, lo muestra
             list.style.display = list.style.display === 'block' ? 'none' : 'block';
         }
 
         // Función para actualizar el texto del botón con los elementos seleccionados del dropdown
         function updateDropdownText() {
             // Obtiene los checkboxes marcados dentro del dropdown
-            const selected = Array.from(document.querySelectorAll('#dropdownList input:checked'));
-                .map(cb => cb.parentElement.textContent.trim()); // Extrae el texto del padre del checkbox
+            const selected = Array.from(document.querySelectorAll('#dropdownList input:checked')).map(cb => cb.parentElement.textContent.trim());
             const button = document.getElementById('dropdownText');
             // Si hay seleccionados, los muestra en el botón; si no, muestra el texto por defecto
             button.textContent = selected.length ? selected.join(', ') : 'Añada el(los) tratamiento(s)';
         }
 
         // Cierra el dropdown si se hace clic fuera de él
-        window.addEventListener('click', function(e) {
+        document.addEventListener('click', function(e) {
             const box = document.querySelector('.dropdown-multi');
-            // Si el clic no fue dentro del dropdown, lo oculta
             if (!box.contains(e.target)) {
                 document.getElementById('dropdownList').style.display = 'none';
             }
         });
+
         // Actualiza el texto del dropdown cuando el contenido del DOM se haya cargado
         document.addEventListener('DOMContentLoaded', updateDropdownText);
-
+        
         // Muestra un modal de aviso automáticamente cuando la página termina de cargarse
-        window.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {
                 const sessionModal = new bootstrap.Modal(modalElement);
-                sessionModal.show(); // Muestra el modal
+                sessionModal.show();
             }
         });
     </script>

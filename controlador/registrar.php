@@ -22,7 +22,7 @@
             }
             else {
                 $_SESSION["err"] = "La contraseña no cumple con los requisitos";
-                header("Location: ../vista/mis_datos.php");
+                header("Location: ../vista/registrar.php");
                 exit();
             }
         }

@@ -223,7 +223,7 @@
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
         // Muestra un modal automáticamente cuando la página termina de cargarse
-        window.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {
                 const sessionModal = new bootstrap.Modal(modalElement);

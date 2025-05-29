@@ -12,7 +12,7 @@
                     <?php
                         if ($datos["administrador"] == "SÍ") {
                             echo " 
-                            <li class='nav-item mx-3'><a class='nav-link fs-5 fw-bold' href='../controlador/cargar_usuarios.php'>GESTIÓN USUARIOS</a></li>
+                            <li class='nav-item mx-3'><a class='nav-link fs-5 fw-bold' href='../controlador/cargar_usuarios.php'>GESTIÓN DE USUARIOS</a></li>
                             ";
                         }
                     ?>
@@ -23,7 +23,7 @@
                     </li>
                     <li class="nav-item dropdown mx-3">
                         <a class="nav-link dropdown-toggle fs-5 fw-bold" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            GESTIÓN PACIENTE
+                            GESTIÓN DE PACIENTES
                         </a>
                         <ul class="dropdown-menu dropdown-menu-lg-end">
                             <li><a class="dropdown-item" href="../controlador/cargar_datos_form_pacientes.php">Añadir paciente</a></li>

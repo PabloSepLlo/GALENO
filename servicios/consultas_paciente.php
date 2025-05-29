@@ -89,6 +89,10 @@
                 FROM pacientes_por_centro ppcs
                 CROSS JOIN pacientes_validos pv;
             ");
+            /* Explicación de consultas CTE: Primero se limita la consulta a los pacientes validos(aquellos que no tienen fecha de alta o su último ingreso está en el rango
+            deseado), después se agrupan los pacientes por centro de salud. Por último, en el select se combinan estas dos ctes, obteniendo el porcentaje de pacientes por 
+            centro de entre los pacientes validos. El cross join se utiliza para que el unico registro de pacientes_validos (total) se equipare con todos los registros de
+            pacientes por centro, calculando asi el porcentaje*/ 
             $stmt->bindParam(":inicio", $inicio);
             $stmt->bindParam(":fin", $fin);
             $stmt->execute();

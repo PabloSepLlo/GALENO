@@ -1,15 +1,20 @@
 <?php
     require_once("../modelo/usuario.php");
     session_start();
-    if (!isset($_SESSION["id_usuario"])) {
+    if (!isset($_SESSION["id_usuario"]) ) {
         $_SESSION["msg"] = "Necesitas estar autenticado";
         header("Location: ./iniciar_sesion.php");
         exit();
     }
     else {
-      $usuario = new Usuario();
-      $usuario->cargar_datos_desde_BBDD($_SESSION["id_usuario"]);
-      $datos = $usuario->get_datos();
+        $usuario = new Usuario();
+        $usuario->cargar_datos_desde_BBDD($_SESSION["id_usuario"]);
+        $datos = $usuario->get_datos();
+        if ($datos["administrador"] != "SÍ") {
+            $_SESSION["msg"] = "No eres administrador, no puedes acceder a esta vista";
+            header("Location: ./menu.php");
+            exit();
+        }
     }
 ?>
 <!doctype html>

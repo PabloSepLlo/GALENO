@@ -70,12 +70,6 @@
         .dropdown-item:hover {
             background-color: #e2e6ea;
         }
-        .tooltip-personalizado {
-            --bs-tooltip-bg: var(--bs-primary);
-            font-size: 0.9rem;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-        }
 
         .animacion_form {
         animation: animacion_form 0.8s ease-out forwards;
@@ -170,9 +164,6 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Inicializa todos los tooltips de Bootstrap en los elementos que tengan el atributo data-bs-toggle="tooltip"
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
         // Muestra un modal de aviso automáticamente cuando la página termina de cargarse
         document.addEventListener('DOMContentLoaded', function() {

@@ -262,33 +262,44 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        // Inicializa todos los tooltips de Bootstrap en los elementos que tengan el atributo data-bs-toggle="tooltip"
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        // Función para mostrar u ocultar el menú desplegable de los tratamientos
         function toggleDropdown() {
             const list = document.getElementById('dropdownList');
+            // Cambia el estilo de visualización: si está visible, lo oculta, si está oculto, lo muestra
             list.style.display = list.style.display === 'block' ? 'none' : 'block';
         }
 
+        // Función para actualizar el texto del botón con los elementos seleccionados del dropdown
         function updateDropdownText() {
-            const selected = Array.from(document.querySelectorAll('#dropdownList input:checked')).map(cb => cb.parentElement.textContent.trim());
+            // Obtiene los checkboxes marcados dentro del dropdown
+            const selected = Array.from(document.querySelectorAll('#dropdownList input:checked'));
+                .map(cb => cb.parentElement.textContent.trim()); // Extrae el texto del padre del checkbox
             const button = document.getElementById('dropdownText');
+            // Si hay seleccionados, los muestra en el botón; si no, muestra el texto por defecto
             button.textContent = selected.length ? selected.join(', ') : 'Añada el(los) tratamiento(s)';
         }
 
+        // Cierra el dropdown si se hace clic fuera de él
         window.addEventListener('click', function(e) {
             const box = document.querySelector('.dropdown-multi');
+            // Si el clic no fue dentro del dropdown, lo oculta
             if (!box.contains(e.target)) {
                 document.getElementById('dropdownList').style.display = 'none';
             }
         });
-
+        // Actualiza el texto del dropdown cuando el contenido del DOM se haya cargado
         document.addEventListener('DOMContentLoaded', updateDropdownText);
-        
+
+        // Muestra un modal de aviso automáticamente cuando la página termina de cargarse
         window.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {
                 const sessionModal = new bootstrap.Modal(modalElement);
-                sessionModal.show();
+                sessionModal.show(); // Muestra el modal
             }
         });
     </script>

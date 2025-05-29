@@ -215,8 +215,11 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        // Inicializa todos los tooltips de Bootstrap en los elementos que tengan el atributo data-bs-toggle="tooltip"
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        // Muestra un modal de aviso automáticamente cuando la página termina de cargarse
         window.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {

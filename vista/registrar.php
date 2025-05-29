@@ -119,9 +119,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
+        // Muestra un modal automáticamente cuando la página termina de cargarse
         window.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {
@@ -129,15 +127,21 @@
                 sessionModal.show();
             }
         });
+
         document.addEventListener('DOMContentLoaded', function() {
-            const newPass = document.getElementById('new_pass');
-            const confirmPass = document.getElementById('confirm_pass');
-            
+            // Obtiene los campos de contraseña
+            const newPass = document.getElementById('new_pass');         
+            const confirmPass = document.getElementById('confirm_pass');  
+
+            // Agrega un evento cuando se escribe algo en el campo de confirmación
             confirmPass.addEventListener('input', function() {
+                // Compara si ambas contraseñas coinciden
                 if(newPass.value !== confirmPass.value) {
+                    // Si no coinciden, se agrega la clase 'is-invalid' de Bootstrap a ambos campos
                     newPass.classList.add('is-invalid');
                     confirmPass.classList.add('is-invalid');
                 } else {
+                    // Si coinciden, se eliminan las clases de error
                     newPass.classList.remove('is-invalid');
                     confirmPass.classList.remove('is-invalid');
                 }

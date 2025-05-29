@@ -183,6 +183,7 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Muestra un modal automáticamente cuando la página termina de cargarse
         window.addEventListener('DOMContentLoaded', () => {
             const modalElement = document.getElementById('sessionModal');
             if (modalElement) {
@@ -190,13 +191,24 @@
                 sessionModal.show();
             }
         });
+
+        // Obtiene el input de búsqueda con el id "buscar"
         const buscar = document.getElementById("buscar");
+        // Agrega un evento que se dispara cada vez que el usuario escribe en el input
         buscar.addEventListener("input", function() {
+            // Convierte el valor del input a minúsculas para hacer la búsqueda insensible a mayúsculas/minúsculas
             const texto = buscar.value.toLowerCase();
+
+            // Recorre todas las filas de la tabla (los pacientes)
             document.querySelectorAll("tr").forEach(fila => {
+                // Dentro de cada fila, busca un elemento con la clase "ape" (donde están los apellidos)
                 const ape = fila.querySelector(".ape");
+
                 if (ape) {
+                    // Obtiene el texto de los apellidos en minúsculas
                     const apellidos = ape.textContent.toLowerCase();
+
+                    // Muestra u oculta la fila dependiendo de si el texto ingresado aparece en los apellidos
                     fila.style.display = apellidos.includes(texto) ? "table-row" : "none";
                 }
             });

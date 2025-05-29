@@ -20,18 +20,22 @@
             $ingreso->set_tratamientos($_SESSION["lista_tratamientos"]);
         }
         if ($ingreso->actualizar_ingreso($_SESSION["id_ingreso"])){
-            foreach ($_SESSION["lista_ingresos"] as &$datos_ingreso) { //El & hace que se referencia la session
+            foreach ($_SESSION["lista_ingresos"] as &$datos_ingreso) { 
+                /*El & hace que se referencie la session pudiendo hacer cambios
+                directamente en la lista y que se muestre la nueva fecha y procedencia 
+                si se ha actualizado*/
                 if ($datos_ingreso["id"] == $_SESSION["id_ingreso"]) {
+                    //Si se ha modificado el ingreso
                     $datos_ingreso["fecha_ingreso"] = $_SESSION["fecha_ingreso"];
+                    //Actualizamos la fecha
                     foreach ($_SESSION["datos_pr"] as $pr) {
+                        /*Usamos la sesion de datos de pr para mostrar las descripciones ya que solo
+                        tenemos el id y completamos abajo $datos_ingreso["procedencia"] con el id que corresponda*/
                         if ($pr["id_procedencia"] == $_SESSION["procedencia"]) {
                             $descripcion_procedencia = $pr["descripcion"];
                             break;
                         }
                     }
-                    /**$ids_procedencias = array_column($_SESSION["datos_pr"], "id_procedencia");
-                    $indice = array_search($_SESSION["procedencia"], $ids_procedencias);
-                    $datos_ingreso["procedencia"] = ($indice !== false) ? $_SESSION["datos_pr"][$indice]["descripcion"] : null;**/
                     $datos_ingreso["procedencia"] = $descripcion_procedencia;
                 }
             }

@@ -5,8 +5,8 @@
     $_POST["ape2"], $_POST["med"], $_POST["enf"], $_POST["centro_salud"]) &&
         !empty($_POST["nombre"]) && !empty($_POST["ape1"]) &&
         !empty($_POST["sexo"]) && !empty($_POST["edad"])) {
-            if (Validaciones::validar_NHC($_POST["nhc"]) || Validaciones::validar_NHC($_SESSION["nhc"])) {
-                $_SESSION["nhc"] = isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : $_POST["nhc"];
+            if (Validaciones::validar_NHC($_POST["nhc"])) {
+                $_SESSION["nhc"] = isset($_SESSION["nhc"], $_SESSION["editando"])  ? $_SESSION["nhc"] : $_POST["nhc"];
                 $_SESSION["nombre"] = $_POST["nombre"];
                 $_SESSION["ape1"] = $_POST["ape1"];
                 $_SESSION["ape2"] = !empty($_POST["ape2"]) ? $_POST["ape2"] : null;

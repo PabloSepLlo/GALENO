@@ -97,7 +97,10 @@
 </head>
 <body>
 
-    <?php include('../include/navbar.php'); ?> 
+    <?php 
+        include('../include/navbar.php');
+        include('../include/aviso.php');  
+    ?> 
     <?php
         if (!isset($_GET["editando"])){
             echo "
@@ -108,19 +111,18 @@
                             <a href='../controlador/borrar_datos_formulario.php' 
                             class='btn btn-outline-danger d-flex align-items-center rounded-pill shadow-sm px-4'>
                                     <span class='d-none d-md-inline me-2'>Cancelar y salir</span><i class='bi bi-x-lg'></i>
-                            
                             </a>
                         </div>
                         <div class='progress my-2'>
                             <div class='progress-bar progress-bar-striped progress-bar-animated' role='progressbar' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100' style='width: 25%'></div>
                         </div>";
-                        include('../include/aviso.php'); 
+                        
                         echo "<form method='POST'>
                             <div class='row'>
                                 <div class='col-md-6 mb-3'>
                                     <label for='nhc' class='form-label fw-bold'>N. H. C.</label>";
                                     if (isset($_SESSION["editando"])) {
-                                        echo "<input type='text' class='form-control' id='nhc' name='nhc' value='" . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "' disabled>";
+                                        echo "<input type='text' class='form-control' id='nhc' name='nhc' value='" . $_SESSION["nhc"] . "' disabled>";
                                     }
                                     else {
                                         echo "<input type='text' class='form-control' id='nhc' name='nhc' value='" . (isset($_SESSION["nhc"]) ? $_SESSION["nhc"] : "") . "' required>";

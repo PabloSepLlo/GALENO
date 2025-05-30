@@ -86,6 +86,32 @@
         .titulo-azul-oscuro {
             color: #052c65 !important;
         }
+
+        tbody tr {
+            transition: all 0.3s ease;
+            opacity: 1;
+            height: auto;
+            overflow: hidden;
+        }
+
+        tbody tr.ocultar {
+            opacity: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            border: none !important;
+            pointer-events: none;
+        }
+
+        tbody tr.ocultar td {
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+            line-height: 0 !important;
+            font-size: 0 !important;
+            transition: all 0.3s ease;
+        }
+
     </style>
 </head>
 <body>
@@ -192,26 +218,33 @@
             }
         });
 
-        // Obtiene el input de búsqueda con el id "buscar"
         const buscar = document.getElementById("buscar");
-        // Agrega un evento que se dispara cada vez que el usuario escribe en el input
-        buscar.addEventListener("input", function() {
-            // Convierte el valor del input a minúsculas para hacer la búsqueda insensible a mayúsculas/minúsculas
-            const texto = buscar.value.toLowerCase();
-
-            // Recorre todas las filas de la tabla (los pacientes)
-            document.querySelectorAll("tr").forEach(fila => {
-                // Dentro de cada fila, busca un elemento con la clase "ape" (donde están los apellidos)
-                const ape = fila.querySelector(".ape");
-
-                if (ape) {
-                    // Obtiene el texto de los apellidos en minúsculas
-                    const apellidos = ape.textContent.toLowerCase();
-
-                    // Muestra u oculta la fila dependiendo de si el texto ingresado aparece en los apellidos
-                    fila.style.display = apellidos.includes(texto) ? "table-row" : "none";
-                }
-            });
+        let timeout;
+        //Se establece un timeout momentaneo para que se actualice al acabar de escribir
+        buscar.addEventListener("keyup", function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                const texto = this.value.toLowerCase();
+                const filas = document.querySelectorAll("tbody tr");
+                
+                filas.forEach(fila => {
+                    const ape = fila.querySelector(".ape");
+                    const debeMostrar = ape && ape.textContent.toLowerCase().includes(texto);
+                    //Debe mostrar si hay contenido en el td de apellido e incluye el texto del input de buscar
+                    if (debeMostrar) {
+                        fila.classList.remove("ocultar");
+                        fila.style.display = "";
+                    } else {
+                        fila.classList.add("ocultar");
+                        // Hace la animación y luego oculta completamente al terminarla con display
+                        setTimeout(() => {
+                            if (fila.classList.contains("ocultar")) {
+                                fila.style.display = "none";
+                            }
+                        }, 300);
+                    }
+                });
+            }, 200);
         });
     </script>
 </body>

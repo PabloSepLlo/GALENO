@@ -1,14 +1,14 @@
 <div>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-xl navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="./menu.php">
-                <img src="../images/9ded914031de73173d19cf30839fef76-hospital-surgery-logo.webp" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+                <img src="../images/logo_letras.png" alt="Logo" height="50" class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
                     <?php
                         if ($datos["administrador"] == "SÍ") {
                             echo " 
@@ -26,9 +26,9 @@
                             GESTIÓN DE PACIENTES
                         </a>
                         <ul class="dropdown-menu dropdown-menu-lg-end">
-                            <li><a class="dropdown-item" href="../controlador/cargar_datos_form_pacientes.php">Añadir paciente</a></li>
-                            <li><a class="dropdown-item" href="./aniadir_ingreso_generales.php?ingresando">Añadir ingreso</a></li>
-                            <li><a class="dropdown-item" href="./aniadir_paciente_demograficos.php?editando">Editar paciente</a></li>
+                            <li><a class="dropdown-item text-center" href="../controlador/cargar_datos_form_pacientes.php">Añadir paciente</a></li>
+                            <li><a class="dropdown-item text-center" href="./aniadir_ingreso_generales.php?ingresando">Añadir ingreso</a></li>
+                            <li><a class="dropdown-item text-center" href="./aniadir_paciente_demograficos.php?editando">Editar paciente</a></li>
                         </ul>
                     </li>
                     <?php
@@ -38,12 +38,12 @@
                         </span>";
                     ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fs-5 px-2" href="#" role="button" data-bs-toggle="dropdown">
-                            <i class="bi bi-person-circle ms-5 fs-5"></i>
+                        <a class="nav-link dropdown-toggle fs-4" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle ms-5"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../vista/mis_datos.php">Mis datos</a></li>
-                            <li><a class="dropdown-item" href="../controlador/cerrar_sesion.php">Cerrar sesión</a></li>
+                            <li><a class="dropdown-item text-center" href="../vista/mis_datos.php">Mis datos</a></li>
+                            <li><a class="dropdown-item text-center" href="../controlador/cerrar_sesion.php">Cerrar sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -57,11 +57,11 @@
                         type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
                     </button>
                 </div>
-                <div class="d-flex align-items-center">
+                <div class="d-flex flex-column justify-content-center align-items-center">
                     <a class="navbar-brand me-2" href="./menu.php">
-                        <img src="../images/9ded914031de73173d19cf30839fef76-hospital-surgery-logo.webp" alt="Logo" width="50" height="50" class="d-inline-block align-text-top mb-2">
+                        <img src="../images/logo_simple_blanco.jpg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top mb-2">
                     </a>
-                    <h5 class="offcanvas-title fw-bold m-0">CONSULTAS</h5>
+                    <h3 class="offcanvas-title fw-bold m-0 text-primary">CONSULTAS</h5>
                 </div>
             </div>
         <div class="offcanvas-body">

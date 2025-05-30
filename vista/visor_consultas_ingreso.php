@@ -34,15 +34,6 @@
             background-color: #f4f6f9; /* Fondo claro */
         }
 
-        /* Navbar */
-        .navbar {
-            background-color: #007bff; /* Azul hospitalario */
-        }
-
-        .offcanvas {
-            background-color: #f4f6f9; 
-        }
-
         .nav-link {
             color: white;
             font-weight: 500;
@@ -50,16 +41,6 @@
 
         .navbar-toggler {
             border-color: white;
-        }
-
-        /* Botón de búsqueda */
-        .btn-search {
-            background-color: #28a745; /* Verde médico */
-            border: none;
-        }
-
-        .btn-search:hover {
-            background-color: #218838;
         }
 
         /* Carrusel */

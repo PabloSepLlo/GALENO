@@ -44,18 +44,13 @@
             }
             
 
-            .main-container {
+            .main-container { /*ajusta al ancho del navegador*/
                 display: flex;
                 flex-direction: column;
                 height: 100vh;
             }
             
-            /* Navbar */
-            .navbar {
-                background-color: #007bff;
-                flex-shrink: 0; /* Evita que el navbar se encoja */
-            }
-            
+
             .carousel-container {
                 flex-grow: 1; /* Ocupa todo el espacio disponible (afecta al responsive) */
                 min-height: 0; 
@@ -90,15 +85,6 @@
             
             .navbar-toggler {
                 border-color: white;
-            }
-            
-            .btn-search {
-                background-color: #28a745;
-                border: none;
-            }
-            
-            .btn-search:hover {
-                background-color: #218838;
             }
 
         </style>

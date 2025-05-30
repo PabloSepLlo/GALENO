@@ -51,7 +51,11 @@
                         <div class="col-12 col-lg-5">
                             <div class="card-body h-100">
                                 <form class="d-flex flex-column justify-content-center h-100" method="POST" action="../controlador/autenticar.php">
-                                    <h3 class="text-center mb-4 text-primary">LOGIN</h3>
+                                    <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                                        <img src="../images/logo_simple_blanco.jpg" height="55" width="55" alt="logo">
+                                        <h3 class="text-center mb-4 text-primary fw-bold">LOGIN</h3>
+                                    </div>
+                                    
                                     <div class="mb-3">
                                         <label for="nombreUsu" class="form-label">Nombre de usuario</label>
                                         <div class="input-group">

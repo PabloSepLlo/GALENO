@@ -31,16 +31,15 @@
         /* Estilos generales */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f4f6f9; /* Fondo claro */
+            background-color: #f4f6f9; /* Fondo claro para fondo*/
         }
 
-        .offcanvas {
-            background-color: #f4f6f9; 
-        }
-
-        /* Navbar */
-        .navbar {
-            background-color: #007bff; /* Azul hospitalario */
+        .fondo_modal {
+            background-color: #f4f6f9; /* Fondo claro para fondo*/
+            background-image: url('../images/fondo_difuso.jpg'); 
+            background-size: cover; 
+            background-position: center center; 
+            background-attachment: fixed; 
         }
 
         .nav-link {
@@ -52,16 +51,6 @@
             border-color: white;
         }
 
-        /* Botón de búsqueda */
-        .btn-search {
-            background-color: #28a745; /* Verde médico */
-            border: none;
-        }
-
-        .btn-search:hover {
-            background-color: #218838;
-        }
-
         /* Carrusel */
         .carousel-image {
             height: 92vh;
@@ -69,7 +58,7 @@
         }
 
         .carousel-caption {
-            background-color: rgba(0, 123, 255, 0.7); /* Azul translúcido */
+            background-color: rgba(0, 123, 255, 0.7); 
             border-radius: 10px;
             padding: 10px;
         }
@@ -87,14 +76,14 @@
             color: #052c65 !important;
         }
 
-        tbody tr {
-            transition: all 0.3s ease;
+        tr {
+            transition: all 0.3s ease-in-out;
             opacity: 1;
             height: auto;
             overflow: hidden;
         }
 
-        tbody tr.ocultar {
+        tr.ocultar {
             opacity: 0;
             height: 0;
             padding: 0;
@@ -103,23 +92,29 @@
             pointer-events: none;
         }
 
-        tbody tr.ocultar td {
+        tr.ocultar td {
             padding: 0 !important;
             margin: 0 !important;
             border: none !important;
             line-height: 0 !important;
             font-size: 0 !important;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .fondo_difuso {
+            
         }
 
     </style>
 </head>
-<body>
+<body class="<?php echo isset($_GET["filtroCS"]) ? 'fondo_modal' : ''; ?>">
     <?php 
         include("../include/navbar.php");
         include("../include/aviso.php");
+        
         if (isset($_GET["filtroCS"])) {
             echo"
+            
                 <div class='modal fade show' id='modalFiltroCS' tabindex='-1' style='display: block; background: rgba(0,0,0,0.5);' aria-labelledby='modalFiltroCSLabel'>
                     <div class='modal-dialog modal-dialog-centered'>
                         <div class='modal-content'>
@@ -232,7 +227,12 @@
                     //Debe mostrar si hay contenido en el td de apellido e incluye el texto del input de buscar
                     if (debeMostrar) {
                         fila.classList.remove("ocultar");
-                        fila.style.display = "";
+                        //Timeout para la vuelta
+                        setTimeout(() => {
+                            if (!fila.classList.contains("ocultar")) {
+                                fila.style.display = "";
+                            }
+                        }, 300);
                     } else {
                         fila.classList.add("ocultar");
                         // Hace la animación y luego oculta completamente al terminarla con display

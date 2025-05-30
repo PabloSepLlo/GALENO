@@ -21,7 +21,6 @@
         .img-fluid {
             object-fit: cover;
             height: 100%;
-            width: 100%;
         }
         .animacion_form {
             opacity: 0;
@@ -42,7 +41,7 @@
     ?>      
     <div class="container py-4">
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-10 col-xl-8 animacion_form">
+            <div class="col-12 col-lg-8 animacion_form">
                 <div class="card border-primary-subtle shadow">
                     <div class="row">
                         <div class="col-md-5 d-none d-md-block">
@@ -50,25 +49,22 @@
                         </div>
                         <div class="col-md-7">
                             <div class="card-body">
-                                <h3 class="text-center text-primary mb-4">Regístrate</h3>
+                                <h3 class="text-center text-primary mb-4 fw-bold">Regístrate</h3>
                                 <form method="POST" action="../controlador/registrar.php">
-                                    
-                                    <div class="mb-3">
-                                        <label for="nombreUsu" class="form-label">Nombre de usuario</label>
+                                   <div class="mb-2">
+                                        <label for="nombreUsu" class="form-label">Usuario</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
                                             <input type="text" name="user_name" class="form-control" id="nombreUsu" required>
                                         </div>
                                     </div>
                                     
-                                    <div class="row mb-3">
-                                        <div class="col-12">
-                                            <label for="nombre" class="form-label">Nombre</label>
-                                            <input type="text" name="nombre" class="form-control" id="nombre" required>
-                                        </div>
+                                    <div class="mb-2">
+                                        <label for="nombre" class="form-label">Nombre</label>
+                                        <input type="text" name="nombre" class="form-control" id="nombre" required>
                                     </div>
                                     
-                                    <div class="row mb-3">
+                                    <div class="row g-2 mb-2">
                                         <div class="col-md-6">
                                             <label for="ape1Usu" class="form-label">Primer apellido</label>
                                             <input type="text" name="ape1" class="form-control" id="ape1Usu" required>
@@ -79,19 +75,19 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="mb-3">
+                                    <div class="mb-2">
                                         <label for="pass1" class="form-label">Contraseña</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                                             <input type="password" name="pass1" class="form-control" id="new_pass" required>
                                         </div>
-                                        <small class="text-muted">
-                                            <i class="bi bi-info-circle me-1"></i>Debe contener 8+ caracteres, mayúsculas, minúsculas, números y símbolos
-                                        </small>
+                                        <div class="form-text">
+                                            <i class="bi bi-info-circle"></i> 8+ caracteres con mayúsculas, minúsculas, números y símbolos
+                                        </div>
                                     </div>
                                     
-                                    <div class="mb-4">
-                                        <label for="pass2" class="form-label">Repita la contraseña</label>
+                                    <div class="mb-3">
+                                        <label for="pass2" class="form-label">Confirmar contraseña</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                                             <input type="password" id="confirm_pass" name="pass2" class="form-control" required>
@@ -115,7 +111,6 @@
             </div>
         </div>
     </div>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Muestra un modal automáticamente cuando la página termina de cargarse
@@ -126,7 +121,7 @@
                 sessionModal.show();
             }
         });
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('keyup', function() {
             // Obtiene los campos de contraseña
             const newPass = document.getElementById('new_pass');         
             const confirmPass = document.getElementById('confirm_pass');  

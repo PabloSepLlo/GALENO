@@ -253,7 +253,6 @@
                                         VALUES (:nhc, :nombre, :ape1, :ape2, :sexo, :edad, :medico, :enfermera, :co_morb, :num_farm, 
                                             :grado_ulcera, :rip_domi, :in_ur, :in_fec, :insom, :sob_cui, :dolor, :upp, :disf, :sv, :sng, 
                                             :ocd, :id_centro_salud, :id_ayuda_social, :id_motivo_inc, :id_convivencia, :id_ppal_cuidador)");
-                    error_log("ENhc: " .$this->nhc , 3, "../logs/error_log.txt");
                     $stmt->bindParam(":nhc", $this->nhc);
                     $stmt->bindParam(":nombre", $this->nombre);
                     $stmt->bindParam(":ape1", $this->ape1);

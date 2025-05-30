@@ -34,13 +34,12 @@
             background-color: #f4f6f9; /* Fondo claro */
         }
 
-        .offcanvas {
+        .fondo_modal {
             background-color: #f4f6f9; 
-        }
-
-        /* Navbar */
-        .navbar {
-            background-color: #007bff; /* Azul hospitalario */
+            background-image: url('../images/fondo_difuso.jpg'); 
+            background-size: cover; 
+            background-position: center center; 
+            background-attachment: fixed; 
         }
 
         .nav-link {
@@ -50,16 +49,6 @@
 
         .navbar-toggler {
             border-color: white;
-        }
-
-        /* Botón de búsqueda */
-        .btn-search {
-            background-color: #28a745; /* Verde médico */
-            border: none;
-        }
-
-        .btn-search:hover {
-            background-color: #218838;
         }
 
         /* Menú desplegable */
@@ -95,7 +84,7 @@
 
     </style>
 </head>
-<body>
+<body class="<?php echo isset($_GET["ingresando"]) ? 'fondo_modal' : ''; ?>">
     <?php include('../include/navbar.php'); ?> 
     <?php
         if (!isset($_GET["ingresando"])){

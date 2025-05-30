@@ -34,14 +34,7 @@
             background-color: #f4f6f9; /* Fondo claro */
         }
 
-        .offcanvas {
-            background-color: #f4f6f9; 
-        }
-
         /* Navbar */
-        .navbar {
-            background-color: #007bff; /* Azul hospitalario */
-        }
 
         .nav-link {
             color: white;
@@ -50,16 +43,6 @@
 
         .navbar-toggler {
             border-color: white;
-        }
-
-        /* Botón de búsqueda */
-        .btn-search {
-            background-color: #28a745; /* Verde médico */
-            border: none;
-        }
-
-        .btn-search:hover {
-            background-color: #218838;
         }
 
         /* Carrusel */
@@ -99,7 +82,7 @@
                 <div class='card-body p-4'>
                     <div class='text-center mb-4'>
                         <div class='position-relative d-inline-block'>
-                            <img src='../images/9ded914031de73173d19cf30839fef76-hospital-surgery-logo.webp' class='rounded-circle border border-3 border-primary' width='100' alt='Logo'>
+                            <img src='../images/logo_simple_blanco.jpg' class='rounded-circle border border-3 border-primary' width='100' alt='Logo'>
                         </div>
                         <h4 class='mt-3 mb-0'>{$datos["nombre"]} {$datos["ape1"]}</h4>
                         <h5 class='text-muted'>@{$datos["user_name"]}</h5>

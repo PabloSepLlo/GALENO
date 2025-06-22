@@ -4,7 +4,7 @@
         function __construct(){
             $server = "localhost";
             $user = "root";
-            $pass = "holabuenas123";
+            $pass = "";
             $dsn = "mysql:host=$server;dbname=base_pacientes";
             try {
                 $this->pdo = new PDO($dsn, $user, $pass);
